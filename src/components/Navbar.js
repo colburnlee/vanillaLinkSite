@@ -3,10 +3,10 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 
 const navigation = [
-  { name: "Dashboard", href: "#", current: true },
-  { name: "Team", href: "#", current: false },
-  { name: "Projects", href: "#", current: false },
-  { name: "Calendar", href: "#", current: false },
+  { name: "Introduction", href: "#", current: true },
+  { name: "Ethereum", href: "#", current: false },
+  { name: "Optimism", href: "#", current: false },
+  { name: "Arbitrum", href: "#", current: false },
 ];
 
 function classNames(...classes) {
@@ -31,6 +31,8 @@ const Navbar = () => {
                   )}
                 </Disclosure.Button>
               </div>
+
+              {/* SVG ICON and Name */}
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
                   <img
@@ -64,6 +66,8 @@ const Navbar = () => {
                   </div>
                 </div>
               </div>
+
+              {/*  BUTTONS, LINKS, and BELL ICON */}
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <button
                   type="button"
