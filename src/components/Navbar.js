@@ -1,12 +1,14 @@
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
+import { Link } from "react-router-dom";
 
 const navigation = [
-  { name: "Introduction", href: "#", current: true },
+  { name: "Introduction", href: "/introduction", current: true },
   { name: "Ethereum", href: "#", current: false },
   { name: "Optimism", href: "#", current: false },
   { name: "Arbitrum", href: "#", current: false },
+  { name: "About Us", href: "/about", current: false },
 ];
 
 function classNames(...classes) {
@@ -34,6 +36,7 @@ const Navbar = () => {
 
               {/* SVG ICON and Name */}
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+                <Link to="/">
                 <div className="flex-shrink-0 flex items-center">
                   <img
                     className="block lg:hidden h-8 w-auto"
@@ -45,13 +48,13 @@ const Navbar = () => {
                     src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
                     alt="Workflow"
                   />
-                </div>
+                </div></Link>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
-                      <a
+                      <Link 
                         key={item.name}
-                        href={item.href}
+                        to={item.href}
                         className={classNames(
                           item.current
                             ? "bg-emerald-800 text-white"
@@ -61,7 +64,7 @@ const Navbar = () => {
                         aria-current={item.current ? "page" : undefined}
                       >
                         {item.name}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>
