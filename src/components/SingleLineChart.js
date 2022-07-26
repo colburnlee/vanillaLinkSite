@@ -6,6 +6,7 @@ const SingleLineChart = ({ data = [], dimensions = {} }) => {
   const { width, height, margin = {} } = dimensions;
   const svgWidth = width + margin.left + margin.right;
   const svgHeight = height + margin.top + margin.bottom;
+  console.log(data);
   //   console.log(
   //     "Max Price Found: $",
   //     d3.max(data.items, (d) => d.price)
@@ -20,9 +21,9 @@ const SingleLineChart = ({ data = [], dimensions = {} }) => {
   //   console.log(data.items[0]["startedAtUTC"]);
   //   console.log(width); // 600
 
-  const formatTime = (format) => {
+  const formatTime = (utcDate) => {
     return {
-      date: d3.utcParse("%Y-%m-%dT%H:%M:%S.%LZ")(format.updatedAtUTC),
+      date: d3.utcParse("%Y-%m-%dT%H:%M:%S.%LZ")(utcDate.updatedAtUTC),
     }; //2020-08-07T14:17:10.000Z || 2022-07-20T23:43:07.000Z
   };
   console.log("Testing Parse Date: ", formatTime(data.items[30000]));
@@ -45,7 +46,7 @@ const SingleLineChart = ({ data = [], dimensions = {} }) => {
       .scaleTime()
       //   .domain(d3.extent(data.items, (d) => formatTime(d)))
       .domain([
-        d3.min(data.items, (d) => formatTime(d)),
+        d3.min(data, (d) => formatTime(d).date),
         formatTime(data.items[30000]),
       ])
       .range([0, width]);
