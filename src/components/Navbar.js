@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const navigation = [
   { name: "Introduction", href: "/introduction", current: true },
-  { name: "Ethereum", href: "#", current: false },
+  { name: "ETH-USD", href: "/ETH/ETHUSD", current: false },
   { name: "Optimism", href: "#", current: false },
   { name: "Arbitrum", href: "#", current: false },
   { name: "About Us", href: "/about", current: false },
