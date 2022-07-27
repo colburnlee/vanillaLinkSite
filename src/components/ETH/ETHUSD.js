@@ -1,5 +1,6 @@
 import useFetch from "../UseFetch";
 import BuildBarChart from "../BuildBarChart";
+import BuildLineChart from "../BuildLineChart";
 
 const ETHUSD = () => {
   const ETH_USD_URL =
@@ -25,7 +26,8 @@ const ETHUSD = () => {
           <div id="my_dataviz">
             `${JSON.stringify(pairs[0].description)} loading complete - Total
             Length ${pairs.length}. Start ${pairs[0]["updatedAtUTC"]}`
-            <BuildBarChart data={pairs} dimensions={dimensions} />
+            {/* <BuildBarChart data={pairs} dimensions={dimensions} /> */}
+            <BuildLineChart data={pairs} />
           </div>
         ) : (
           "Pair information Loading"
