@@ -7,39 +7,51 @@ const ETHUSD = () => {
   const { error, isPending, data: pairs } = useFetch(ETH_USD_URL);
 
   return (
-    <>
-      <div className="flex justify-center flex-shrink">
-        {error && <p className="text-5xl">{error}</p>}
-        {isPending && <p className="text-5xl">Loading...</p>}
-      </div>
-      <div className="grid grid-cols-2 gap-4 m-8">
-        <div className="flex justify-center flex-shrink">
-          <div>
-            <p className="text-5xl mb-8">ETH-USD</p>
-            <div className="border-dotted border-2 p-8 border-emerald-600 hover:border-emerald-900">
+    // Design Block
+    <section className="mb-32 text-gray-800">
+      <p className="text-5xl font-bold mb-12 mt-4 text-center">ETH-USD</p>
+      <div className="flex flex-wrap mb-12">
+        <div className="grow-0 shrink-0 basis-auto w-full lg:w-6/12 lg:pl-6">
+          <div className="grow-0 shrink-0 basis-auto w-full lg:w-6/12 lg:pl-6">
+            {error && <p className="text-5xl">{error}</p>}
+            {isPending && <p className="text-5xl">Loading...</p>}
+          </div>
+          <div className="grow-0 shrink-0 basis-auto w-full lg:w-6/12 lg:pl-6">
+            <div>
+              <div className="border-dotted border-2 p-8 border-emerald-600 hover:border-emerald-900 m-4 mb-10">
+                {pairs ? (
+                  <>
+                    <ul className="text-2xl text-center list-disc mb-2">
+                      Pair Information
+                      <li className="mt-2 text-start">
+                        {pairs.length} updates to blockchain
+                      </li>
+                      <li>Start {pairs[0]["updatedAtUTC"]}</li>
+                    </ul>
+                    <ul className="text-2xl text-center list-disc">
+                      Trigger Criteria:
+                      <li>Price Deviation Threshold: .5%</li>
+                      <li>3600 seconds (1 hour) since last update</li>
+                    </ul>
+                  </>
+                ) : (
+                  <p className="text-2xl">"Pair information Loading"</p>
+                )}
+              </div>
+            </div>
+          </div>
+          <div className="grow-0 shrink-0 basis-auto w-full lg:w-6/12 lg:pl-6">
+            <div className="relative bg-no-repeat bg-cover  rounded-lg">
               {pairs ? (
-                <ul className="text-2xl text-center list-disc">
-                  Pair Information
-                  <li className="mt-2 text-start">
-                    {pairs.length} updates to blockchain
-                  </li>
-                  <li> Start {pairs[0]["updatedAtUTC"]}</li>
-                </ul>
+                <LineChart data={pairs} width={900} height={600} />
               ) : (
                 <p className="text-2xl">"Pair information Loading"</p>
               )}
             </div>
           </div>
         </div>
-        <div className="flex justify-center mt-12">
-          {pairs ? (
-            <LineChart data={pairs} width={900} height={600} />
-          ) : (
-            <p className="text-2xl">"Pair information Loading"</p>
-          )}
-        </div>
       </div>
-    </>
+    </section>
   );
 };
 
