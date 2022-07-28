@@ -1,37 +1,43 @@
 import useFetch from "../UseFetch";
-import BuildBarChart from "../BuildBarChart";
-import BuildLineChart from "../BuildLineChart";
+import LineChart from "../SimpleLineChart";
 
 const ETHUSD = () => {
   const ETH_USD_URL =
     "https://gist.githubusercontent.com/colburnlee/86882f86b4706370ad574ff15b292783/raw/a2f0b7e731659ca25668091ef805ad053522d071/ETH_USD.json";
   const { error, isPending, data: pairs } = useFetch(ETH_USD_URL);
-  const dimensions = {
-    width: 600,
-    height: 300,
-    margin: {
-      top: 30,
-      right: 30,
-      bottom: 30,
-      left: 60,
-    },
-  };
+
   return (
     <>
-      <h1>This is the landing for the ETH-USD Pair</h1>
-      <div className="home">
-        {error && <div>{error}</div>}
-        {isPending && <div>Loading...</div>}
-        {pairs ? (
-          <div id="my_dataviz">
-            `${JSON.stringify(pairs[0].description)} loading complete - Total
-            Length ${pairs.length}. Start ${pairs[0]["updatedAtUTC"]}`
-            {/* <BuildBarChart data={pairs} dimensions={dimensions} /> */}
-            <BuildLineChart data={pairs} />
+      <div className="flex justify-center flex-shrink">
+        {error && <p className="text-5xl">{error}</p>}
+        {isPending && <p className="text-5xl">Loading...</p>}
+      </div>
+      <div className="grid grid-cols-2 gap-4 m-8">
+        <div className="flex justify-center flex-shrink">
+          <div>
+            <p className="text-5xl mb-8">ETH-USD</p>
+            <div className="border-dotted border-2 p-8 border-emerald-600 hover:border-emerald-900">
+              {pairs ? (
+                <ul className="text-2xl text-center list-disc">
+                  Pair Information
+                  <li className="mt-2 text-start">
+                    {pairs.length} updates to blockchain
+                  </li>
+                  <li> Start {pairs[0]["updatedAtUTC"]}</li>
+                </ul>
+              ) : (
+                <p className="text-2xl">"Pair information Loading"</p>
+              )}
+            </div>
           </div>
-        ) : (
-          "Pair information Loading"
-        )}
+        </div>
+        <div className="flex justify-center mt-12">
+          {pairs ? (
+            <LineChart data={pairs} width={900} height={600} />
+          ) : (
+            <p className="text-2xl">"Pair information Loading"</p>
+          )}
+        </div>
       </div>
     </>
   );
