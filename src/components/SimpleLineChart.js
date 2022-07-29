@@ -3,7 +3,7 @@ import * as d3 from "d3";
 
 const MARGIN = { top: 30, right: 30, bottom: 50, left: 50 };
 
-export const LineChart = (LineChartProps = {}) => {
+export const ManualLineChart = (LineChartProps = {}) => {
   const formatTime = (utcDate) => {
     return d3.utcParse("%Y-%m-%dT%H:%M:%S.%LZ")(utcDate.updatedAtUTC);
   }; //2020-08-07T14:17:10.000Z || 2022-07-20T23:43:07.000Z
@@ -84,4 +84,4 @@ export const LineChart = (LineChartProps = {}) => {
     </div>
   );
 };
-export default LineChart;
+export default ManualLineChart;

@@ -1,5 +1,6 @@
 import useFetch from "../UseFetch";
-import LineChart from "../SimpleLineChart";
+import ManualLineChart from "../SimpleLineChart";
+import RechartLinechart from "../RechartLinechart";
 
 const ETHUSD = () => {
   const ETH_USD_URL =
@@ -43,7 +44,8 @@ const ETHUSD = () => {
           <div className="grow-0 shrink-0 basis-auto w-full lg:w-6/12 lg:pl-6">
             <div className="relative bg-no-repeat bg-cover  rounded-lg">
               {pairs ? (
-                <LineChart data={pairs} width={900} height={600} />
+                // <ManualLineChart data={pairs} width={900} height={600} />
+                <RechartLinechart data={pairs} width={900} height={600} />
               ) : (
                 <p className="text-2xl">"Pair information Loading"</p>
               )}
