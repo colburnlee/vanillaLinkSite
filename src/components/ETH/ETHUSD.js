@@ -1,11 +1,18 @@
 import useFetch from "../UseFetch";
-import ManualLineChart from "../SimpleLineChart";
 import RechartLinechart from "../RechartLinechart";
+import RechartOHLCCompare from "../RechartOHLCCompare";
 
 const ETHUSD = () => {
+  const ETH_USD_OHLC_URL =
+    "https://gist.githubusercontent.com/colburnlee/61896ce060edcb9db7cb110dd44887bd/raw/60078578b362a9883b579845bbd2490dfebbd1ee/ETH_USDT_OHLC.json";
   const ETH_USD_URL =
     "https://gist.githubusercontent.com/colburnlee/86882f86b4706370ad574ff15b292783/raw/a2f0b7e731659ca25668091ef805ad053522d071/ETH_USD.json";
-  const { error, isPending, data: pairs } = useFetch(ETH_USD_URL);
+  const {
+    error,
+    isPending,
+    data: pairs,
+    comparisonData,
+  } = useFetch(ETH_USD_URL, ETH_USD_OHLC_URL);
 
   return (
     // Design Block
@@ -43,9 +50,22 @@ const ETHUSD = () => {
           </div>
           <div className="grow-0 shrink-0 basis-auto w-full lg:w-6/12 lg:pl-6">
             <div className="relative bg-no-repeat bg-cover  rounded-lg">
-              {pairs ? (
+              {pairs && comparisonData ? (
                 // <ManualLineChart data={pairs} width={900} height={600} />
                 <RechartLinechart data={pairs} width={900} height={600} />
+              ) : (
+                <p className="text-2xl">"Pair information Loading"</p>
+              )}
+            </div>
+            <div className="relative bg-no-repeat bg-cover  rounded-lg">
+              {pairs && comparisonData ? (
+                // <ManualLineChart data={pairs} width={900} height={600} />
+                <RechartOHLCCompare
+                  comparisonData={comparisonData}
+                  data={pairs}
+                  width={900}
+                  height={600}
+                />
               ) : (
                 <p className="text-2xl">"Pair information Loading"</p>
               )}
