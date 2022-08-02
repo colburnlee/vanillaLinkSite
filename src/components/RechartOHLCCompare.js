@@ -10,7 +10,9 @@ import {
 import * as d3 from "d3";
 
 const RechartOHLCCompare = (LineChartProps = {}) => {
+  
   const { width, height, data, comparisonData } = LineChartProps;
+  const priceConstructor = `${data[0].description} Price`;
   const dateOptions = {
     // weekday: "short",
     year: "2-digit",
@@ -28,8 +30,8 @@ const RechartOHLCCompare = (LineChartProps = {}) => {
     (accumulator, currentValue) => {
       accumulator.push({
         date: dateFormat(new Date(currentValue.period)),
-        low: parseFloat(currentValue.low.toFixed(2)),
-        high: parseFloat(currentValue.high.toFixed(2)),
+        low: parseFloat(currentValue.low),
+        high: parseFloat(currentValue.high),
       });
       return accumulator;
     },
@@ -46,36 +48,55 @@ const RechartOHLCCompare = (LineChartProps = {}) => {
   //   console.log(oracle_data[0]);
 
   //   console.log(lineChartData);
-  let [xMin, xMax] = d3.extent(comparisonData.data, (d) => d.period);
-  xMin = dateFormat(new Date(xMin));
-  xMax = dateFormat(new Date(xMax));
+  // let [xMin, xMax] = d3.extent(oracle_data, (d) => d.period);
+  // xMin = dateFormat(new Date(xMin));
+  // xMax = dateFormat(new Date(xMax));
   //   xMin = xMin.toLocaleDateString("en-US", dateOptions);
   //   xMax = xMax.toLocaleDateString("en-US", dateOptions);
 
-  let [yMin, yMax] = d3.extent(lineChartData, (d) => parseFloat(d.high));
+  // let [yMin, yMax] = d3.extent(lineChartData, (d) => parseFloat(d.high));
 
   //   console.log(`X Axis Min: ${xMin}  Max: ${xMax}`);
   //   console.log(`Y Axis Min: ${yMin}  Max: ${yMax}`);
 
   console.log("OHLC Array Sample: ", lineChartData[0]);
   console.log("Oracle Array Sample: ", oracle_data[0]);
-  //   const combinedData = lineChartData.concat(oracle_data);
+  console.log("OHLC Array Length: ", lineChartData.length);
+  console.log("Oracle Array Length: ", oracle_data.length);
+
+  const combinedData = lineChartData.concat(oracle_data).sort(function(a,b){
+    return new Date(a.date) - new Date(b.date);
+  });
+  // console.log("Combined Array: ", combinedData)
+
+// FOR TESTING - SLICE VARIABLES
+  const combinedDataSlice = combinedData.slice(0,10000)
+  const lineChartSlice = lineChartData.slice(0,10000)
+  let [xMin, xMax] = d3.extent(lineChartSlice, (d) => d.period);
+  xMin = dateFormat(new Date(xMin));
+  xMax = dateFormat(new Date(xMax));
+  let [yMin, yMax] = d3.extent(combinedDataSlice, (d) => parseFloat(d.high));
+// END SLICE VARIABLES
 
   return (
     <LineChart
       width={width}
       height={height}
-      data={oracle_data}
+      data={combinedDataSlice}
       margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
     >
       <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="date" domain={[xMin, xMax]} />
-      <YAxis domain={[0, yMax]} />
+      <XAxis dataKey="date" domain={[xMin, xMax]} type="category" scale={"auto"} label={{ value: "Date", position: "insideBottomRight", offset: -10 }}/>
+      <YAxis domain={[0, yMax]} label={{
+          value: priceConstructor,
+          angle: -90,
+          position: "insideLeft",
+        }}/>
       <Tooltip />
       <Legend />
-      {/* <Line type="monotone" dataKey="low" stroke="#8884d8" dot={false} />
-      <Line type="monotone" dataKey="high" stroke="#82ca9d" dot={false} /> */}
-      <Line type="monotone" dataKey="oracle_price" stroke="#3d2cbf" />
+      <Line connectNulls type="monotone" dataKey="low" stroke="#8884d8" dot={false} />
+      <Line connectNulls type="monotone" dataKey="high" stroke="#82ca9d" dot={false} />
+      <Line type="monotone" dataKey="oracle_price" stroke="#3d2cbf" dot={false} />
     </LineChart>
   );
 };

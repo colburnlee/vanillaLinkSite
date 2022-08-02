@@ -49,14 +49,14 @@ const ETHUSD = () => {
             </div>
           </div>
           <div className="grow-0 shrink-0 basis-auto w-full lg:w-6/12 lg:pl-6">
-            <div className="relative bg-no-repeat bg-cover  rounded-lg">
+            {/* <div className="relative bg-no-repeat bg-cover  rounded-lg">
               {pairs && comparisonData ? (
                 // <ManualLineChart data={pairs} width={900} height={600} />
                 <RechartLinechart data={pairs} width={900} height={600} />
               ) : (
                 <p className="text-2xl">"Pair information Loading"</p>
               )}
-            </div>
+            </div> */}
             <div className="relative bg-no-repeat bg-cover  rounded-lg">
               {pairs && comparisonData ? (
                 // <ManualLineChart data={pairs} width={900} height={600} />
