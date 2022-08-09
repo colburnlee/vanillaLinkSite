@@ -7,11 +7,11 @@ import {
   Tooltip,
   Legend,
   Brush,
+  ResponsiveContainer,
 } from "recharts";
 import * as d3 from "d3";
 
 const RechartOHLCCompare = (LineChartProps = {}) => {
-  
   const { width, height, data, comparisonData } = LineChartProps;
   const priceConstructor = `${data[0].description} Price`;
   // const dateOptions = {
@@ -65,42 +65,70 @@ const RechartOHLCCompare = (LineChartProps = {}) => {
   // console.log("OHLC Array Length: ", lineChartData.length);
   // console.log("Oracle Array Length: ", oracle_data.length);
 
-  const combinedData = lineChartData.concat(oracle_data).sort(function(a,b){
+  const combinedData = lineChartData.concat(oracle_data).sort(function (a, b) {
     // TODO - Re-sort array to excise the thousands of ~1min updates during proxy version upgrades
     return new Date(a.date) - new Date(b.date);
   });
-  console.log("Combined Array: ", combinedData)
+  console.log("Combined Array: ", combinedData);
 
-// FOR TESTING - SLICE VARIABLES
-  const combinedDataSlice = combinedData.slice(18000,19000)
-  const lineChartSlice = lineChartData.slice(18000,19000)
+  // FOR TESTING - SLICE VARIABLES
+  const combinedDataSlice = combinedData.slice(18000, 19000);
+  const lineChartSlice = lineChartData.slice(18000, 19000);
   let [xMin, xMax] = d3.extent(lineChartSlice, (d) => d.period);
   xMin = dateFormat(new Date(xMin));
   xMax = dateFormat(new Date(xMax));
   let [yMin, yMax] = d3.extent(combinedDataSlice, (d) => parseFloat(d.high));
-// END SLICE VARIABLES
+  // END SLICE VARIABLES
 
   return (
-    <LineChart
-      width={width}
-      height={height}
-      data={combinedDataSlice}
-      margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-    >
-      <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="date" domain={[xMin, xMax]} type="category" scale={"auto"} />
-      <YAxis domain={[0, yMax]} label={{
-          value: priceConstructor,
-          angle: -90,
-          position: "insideLeft",
-        }}/>
-      <Tooltip />
-      <Legend />
-      <Brush dataKey="date" height={40} stroke="#82ca9d" />
-      <Line connectNulls type="monotone" dataKey="low" stroke="#8884d8" dot={false} />
-      <Line connectNulls type="monotone" dataKey="high" stroke="#82ca9d" dot={false} />
-      <Line connectNulls type="monotone" dataKey="oracle_price" stroke="#3d2cbf" dot={false} />
-    </LineChart>
+    <ResponsiveContainer width="100%" height="100%">
+      <LineChart
+        width={width}
+        height={height}
+        data={combinedDataSlice}
+        margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+      >
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis
+          dataKey="date"
+          domain={[xMin, xMax]}
+          type="category"
+          scale={"auto"}
+        />
+        <YAxis
+          domain={[0, yMax]}
+          label={{
+            value: priceConstructor,
+            angle: -90,
+            position: "insideLeft",
+          }}
+        />
+        <Tooltip />
+        <Legend />
+        <Brush dataKey="date" height={40} stroke="#82ca9d" />
+        <Line
+          connectNulls
+          type="monotone"
+          dataKey="low"
+          stroke="#8884d8"
+          dot={false}
+        />
+        <Line
+          connectNulls
+          type="monotone"
+          dataKey="high"
+          stroke="#82ca9d"
+          dot={false}
+        />
+        <Line
+          connectNulls
+          type="monotone"
+          dataKey="oracle_price"
+          stroke="#3d2cbf"
+          dot={false}
+        />
+      </LineChart>
+    </ResponsiveContainer>
   );
 };
 
