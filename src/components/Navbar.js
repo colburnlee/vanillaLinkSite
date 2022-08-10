@@ -1,13 +1,5 @@
 import { Link } from "react-router-dom";
 
-const navigation = [
-  { name: "Introduction", href: "/introduction", current: true },
-  { name: "ETH-USD", href: "/ETH/ETHUSD", current: false },
-  { name: "Optimism", href: "#", current: false },
-  { name: "Arbitrum", href: "#", current: false },
-  { name: "About Us", href: "/about", current: false },
-];
-
 const Navbar = () => {
   return (
     <header className="text-gray-400 bg-gray-900 body-font">
@@ -22,7 +14,7 @@ const Navbar = () => {
             stroke="currentColor"
             stroke-linecap="round"
             stroke-linejoin="round"
-            stroke-width="2"
+            stroke-width="3"
             className="w-10 h-10 text-black p-2 bg-emerald-600 rounded-full"
             viewBox="0 0 24 24"
           >

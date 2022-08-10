@@ -14,7 +14,7 @@ const ETHUSD = () => {
   } = useFetch(ETH_USD_URL, ETH_USD_OHLC_URL);
 
   return (
-    <section className="text-black bg-white body-font">
+    <section className="text-black body-font">
       <div className="container px-5 py-24 mx-auto flex flex-wrap">
         <div className="flex flex-wrap w-full">
           {/* Div for Pair Name, Description, and Information */}
@@ -53,11 +53,11 @@ const ETHUSD = () => {
                   </div>
                   <div className="flex-grow pl-4">
                     <h2 className="font-medium title-font text-sm text-black mb-1 tracking-wider">
-                      <p>Pair Information</p>
+                      <p>Update Parameters</p>
                     </h2>
                     <p className="leading-relaxed">
-                      <p>Start Date: {new Date(pairs[0]["updatedAtUTC"]).toLocaleDateString('en-us')}</p>
-                      <p>Updates to Blockchain: {pairs.length.toLocaleString(undefined, { maximumFractionDigits: 2 })}</p>
+                      <p>Deviation Threshold: 0.5%</p>
+                      <p>Heartbeat: 60 minutes</p>
                     </p>
                   </div>
                 </div>
@@ -76,17 +76,25 @@ const ETHUSD = () => {
                       className="w-5 h-5"
                       viewBox="0 0 24 24"
                     >
-                      <circle cx="12" cy="5" r="3"></circle>
-                      <path d="M12 22V8M5 12H2a10 10 0 0020 0h-3"></path>
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                      <circle cx="12" cy="12" r="3"></circle>
                     </svg>
                   </div>
                   <div className="flex-grow pl-4">
                     <h2 className="font-medium title-font text-sm text-black mb-1 tracking-wider">
-                      STEP 2
+                      Data Set Information
                     </h2>
-                    <p className="leading-relaxed">
-                      Vice migas literally kitsch +1 pok pok. Truffaut hot
-                      chicken slow-carb health goth, vape typewriter.
+                    <p>
+                      Start Date:{" "}
+                      {new Date(pairs[0]["updatedAtUTC"]).toLocaleDateString(
+                        "en-us"
+                      )}
+                    </p>
+                    <p>
+                      Updates to Blockchain:{" "}
+                      {pairs.length.toLocaleString(undefined, {
+                        maximumFractionDigits: 2,
+                      })}
                     </p>
                   </div>
                 </div>
@@ -102,18 +110,16 @@ const ETHUSD = () => {
                       className="w-5 h-5"
                       viewBox="0 0 24 24"
                     >
-                      <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
-                      <path d="M22 4L12 14.01l-3-3"></path>
+                      <path d="M8 17l4 4 4-4m-4-5v9"></path>
+                      <path d="M20.88 18.09A5 5 0 0018 9h-1.26A8 8 0 103 16.29"></path>
                     </svg>
                   </div>
                   <div className="flex-grow pl-4">
                     <h2 className="font-medium title-font text-sm text-black mb-1 tracking-wider">
-                      FINISH
+                      Download Dataset
                     </h2>
-                    <p className="leading-relaxed">
-                      Pitchfork ugh tattooed scenester echo park gastropub
-                      whatever cold-pressed retro.
-                    </p>
+                    <p className="leading-relaxed">JSON </p>
+                    <p>CSV</p>
                   </div>
                 </div>
               </>
