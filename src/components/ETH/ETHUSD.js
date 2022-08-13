@@ -15,10 +15,10 @@ const ETHUSD = () => {
 
   return (
     <section className="text-black body-font">
-      <div className="container px-5 py-24 mx-auto flex flex-wrap">
+      <div className="container px-2 pt-24 mx-auto flex flex-wrap">
         <div className="flex flex-wrap w-full">
           {/* Div for Pair Name, Description, and Information */}
-          <div className="lg:w-2/5 md:w-1/2 md:pr-10 md:py-6">
+          <div className="lg:w-1/3 md:w-1/2 md:pr-10 md:py-6">
             {/* Pair Name and Loading Status */}
             <div className="flex relative pb-12">
               <div class="h-full w-1 bg-gray-800 pointer-events-none"></div>
@@ -133,7 +133,7 @@ const ETHUSD = () => {
               <RechartOHLCCompare
                 comparisonData={comparisonData}
                 data={pairs}
-                width={900}
+                width={1000}
                 height={600}
               />
             ) : (
