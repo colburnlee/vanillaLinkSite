@@ -1,17 +1,62 @@
 import useFetch from "../UseFetch";
 import RechartOHLCCompare from "../RechartOHLCCompare";
+import { useEffect } from "react";
+import { storage } from "../../firebase";
+import { ref, getDownloadURL, getBytes } from "firebase/storage";
 
 const ETHUSD = () => {
   const ETH_USD_OHLC_URL =
     "https://gist.githubusercontent.com/colburnlee/61896ce060edcb9db7cb110dd44887bd/raw/60078578b362a9883b579845bbd2490dfebbd1ee/ETH_USDT_OHLC.json";
   const ETH_USD_URL =
     "https://gist.githubusercontent.com/colburnlee/86882f86b4706370ad574ff15b292783/raw/a2f0b7e731659ca25668091ef805ad053522d071/ETH_USD.json";
+
+  const chain = "ETH";
+  const pair = "ETHUSD";
+
+  // Build References
+  const pairRef = ref(storage, `${chain}/${pair}/`);
+  const pairData = ref(pairRef, `${pair}.json`);
+  const OHLCData = ref(pairRef, `ETH_USD_OHLC.json`);
+
+  // Build URLs
+  const getUrl = async (reference) => {
+    const url = await getDownloadURL(reference);
+    return url;
+  };
+
+  // Pass in References to get URLs
+  const getURL = async (pairRef, OHLCRef) => {
+    const pairDataURL = await getUrl(pairData);
+    const OHLCDataURL = await getUrl(OHLCData);
+  };
+  // Request Files from URLs
+  const getFile = async (url) => {
+    const file = await getBytes(url);
+    return file;
+  };
+
   const {
     error,
     isPending,
     data: pairs,
     comparisonData,
-  } = useFetch(ETH_USD_URL, ETH_USD_OHLC_URL);
+  } = useFetch(pairData, OHLCData);
+  // console.log("Async Pair Data array: ", dataConstructor(pairData));
+  // console.log("Async OHLC Data array: ", OHLCDataFile);
+
+  //This UseEffect is for testing/learning how to pull files from firebase storage
+  // useEffect(() => {
+  //   const dataListRef = ref(storage, `${chain}/${pair}`);
+  //   listAll(dataListRef).then((response) => {
+  //     // console.log("Firebase Test:", response);
+  //     // console.log("Firebse Storage Object:", storage);
+  //     response.items.forEach((item) => {
+  //       getDownloadURL(item).then((url) => {
+  //         console.log(url);
+  //       });
+  //     });
+  //   });
+  // }, []);
 
   return (
     <section className="text-black body-font">

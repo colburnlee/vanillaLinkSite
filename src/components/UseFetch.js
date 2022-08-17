@@ -1,14 +1,27 @@
 import { useState, useEffect } from "react";
+import { getDownloadURL } from "firebase/storage";
 
-const useFetch = (url, comparisonUrl) => {
+const useFetch = (pairRef, comparisonRef) => {
   const [data, setData] = useState(null);
   const [comparisonData, setComparisonData] = useState(null);
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
+  const [url, setUrl] = useState(null);
+  const [comparisonUrl, setComparisonUrl] = useState(null);
 
   useEffect(() => {
-    const abortCont = new AbortController();
+    const fetchUrl = async (ref) => {
+      getDownloadURL(ref).then((res) => {
+        const result = res;
+        // console.log("Result is...", result);
+        setUrl(result);
+      });
+    };
+    fetchUrl(pairRef);
 
+    console.log("UseFetch URL: ", url);
+
+    const abortCont = new AbortController();
     fetch(url, { signal: abortCont.signal })
       .then((res) => {
         if (!res.ok) {
@@ -27,6 +40,7 @@ const useFetch = (url, comparisonUrl) => {
       .catch((err) => {
         if (err.name === "AbortError") {
           console.log("fetch aborted");
+          console.log(err);
         } else {
           // auto catches network / connection error
           setIsPending(false);
@@ -36,10 +50,21 @@ const useFetch = (url, comparisonUrl) => {
 
     // abort the fetch
     return () => abortCont.abort();
-  }, [url]);
+  }, []);
 
   useEffect(() => {
+    const fetchUrl = async (ref) => {
+      getDownloadURL(ref).then((res) => {
+        const result = res;
+        // console.log("Result is...", result);
+        setComparisonUrl(result);
+      });
+    };
+    fetchUrl(comparisonRef);
+
     const abortCont = new AbortController();
+    fetchUrl(comparisonRef);
+    console.log("Usefetch comparison URL: ", comparisonUrl);
 
     fetch(comparisonUrl, { signal: abortCont.signal })
       .then((res) => {
@@ -59,6 +84,7 @@ const useFetch = (url, comparisonUrl) => {
       .catch((err) => {
         if (err.name === "AbortError") {
           console.log("fetch aborted");
+          console.log(err);
         } else {
           // auto catches network / connection error
           setIsPending(false);
@@ -68,7 +94,7 @@ const useFetch = (url, comparisonUrl) => {
 
     // abort the fetch
     return () => abortCont.abort();
-  }, [comparisonUrl]);
+  }, []);
 
   return { data, isPending, error, comparisonData };
 };

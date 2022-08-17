@@ -5,30 +5,18 @@ import Introduction from "./Introduction";
 import ETHUSD from "./components/ETH/ETHUSD";
 import Footer from "./components/Footer";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import { storage } from "./firebase";
+import { ref, list } from "firebase/storage";
+
 // Import the functions you need from the SDKs you need
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 function App() {
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-
-  const firebaseConfig = {
-    apiKey: process.env.REACT_APP_APIKEY,
-    authDomain: process.env.REACT_APP_AUTHDOMAIN,
-    projectId: process.env.REACT_APP_PROJECTID,
-    storageBucket: process.env.REACT_APP_STORAGEBUCKET,
-    messagingSenderId: process.env.REACT_APP_MESSAGINGSENDERID,
-    appId: process.env.REACT_APP_APPID,
-    measurementId: process.env.REACT_APP_MEASUREMENTID,
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
+  console.log(storage);
+  const filesListRef = ref(storage, "/test");
+  console.log(list(filesListRef));
   return (
     <Router>
       <div className="App min-h-screen bg-gradient-to-r from-gray-200 to-emerald-50">
