@@ -5,8 +5,6 @@ import Introduction from "./Introduction";
 import ETHUSD from "./components/ETH/ETHUSD";
 import Footer from "./components/Footer";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { storage } from "./firebase";
-import { ref, list } from "firebase/storage";
 
 // Import the functions you need from the SDKs you need
 
@@ -14,9 +12,6 @@ import { ref, list } from "firebase/storage";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 function App() {
-  console.log(storage);
-  const filesListRef = ref(storage, "/test");
-  console.log(list(filesListRef));
   return (
     <Router>
       <div className="App min-h-screen bg-gradient-to-r from-gray-200 to-emerald-50">
