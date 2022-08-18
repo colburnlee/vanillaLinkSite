@@ -1,26 +1,25 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { storage } from "../../firebase";
 import { ref, getDownloadURL } from "firebase/storage";
 import useAxios from "../useAxios";
 import OHLChart from "../OHLChart";
 
 const ETHUSD = () => {
-  const [chartUrl, setChartUrl] = useState(null);
-  const [JSONfileUrl, setJSONFileUrl] = useState(null);
-  const [updateCount, setUpdateCount] = useState(null);
-
-  // const ETH_USD_OHLC_URL =
-  //   "https://gist.githubusercontent.com/colburnlee/61896ce060edcb9db7cb110dd44887bd/raw/60078578b362a9883b579845bbd2490dfebbd1ee/ETH_USDT_OHLC.json";
-  // const ETH_USD_URL =
-  //   "https://gist.githubusercontent.com/colburnlee/86882f86b4706370ad574ff15b292783/raw/a2f0b7e731659ca25668091ef805ad053522d071/ETH_USD.json";
-
+  // Set the initial variables for the chain and pair
   const chain = "ETH";
   const pair = "ETHUSD";
+
+  // Set the initial state variables for the chart
+  const [chartUrl, setChartUrl] = useState(null);
+  const [JSONfileUrl, setJSONFileUrl] = useState(null);
+  const [CSVfileUrl, setCSVFileUrl] = useState(null);
+  const [updateCount, setUpdateCount] = useState(null);
 
   // Build References
   const pairRef = ref(storage, `${chain}/${pair}/`);
   const chartRef = ref(pairRef, `${pair}Chart.json`);
   const jsonFileRef = ref(pairRef, `${pair}.json`);
+  const csvFileRef = ref(pairRef, `${pair}_CSV.csv`);
 
   // Pass in References to get URLs
   // Chart URL
@@ -33,9 +32,22 @@ const ETHUSD = () => {
     });
 
   // JSON File URL
-  getDownloadURL(jsonFileRef).then((res) => {
-    setJSONFileUrl(res);
-  });
+  getDownloadURL(jsonFileRef)
+    .then((res) => {
+      setJSONFileUrl(res);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+
+  // CSV File URL
+  getDownloadURL(csvFileRef)
+    .then((res) => {
+      setCSVFileUrl(res);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 
   // Get data for chart
   const {
@@ -44,11 +56,16 @@ const ETHUSD = () => {
     error: chartDataError,
   } = useAxios(chartUrl);
 
-  // setUpdateCount(
-  //   chartData["Updates"].reduce(
-  //     (accumulator, currentValue) => accumulator + currentValue
-  //   )
-  // );
+  useEffect(() => {
+    if (chartData) {
+      const updateCount = chartData.map((chartData) => chartData.Updates);
+      const totalUpdates = updateCount.reduce((a, b) => a + b);
+
+      setUpdateCount(
+        totalUpdates.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+      );
+    }
+  }, [chartData]);
 
   return (
     <section className="text-black body-font">
@@ -60,7 +77,6 @@ const ETHUSD = () => {
             <div className="flex relative pb-12">
               <div class="h-full w-1 bg-gray-800 pointer-events-none"></div>
               <div className="flex-grow pl-4">
-                {chartDataError && <p className="text-5xl">{chartDataError}</p>}
                 {chartDataPending && <p className="text-5xl">Loading...</p>}
                 {chartData && <p className="text-5xl"> {pair} </p>}
               </div>
@@ -150,19 +166,30 @@ const ETHUSD = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <p className="leading-relaxed"> JSON </p>
+                          <p className="leading-relaxed"> JSON file</p>
                         </a>
                       </>
                     ) : (
                       <p className="leading-relaxed">No JSON File</p>
                     )}
-                    <p>CSV</p>
+                    {CSVfileUrl ? (
+                      <>
+                        <a
+                          href={CSVfileUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <p>CSV file</p>
+                        </a>
+                      </>
+                    ) : (
+                      <p className="leading-relaxed">No CSV File</p>
+                    )}
                   </div>
                 </div>
               </>
             ) : (
               <>
-                {" "}
                 <p className="text-xl">Pair information Loading</p>
               </>
             )}

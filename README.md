@@ -73,4 +73,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ### FIREBASE Commands:
 
-firebase emulators:start --import=./dir # starts storage emulator with a test data set
+"startFirebaseWithEmulator": "firebase emulators:start --import=./dir --export-on-exit" # starts storage emulator with a test data set. It updates the emulator db on exit.
