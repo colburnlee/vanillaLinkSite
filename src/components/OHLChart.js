@@ -14,7 +14,7 @@ import * as d3 from "d3";
 const OHLChart = (LineChartProps = {}) => {
   const { width, height, description = "Pair", data } = LineChartProps;
   const priceConstructor = `${description} Price`;
-  let [yMin, yMax] = d3.extent(data, (d) => parseFloat(d.High));
+  let [, yMax] = d3.extent(data, (d) => parseFloat(d.High));
   let [xMin, xMax] = d3.extent(data, (d) => d.date);
   return (
     <ResponsiveContainer width="100%" height="100%">
