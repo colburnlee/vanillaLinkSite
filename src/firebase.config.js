@@ -18,8 +18,10 @@ let storage = null;
 if (window.location.hostname === "localhost") {
   storage = getStorage();
   connectStorageEmulator(storage, "localhost", 9199);
+  console.log("Connected to Firebase Emulator", storage);
 } else {
   storage = getStorage(app);
+  console.log("Connected to Firebase Server", storage);
 }
 export { storage, app };
 // Your web app's Firebase configuration

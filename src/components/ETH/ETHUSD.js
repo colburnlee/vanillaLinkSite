@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { storage } from "../../firebase";
+import { storage } from "../../firebase.config";
 import { ref, getDownloadURL } from "firebase/storage";
 import useAxios from "../useAxios";
 import OHLChart from "../OHLChart";
