@@ -50,11 +50,7 @@ const ETHUSD = () => {
     });
 
   // Get data for chart
-  const {
-    data: chartData,
-    isPending: chartDataPending,
-    error: chartDataError,
-  } = useAxios(chartUrl);
+  const { data: chartData, isPending: chartDataPending } = useAxios(chartUrl);
 
   useEffect(() => {
     if (chartData) {
