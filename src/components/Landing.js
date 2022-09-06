@@ -1,4 +1,4 @@
-import useFetch from "./UseFetch";
+import { FolderPlus, Heart, SkipBack, Sliders, TrendingUp } from "./Icons";
 
 const Landing = () => {
   return (
@@ -9,7 +9,7 @@ const Landing = () => {
         <div className="container px-4 py-24 mx-auto">
           {/* Hero Line Container */}
           <p className="sm:text-3xl text-3xl font-medium title-font text-center text-black mb-20">
-            Recording the on-chain history of Chainlink oracles
+            Data sets pulled from Chainlink price oracles
           </p>
           {/* Container for ALL text boxes */}
           <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6">
@@ -17,17 +17,7 @@ const Landing = () => {
             <div className="p-4 md:w-1/3 flex ">
               {/* Container for icon */}
               <div className="w-12 h-12 inline-flex items-center justify-center rounded-full bg-gray-800 text-emerald-600 mb-4 flex-shrink-0">
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  class="w-6 h-6"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-                </svg>
+                <FolderPlus />
               </div>
               {/* Container for info breakout */}
               <div className="flex-grow pl-6">
@@ -45,17 +35,7 @@ const Landing = () => {
             <div className="p-4 md:w-1/3 flex">
               {/* Container for icon */}
               <div className="w-12 h-12 inline-flex items-center justify-center rounded-full bg-gray-800 text-emerald-600 mb-4 flex-shrink-0">
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  class="w-5 h-5"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                </svg>
+                <SkipBack />
               </div>
               {/* Container for info breakout */}
 
@@ -64,9 +44,9 @@ const Landing = () => {
                   Apples to Apples
                 </p>
                 <p className="leading-relaxed text-base">
-                  Chainlink oracles power defi. Using on-chain information
-                  enables better decisions for protocols that require historical
-                  price information
+                  Chainlink oracles power all things decentralized finance
+                  (defi). Using on-chain information enables better decisions
+                  for protocols that require historical price information
                 </p>
               </div>
             </div>
@@ -74,17 +54,7 @@ const Landing = () => {
             <div className="p-4 md:w-1/3 flex">
               {/* Container for icon */}
               <div className="w-12 h-12 inline-flex items-center justify-center rounded-full bg-gray-800 text-emerald-600 mb-4 flex-shrink-0">
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  class="w-6 h-6"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M12 2l9 4.9V17L12 22l-9-4.9V7z"></path>
-                </svg>
+                <TrendingUp />
               </div>
               {/* Container for info breakout */}
 
@@ -105,28 +75,61 @@ const Landing = () => {
         <section class="text-gray-600 body-font">
           <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
             <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
-              <img
-                className="object-cover object-center rounded"
-                alt="hero"
-                src="https://dummyimage.com/720x600"
-              ></img>
+              <h2 className="font-medium title-font text-xl text-black mb-1 tracking-wider">
+                <p>Why oracles update:</p>
+              </h2>
+              <br></br>
+              <div className="flex relative pb-12">
+                <div className="h-full w-10 absolute inset-0 flex items-center justify-center"></div>
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-600 inline-flex items-center justify-center text-black relative z-10">
+                  <Sliders />
+                </div>
+                <div className="flex-grow pl-4">
+                  <ul className="leading-relaxed">
+                    <li>
+                      <b>Deviation Threshold</b>: Chainlink nodes are constantly
+                      monitoring prices of assets off-chain. The deviation of
+                      the real-world price of an asset beyond a certain interval
+                      triggers all the nodes to update.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div className="flex relative pb-12">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-600 inline-flex items-center justify-center text-black relative z-10">
+                  <Heart />
+                </div>
+                <div className="flex-grow pl-4">
+                  <ul className="leading-relaxed">
+                    <li>
+                      <b>Heartbeat</b>: If the price stays within the deviation
+                      parameters, it will only trigger an update every X minutes
+                      / hours.
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
             <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
               <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
-                So, what's in an oracle?
+                So, what's an oracle?
               </h1>
               <p className="mb-8 leading-relaxed">
                 Chainlink's oracles provide trusted price feeds to L1 and L2
                 blockchains. Each feed has certain standard information (usually
-                relating to the asset price) that is regularly updated according
-                to its deviation from the previous price on chain and its
-                'heartbeat' i.e. the cadence of regular updates onto the
-                blockhain.
+                relating to an asset's price) that is regularly updated
+                according to its deviation from the previous price on chain and
+                its 'heartbeat' i.e. the cadence of regular updates onto the
+                blockhain. Oracle 'heartbeats' are recorded to the blockchain
+                regularly... from once daily, to every 60 mins
               </p>
               <p>
-                Oracle 'heartbeats' are recorded to the blockchain regularly...
-                from once daily, to every 60 mins
+                Once the oracle is updated, the new price is recorded to the
+                blockchain. This is the price that is used by smart contracts to
+                make decisions, and billions of dollars of value are locked up
+                in smart contracts that rely on these prices.
               </p>
+              <br></br>
               <div className="flex justify-center">
                 <a
                   href="https://docs.chain.link/docs/price-feeds-api-reference/#functions-in-aggregatorv3interface"
@@ -134,7 +137,7 @@ const Landing = () => {
                   rel="noopener noreferrer"
                 >
                   <button className="inline-flex text-black bg-emerald-600 border-0 py-2 px-6 focus:outline-none hover:bg-emerald-800 rounded text-lg">
-                    Read the Docs
+                    Chainlink Docs
                   </button>
                 </a>
               </div>
