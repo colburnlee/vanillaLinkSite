@@ -13,11 +13,17 @@ const Navbar = () => {
           <span className="ml-3 text-xl">Link to the Past</span>
         </Link>
         <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-700	flex flex-wrap items-center text-base justify-center">
+          <Link to="/introduction" className="mr-5 hover:text-white">
+            Introduction
+          </Link>
           <Link to="/about" className="mr-5 hover:text-white">
             About
           </Link>
           <Link to="/ETH/ETHUSD" className="mr-5 hover:text-white">
             ETH-USD
+          </Link>
+          <Link to="/ETH/BTCUSD" className="mr-5 hover:text-white">
+            BTC-USD
           </Link>
         </nav>
       </div>

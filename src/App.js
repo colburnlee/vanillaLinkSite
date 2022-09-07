@@ -1,15 +1,10 @@
 import Navbar from "./components/Navbar";
-import Landing from "./components/Landing";
-import About from "./About";
-import Introduction from "./Introduction";
-import ETHUSD from "./components/ETH/ETHUSD";
+import Landing from "./components/Pages/Landing";
+import About from "./components/Pages/About";
+import Introduction from "./components/Pages/Introduction";
 import Footer from "./components/Footer";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-
-// Import the functions you need from the SDKs you need
-
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import Pair from "./components/Pages/Pair";
 
 function App() {
   return (
@@ -22,13 +17,43 @@ function App() {
         <div className="Content px-2 ">
           <Routes>
             <Route path="/" element={<Landing />}></Route>
+            <Route
+              exact
+              path="/introduction"
+              element={<Introduction />}
+            ></Route>
             <Route exact path="/about" element={<About />}></Route>
             <Route
               exact
               path="/introduction"
               element={<Introduction />}
             ></Route>
-            <Route exact path="/ETH/ETHUSD" element={<ETHUSD />}></Route>
+            <Route
+              exact
+              path="/ETH/ETHUSD"
+              element={
+                <Pair
+                  chain={"ETH"}
+                  pair={"ETHUSD"}
+                  deviationThreshold={0.5}
+                  heartbeat={1}
+                  proxyAddress={"0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419"}
+                />
+              }
+            ></Route>
+            <Route
+              exact
+              path="/ETH/BTCUSD"
+              element={
+                <Pair
+                  chain={"ETH"}
+                  pair={"BTCUSD"}
+                  deviationThreshold={0.5}
+                  heartbeat={1}
+                  proxyAddress={"0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c"}
+                />
+              }
+            ></Route>
           </Routes>
         </div>
       </div>

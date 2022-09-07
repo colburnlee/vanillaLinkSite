@@ -1,0 +1,20 @@
+{
+  "name": "ETH/BTCUSD/BTCUSDChart.json",
+  "bucket": "link-to-the-past-a5042.appspot.com",
+  "contentType": "application/json",
+  "metageneration": 1,
+  "generation": 1662575430921,
+  "storageClass": "STANDARD",
+  "contentDisposition": "inline",
+  "cacheControl": "public, max-age=3600",
+  "contentEncoding": "identity",
+  "downloadTokens": [
+    "8d80dd94-4b4a-45e0-bdb3-81fbbf5e0450"
+  ],
+  "etag": "1kDSmrCuxbBv4zti5MV7HSoihSA",
+  "timeCreated": "2022-09-07T18:30:30.920Z",
+  "updated": "2022-09-07T18:30:30.921Z",
+  "size": 48738,
+  "md5Hash": "5FTcz76c/UXGJCFAGc0SFQ==",
+  "crc32c": "1077326539"
+}
