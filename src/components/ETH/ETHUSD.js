@@ -3,11 +3,16 @@ import { storage } from "../../firebase.config";
 import { ref, getDownloadURL } from "firebase/storage";
 import useAxios from "../useAxios";
 import OHLChart from "../OHLChart";
+import { Settings, Link, Download } from "../Icons";
+import { truncateEthAddress } from "../addressFormatter";
 
 const ETHUSD = () => {
   // Set the initial variables for the chain and pair
   const chain = "ETH";
   const pair = "ETHUSD";
+  const deviationThreshold = 0.5; // 0.5% deviation from the previous price
+  const heartbeat = 1; // 1 hour heartbeat
+  const proxyAddress = "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419";
 
   // Set the initial state variables for the chart
   const [chartUrl, setChartUrl] = useState(null);
@@ -86,25 +91,17 @@ const ETHUSD = () => {
                     <div className="h-full w-1 bg-gray-800 pointer-events-none"></div>
                   </div>
                   <div className="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-600 inline-flex items-center justify-center text-black relative z-10">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      className="w-5 h-5"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-                    </svg>
+                    <Settings />
                   </div>
                   <div className="flex-grow pl-4">
                     <h2 className="font-medium title-font text-sm text-black mb-1 tracking-wider">
                       <p>Update Parameters</p>
                     </h2>
                     <ul className="leading-relaxed">
-                      <li>Deviation Threshold: 0.5%</li>
-                      <li>Heartbeat: 60 minutes</li>
+                      <li>Deviation Threshold: {deviationThreshold}%</li>
+                      <li>
+                        Heartbeat: {heartbeat} {heartbeat <= 1 ? "hr" : "hrs"}
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -114,18 +111,7 @@ const ETHUSD = () => {
                     <div className="h-full w-1 bg-gray-800 pointer-events-none"></div>
                   </div>
                   <div className="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-600 inline-flex items-center justify-center text-black relative z-10">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      className="w-5 h-5"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                      <circle cx="12" cy="12" r="3"></circle>
-                    </svg>
+                    <Link />
                   </div>
                   <div className="flex-grow pl-4">
                     <h2 className="font-medium title-font text-sm text-black mb-1 tracking-wider">
@@ -133,23 +119,31 @@ const ETHUSD = () => {
                     </h2>
                     <p>Start Date: {chartData[0].date}</p>
                     <p>Updates to Blockchain: {updateCount} </p>
+                    <p className="leading-relaxed">
+                      Proxy Contract Address:
+                      {proxyAddress ? (
+                        <>
+                          <a
+                            href={
+                              "https://etherscan.io/address/" + proxyAddress
+                            }
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {" "}
+                            {truncateEthAddress(proxyAddress)}
+                          </a>
+                        </>
+                      ) : (
+                        "Not available"
+                      )}
+                    </p>
                   </div>
                 </div>
 
                 <div className="flex relative">
                   <div className="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-600 inline-flex items-center justify-center text-black relative z-10">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      className="w-5 h-5"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M8 17l4 4 4-4m-4-5v9"></path>
-                      <path d="M20.88 18.09A5 5 0 0018 9h-1.26A8 8 0 103 16.29"></path>
-                    </svg>
+                    <Download />
                   </div>
                   <div className="flex-grow pl-4">
                     <h2 className="font-medium title-font text-sm text-black mb-1 tracking-wider">

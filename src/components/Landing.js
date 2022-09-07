@@ -9,7 +9,8 @@ const Landing = () => {
         <div className="container px-4 py-24 mx-auto">
           {/* Hero Line Container */}
           <p className="sm:text-3xl text-3xl font-medium title-font text-center text-black mb-20">
-            Data sets pulled from Chainlink price oracles
+            Historical data sets referenced directly from Chainlink price
+            oracles
           </p>
           {/* Container for ALL text boxes */}
           <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6">
@@ -72,7 +73,7 @@ const Landing = () => {
         </div>
       </div>
       <div className="sticky top-0 h-screen flex flex-col items-center justify-center bg-gradient-to-r from-gray-200 to bg-emerald-50">
-        <section class="text-gray-600 body-font">
+        <section className="text-gray-600 body-font">
           <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
             <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
               <h2 className="font-medium title-font text-xl text-black mb-1 tracking-wider">
