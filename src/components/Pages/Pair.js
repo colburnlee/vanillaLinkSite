@@ -58,7 +58,8 @@ const Pair = ({ chain, pair, deviationThreshold, heartbeat, proxyAddress }) => {
     });
 
   // Get data for chart
-  const { data: chartData } = useAxios(chartUrl);
+  let chartData = null;
+  ({ data: chartData } = useAxios(chartUrl));
 
   useEffect(() => {
     if (chartData) {
