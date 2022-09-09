@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
-import { storage } from "../../firebase.config";
+import { storage } from "../../firebase/firebase.config";
 import { ref, getDownloadURL } from "firebase/storage";
 import useAxios from "../useAxios";
 import OHLChart from "../OHLChart";
 import { Settings, Link, Download, LoadingWheel } from "../Icons";
 import { truncateEthAddress } from "../addressFormatter";
+// import { doc, getDoc, getDocs, collection } from "firebase/firestore";
+// import { db } from "../../firebase.config";
 
 const ETHUSD = () => {
   // Set the initial variables for the chain and pair
@@ -24,40 +26,39 @@ const ETHUSD = () => {
   const pairRef = ref(storage, `${chain}/${pair}/`);
   const chartRef = ref(pairRef, `${pair}Chart.json`);
   const jsonFileRef = ref(pairRef, `${pair}.json`);
-  const csvFileRef = ref(pairRef, `${pair}_CSV.csv`);
-
-  // Pass in References to get URLs
-  // Chart URL
-  getDownloadURL(chartRef)
-    .then((res) => {
-      setChartUrl(res);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-
-  // JSON File URL
-  getDownloadURL(jsonFileRef)
-    .then((res) => {
-      setJSONFileUrl(res);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-
-  // CSV File URL
-  getDownloadURL(csvFileRef)
-    .then((res) => {
-      setCSVFileUrl(res);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  const csvFileRef = ref(pairRef, `${pair}.csv`);
 
   // Get data for chart
-  const { data: chartData, isPending: chartDataPending } = useAxios(chartUrl);
+  const { data: chartData } = useAxios(chartUrl);
 
   useEffect(() => {
+    // Pass in References to get URLs
+    // Chart URL
+    getDownloadURL(chartRef)
+      .then((res) => {
+        setChartUrl(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    // JSON File URL
+    getDownloadURL(jsonFileRef)
+      .then((res) => {
+        setJSONFileUrl(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    // CSV File URL
+    getDownloadURL(csvFileRef)
+      .then((res) => {
+        setCSVFileUrl(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
     if (chartData) {
       const updateCount = chartData.map((chartData) => chartData.Updates);
       const totalUpdates = updateCount.reduce((a, b) => a + b);
@@ -66,7 +67,7 @@ const ETHUSD = () => {
         totalUpdates.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
       );
     }
-  }, [chartData]);
+  }, [chartData, chartRef, csvFileRef, jsonFileRef]);
 
   return (
     <section className="text-black body-font">
@@ -78,7 +79,6 @@ const ETHUSD = () => {
             <div className="flex relative pb-12">
               <div class="h-full w-1 bg-gray-800 pointer-events-none"></div>
               <div className="flex-grow pl-4">
-                {chartDataPending && <p className="text-5xl">Loading...</p>}
                 {chartData && <p className="text-5xl"> {pair} </p>}
               </div>
             </div>

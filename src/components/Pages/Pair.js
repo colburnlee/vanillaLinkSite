@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { storage } from "../../firebase.config";
+import { storage } from "../../firebase/firebase.config";
 import { ref, getDownloadURL } from "firebase/storage";
 import useAxios from "../useAxios";
 import OHLChart from "../OHLChart";
@@ -29,39 +29,38 @@ const Pair = ({ chain, pair, deviationThreshold, heartbeat, proxyAddress }) => {
   const jsonFileRef = ref(pairRef, `${pair}.json`);
   const csvFileRef = ref(pairRef, `${pair}.csv`);
 
-  // Pass in References to get URLs
-  // Chart URL
-  getDownloadURL(chartRef)
-    .then((res) => {
-      setChartUrl(res);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-
-  // JSON File URL
-  getDownloadURL(jsonFileRef)
-    .then((res) => {
-      setJSONFileUrl(res);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-
-  // CSV File URL
-  getDownloadURL(csvFileRef)
-    .then((res) => {
-      setCSVFileUrl(res);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-
   // Get data for chart
   let chartData = null;
   ({ data: chartData } = useAxios(chartUrl));
 
   useEffect(() => {
+    // Pass in References to get URLs
+    // Chart URL
+    getDownloadURL(chartRef)
+      .then((res) => {
+        setChartUrl(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    // JSON File URL
+    getDownloadURL(jsonFileRef)
+      .then((res) => {
+        setJSONFileUrl(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    // CSV File URL
+    getDownloadURL(csvFileRef)
+      .then((res) => {
+        setCSVFileUrl(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
     if (chartData) {
       const updateCount = chartData.map((chartData) => chartData.Updates);
       const totalUpdates = updateCount.reduce((a, b) => a + b);
@@ -70,7 +69,7 @@ const Pair = ({ chain, pair, deviationThreshold, heartbeat, proxyAddress }) => {
         totalUpdates.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
       );
     }
-  }, [chartData, chartUrl]);
+  }, [chartData, chartUrl, chartRef, csvFileRef, jsonFileRef]);
 
   return (
     <section className="text-black body-font">

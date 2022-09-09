@@ -5,6 +5,7 @@ import Introduction from "./components/Pages/Introduction";
 import Footer from "./components/Footer";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Pair from "./components/Pages/Pair";
+// import ETHUSD from "./components/ETH/ETHUSD";
 
 function App() {
   return (
