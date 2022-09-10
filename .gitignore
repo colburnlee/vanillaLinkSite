@@ -38,5 +38,3 @@ yarn-debug.log*
 yarn-error.log*
 
 /google-cloud-sdk/
-firebase.config.js
-configrescue.js
