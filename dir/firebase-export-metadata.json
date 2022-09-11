@@ -5,6 +5,10 @@
     "path": "firestore_export",
     "metadata_file": "firestore_export/firestore_export.overall_export_metadata"
   },
+  "database": {
+    "version": "4.8.0",
+    "path": "database_export"
+  },
   "storage": {
     "version": "11.7.0",
     "path": "storage_export"
