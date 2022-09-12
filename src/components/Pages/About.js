@@ -5,13 +5,14 @@ import { Github, Twitter } from "../Icons";
 // import { doc, getDoc, getDocs, collection } from "firebase/firestore";
 // import { useState, useEffect } from "react";
 // import { db, rtdb } from "../../firebase/firebase.config";
-// import { ref, set, get, child } from "firebase/database";
+// import { ref, get, child } from "firebase/database";
 
 // End Testing
 
 const About = () => {
   // Realtime Database (RTDB) Testing
   // const [rtdbDecimals, setrtdbDecimals] = useState(null);
+  // const [rtdbLatestRound, setrtdbLatestRound] = useState(null);
 
   // const rtdbRef = ref(rtdb);
   // const getRtdbDecimals = async (ref) => {
@@ -19,6 +20,20 @@ const About = () => {
   //   if (snapshot.exists()) {
   //     console.log("RTDB RESULT: ", snapshot.val());
   //     setrtdbDecimals(snapshot.val());
+  //   } else {
+  //     console.log("No RTDB data available", rtdbRef);
+  //   }
+  // };
+
+  // const getLatestRound = async (ref) => {
+  //   const snapshot = await get(child(ref, "/oracles/ETH_ETHUSD/latestRound"));
+  //   if (snapshot.exists()) {
+  //     console.log("RTDB RESULT: ", snapshot.val());
+  //     setrtdbLatestRound(
+  //       `Latest Answer: ${snapshot.val().answer} at ${new Date(
+  //         snapshot.val().updatedAt * 1000
+  //       )}`
+  //     );
   //   } else {
   //     console.log("No RTDB data available", rtdbRef);
   //   }
@@ -70,6 +85,7 @@ const About = () => {
   //   getData(dataRef);
   //   getDataDoc(dataDocRef);
   //   getRtdbDecimals(rtdbRef);
+  //   getLatestRound(rtdbRef);
   // }, [docRef, dataRef, dataDocRef, rtdbRef]);
 
   // End Testing
@@ -81,7 +97,13 @@ const About = () => {
           {/* For Testing - Delete or Comment prior to commit  */}
           {/* {rtdbDecimals && <p className="text-5xl"> RTDB: {rtdbDecimals} </p>}
           {fbDecimals && <p className="text-5xl"> {fbDecimals} </p>}
-          {fbDescription && <p className="text-5xl"> {fbDescription} </p>} */}
+          {fbDescription && <p className="text-5xl"> {fbDescription} </p>}
+          {rtdbLatestRound && (
+            <p className="text-5xl">
+              {" "}
+              RTDB Latest Round info: {rtdbLatestRound}{" "}
+            </p>
+          )} */}
 
           {/* End Testing */}
           <svg
