@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
-import { storage } from "../../firebase/firebase.config";
+import { storage } from "../../firebase/firebase.config"; // add: rtdb
 import { ref, getDownloadURL } from "firebase/storage";
 import useAxios from "../useAxios";
 import OHLChart from "../OHLChart";
 import { Settings, Link, Download, LoadingWheel } from "../Icons";
 import { truncateEthAddress } from "../addressFormatter";
 import PropTypes from "prop-types";
+// import { get, ref as ref_rtdb } from "firebase/database";
 
 const Pair = ({ chain, pair, deviationThreshold, heartbeat, proxyAddress }) => {
   // Declare the initial state variable types for the chart
@@ -69,6 +70,16 @@ const Pair = ({ chain, pair, deviationThreshold, heartbeat, proxyAddress }) => {
         totalUpdates.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
       );
     }
+
+    // get the data from the RTDB
+    // const rtdbRef = ref_rtdb(rtdb, `oracles/${chain}_${pair}`);
+    // get(rtdbRef.val()).then((snapshot) => {
+    //   if (snapshot.exists()) {
+    //     console.log("RTDB value for pair", snapshot.val());
+    //   } else {
+    //     console.log("No data available");
+    //   }
+    // });
   }, [chartData, chartUrl, chartRef, csvFileRef, jsonFileRef]);
 
   return (
