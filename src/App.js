@@ -4,7 +4,7 @@ import About from "./components/Pages/About";
 import Introduction from "./components/Pages/Introduction";
 import Footer from "./components/Footer";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Pair from "./components/Pages/Pair";
+import RtdbPair from "./components/Pages/RtdbPair";
 // import ETHUSD from "./components/ETH/ETHUSD";
 
 function App() {
@@ -32,28 +32,12 @@ function App() {
             <Route
               exact
               path="/ETH/ETHUSD"
-              element={
-                <Pair
-                  chain={"ETH"}
-                  pair={"ETHUSD"}
-                  deviationThreshold={0.5}
-                  heartbeat={1}
-                  proxyAddress={"0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419"}
-                />
-              }
+              element={<RtdbPair chain={"ETH"} pair={"ETHUSD"} />}
             ></Route>
             <Route
               exact
               path="/ETH/BTCUSD"
-              element={
-                <Pair
-                  chain={"ETH"}
-                  pair={"BTCUSD"}
-                  deviationThreshold={0.5}
-                  heartbeat={1}
-                  proxyAddress={"0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c"}
-                />
-              }
+              element={<RtdbPair chain={"ETH"} pair={"BTCUSD"} />}
             ></Route>
           </Routes>
         </div>

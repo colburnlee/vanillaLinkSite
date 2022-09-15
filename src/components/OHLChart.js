@@ -45,28 +45,28 @@ const OHLChart = (LineChartProps = {}) => {
         <Line
           connectNulls
           type="monotone"
-          dataKey="Low"
+          dataKey="low"
           stroke="#8884d8"
           dot={false}
         />
         <Line
           connectNulls
           type="monotone"
-          dataKey="High"
+          dataKey="high"
           stroke="#82ca9d"
           dot={false}
         />
         <Line
           connectNulls
           type="monotone"
-          dataKey="Open"
+          dataKey="open"
           stroke="#3d2cbf"
           dot={false}
         />
         <Line
           connectNulls
           type="monotone"
-          dataKey="Updates"
+          dataKey="updateCount"
           strokeWidth={1}
           dot={false}
         />
