@@ -1,0 +1,20 @@
+{
+  "name": "ETH/ETHUSD/ETHUSDChart.json",
+  "bucket": "link-to-the-past-a5042.appspot.com",
+  "metageneration": 1,
+  "generation": 1662434632821,
+  "contentType": "application/json",
+  "storageClass": "STANDARD",
+  "contentDisposition": "inline",
+  "cacheControl": "public, max-age=3600",
+  "contentEncoding": "identity",
+  "downloadTokens": [
+    "f502d1b7-3e2b-4eb6-9ce4-0f7f72fa910e"
+  ],
+  "etag": "aMLz70/jgWMi/O7xd+actDl03ok",
+  "timeCreated": "2022-09-06T03:23:52.821Z",
+  "updated": "2022-09-06T03:23:52.826Z",
+  "size": 55986,
+  "md5Hash": "ZJhKnqLJRgpP/F0N2aJTyw==",
+  "crc32c": "27551375"
+}

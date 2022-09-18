@@ -1,5 +1,5 @@
 {
-  "version": "11.7.0",
+  "version": "11.9.0",
   "firestore": {
     "version": "1.14.4",
     "path": "firestore_export",
@@ -10,7 +10,7 @@
     "path": "database_export"
   },
   "storage": {
-    "version": "11.7.0",
+    "version": "11.9.0",
     "path": "storage_export"
   }
 }
