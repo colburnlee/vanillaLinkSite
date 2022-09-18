@@ -1,0 +1,20 @@
+{
+  "name": "ETH/BTCUSD/BTCUSD.csv",
+  "bucket": "link-to-the-past-a5042.appspot.com",
+  "contentType": "text/csv",
+  "metageneration": 1,
+  "generation": 1662575430932,
+  "storageClass": "STANDARD",
+  "contentDisposition": "inline",
+  "cacheControl": "public, max-age=3600",
+  "contentEncoding": "identity",
+  "downloadTokens": [
+    "662487ce-fb10-420b-ad24-bc2fc1f0d74c"
+  ],
+  "etag": "AlrZbLE6izDhJ0kKt/mCD5UTgpQ",
+  "timeCreated": "2022-09-07T18:30:30.931Z",
+  "updated": "2022-09-07T18:30:30.941Z",
+  "size": 2466863,
+  "md5Hash": "TCkPviYuwfQRzMvw1QnrSQ==",
+  "crc32c": "3264221252"
+}

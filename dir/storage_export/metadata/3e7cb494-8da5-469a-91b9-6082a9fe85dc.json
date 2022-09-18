@@ -1,0 +1,20 @@
+{
+  "name": "ohlChart/ETH_BTCUSD.json",
+  "bucket": "link-to-the-past-a5042.appspot.com",
+  "contentType": "application/octet-stream",
+  "metageneration": 1,
+  "generation": 1663271962377,
+  "storageClass": "STANDARD",
+  "contentDisposition": "inline",
+  "cacheControl": "public, max-age=3600",
+  "contentEncoding": "identity",
+  "downloadTokens": [
+    "bb5c5ff5-066c-417e-8502-bf360be2ec67"
+  ],
+  "etag": "F9NtxIUPUPIRZX1XsAhJ2EeVKc8",
+  "timeCreated": "2022-09-15T19:59:22.376Z",
+  "updated": "2022-09-15T19:59:22.384Z",
+  "size": 766610,
+  "md5Hash": "YQyUD+CO8UMtIvleYFUGDQ==",
+  "crc32c": "3640671075"
+}

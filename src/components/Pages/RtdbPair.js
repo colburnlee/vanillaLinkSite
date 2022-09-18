@@ -24,7 +24,7 @@ const Pair = ({ chain, pair }) => {
   const [proxyAddress, setProxyAddress] = useState(null);
   const [deviationThreshold, setDeviationThreshold] = useState(null);
   const [heartbeat, setHeartbeat] = useState(null);
-  // const [latestRound, setLatestRound] = useState(null);
+  const [latestRound, setLatestRound] = useState(null);
 
   // Build Storage References
   const pairRef = ref(storage);
@@ -40,7 +40,6 @@ const Pair = ({ chain, pair }) => {
   ({ data: chartData } = useAxios(chartUrl));
 
   useEffect(() => {
-    // Pass in References to get URLs
     // Chart URL
     getDownloadURL(chartRef)
       .then((res) => {
@@ -62,10 +61,15 @@ const Pair = ({ chain, pair }) => {
     if (chartData) {
       const updateCount = chartData.map((chartData) => chartData.updateCount);
       const totalUpdates = updateCount.reduce((a, b) => a + b);
+      const roundsInDay = chartData[chartData.length - 1].roundsInDay;
+      const latestRound = roundsInDay
+        ? roundsInDay[roundsInDay.length - 1]
+        : null;
 
       setUpdateCount(
         totalUpdates.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
       );
+      setLatestRound(latestRound);
     }
   }, [chartData, chartRef, jsonFileRef]);
 
@@ -77,9 +81,8 @@ const Pair = ({ chain, pair }) => {
         setProxyAddress(snapshot.val().proxyAddress);
         setDeviationThreshold(snapshot.val().deviationThreshold);
         setHeartbeat(snapshot.val().heartbeat);
-        // setLatestRound(JSON.stringify(snapshot.val().latestRound));
       } else {
-        console.log("No data available");
+        console.log("No rtdb data available");
       }
     });
   }, [rtdbRef]);
@@ -134,6 +137,7 @@ const Pair = ({ chain, pair }) => {
                     </h2>
                     <p>Start Date: {chartData[0].date}</p>
                     <p>Updates to Blockchain: {updateCount} </p>
+                    <p>Latest Round on Record: {latestRound}</p>
                     <p className="leading-relaxed">
                       Proxy Contract Address:
                       {proxyAddress ? (

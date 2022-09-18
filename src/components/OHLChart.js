@@ -46,6 +46,7 @@ const OHLChart = (LineChartProps = {}) => {
           connectNulls
           type="monotone"
           dataKey="low"
+          name="Low"
           stroke="#8884d8"
           dot={false}
         />
@@ -53,6 +54,7 @@ const OHLChart = (LineChartProps = {}) => {
           connectNulls
           type="monotone"
           dataKey="high"
+          name="High"
           stroke="#82ca9d"
           dot={false}
         />
@@ -60,6 +62,7 @@ const OHLChart = (LineChartProps = {}) => {
           connectNulls
           type="monotone"
           dataKey="open"
+          name="Open"
           stroke="#3d2cbf"
           dot={false}
         />
@@ -67,8 +70,12 @@ const OHLChart = (LineChartProps = {}) => {
           connectNulls
           type="monotone"
           dataKey="updateCount"
-          strokeWidth={1}
+          name="Daily Updates"
+          activeDot={false}
+          strokeWidth={0}
+          stroke="#000000"
           dot={false}
+          legendType="none"
         />
       </LineChart>
     </ResponsiveContainer>
