@@ -1,0 +1,20 @@
+{
+  "name": "ETH/BTCUSD/BTCUSD.json",
+  "bucket": "link-to-the-past-a5042.appspot.com",
+  "metageneration": 1,
+  "generation": 1662575448604,
+  "contentType": "application/json",
+  "storageClass": "STANDARD",
+  "contentDisposition": "inline",
+  "cacheControl": "public, max-age=3600",
+  "contentEncoding": "identity",
+  "downloadTokens": [
+    "6ec88a26-a771-4a9d-b2e1-64f9ae8b236c"
+  ],
+  "etag": "gXdb70SN3eKyOKhzKHFKvV0S0GE",
+  "timeCreated": "2022-09-07T18:30:48.603Z",
+  "updated": "2022-09-07T18:30:48.621Z",
+  "size": 5047013,
+  "md5Hash": "ATsxnODQHQoKEbkLnjr6OA==",
+  "crc32c": "3240887680"
+}

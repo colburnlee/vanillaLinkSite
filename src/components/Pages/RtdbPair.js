@@ -136,6 +136,8 @@ const Pair = ({ chain, pair }) => {
                       Oracle Information
                     </h2>
                     <p>Start Date: {chartData[0].date}</p>
+                    <p>Decimals: {decimals} </p>
+
                     <p>Updates to Blockchain: {updateCount} </p>
                     <p>Latest Round on Record: {latestRound}</p>
                     <p className="leading-relaxed">
@@ -154,8 +156,6 @@ const Pair = ({ chain, pair }) => {
                       )}
                     </p>
                     {/* <p>last round info: {latestRound}</p> */}
-
-                    <ul className="leading-relaxed"> Decimals: {decimals} </ul>
                   </div>
                 </div>
 
@@ -165,7 +165,7 @@ const Pair = ({ chain, pair }) => {
                   </div>
                   <div className="flex-grow pl-4">
                     <h2 className="font-medium title-font text-sm text-black mb-1 tracking-wider">
-                      Download Dataset
+                      Download Dataset (Updated Daily at 00:00 UTC)
                     </h2>
                     <>
                       <a
@@ -174,6 +174,11 @@ const Pair = ({ chain, pair }) => {
                         rel="noopener noreferrer"
                       >
                         <p className="leading-relaxed"> JSON file</p>
+                        {/* <p>
+                          Contains information on each round produced and a
+                          caluculated price value (answer * 10**-decimal value)
+                        </p> */}
+                        {/* {"answer":134423000000,"answeredInRound":"92233720368547791847","price":1344.23,"roundId":"92233720368547791847","startedAt":1663548959,"updatedAt":1663548959} */}
                       </a>
                     </>
                   </div>

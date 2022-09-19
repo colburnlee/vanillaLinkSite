@@ -3,12 +3,12 @@ WARNING: Illegal reflective access by io.netty.util.internal.ReflectionUtil (fil
 WARNING: Please consider reporting this to the maintainers of io.netty.util.internal.ReflectionUtil
 WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
 WARNING: All illegal access operations will be denied in a future release
-12:15:08.136 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
-12:15:08.310 [main] INFO com.firebase.server.forge.App$ - Listening at localhost:9000
-12:15:08.895 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO com.firebase.core.namespace.NamespaceActor - link-to-the-past-a5042-default-rtdb successfully activated FBKV (SurveyIdle(0)) wait: 131ms, init: 0ms
-19:19:57.769 [NamespaceSystem-akka.actor.default-dispatcher-923] INFO com.firebase.core.namespace.NamespaceActor - link-to-the-past-a5042 successfully activated FBKV (SurveyIdle(0)) wait: 3ms, init: 0ms
-19:19:58.412 [Thread-0] INFO com.firebase.server.forge.App$ - Attempting graceful shutdown.
-19:19:58.418 [NamespaceSystem-akka.actor.default-dispatcher-923] INFO com.firebase.core.namespace.Terminator$Terminator - 2 actors left to terminate: link-to-the-past-a5042, link-to-the-past-a5042-default-rtdb
-19:19:58.422 [NamespaceSystem-akka.actor.default-dispatcher-935] INFO com.firebase.core.namespace.NamespaceActor - stopped namespace actor for link-to-the-past-a5042
-19:19:58.422 [NamespaceSystem-akka.actor.default-dispatcher-931] INFO com.firebase.core.namespace.NamespaceActor - stopped namespace actor for link-to-the-past-a5042-default-rtdb
-19:19:58.425 [Thread-0] INFO com.firebase.server.forge.App$ - Graceful shutdown complete.
+08:32:56.739 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+08:32:56.878 [main] INFO com.firebase.server.forge.App$ - Listening at localhost:9000
+08:32:57.363 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO com.firebase.core.namespace.NamespaceActor - link-to-the-past-a5042-default-rtdb successfully activated FBKV (SurveyIdle(0)) wait: 133ms, init: 0ms
+17:00:55.878 [NamespaceSystem-akka.actor.default-dispatcher-173] INFO com.firebase.core.namespace.NamespaceActor - link-to-the-past-a5042 successfully activated FBKV (SurveyIdle(0)) wait: 2ms, init: 0ms
+17:00:56.545 [Thread-0] INFO com.firebase.server.forge.App$ - Attempting graceful shutdown.
+17:00:56.551 [NamespaceSystem-akka.actor.default-dispatcher-173] INFO com.firebase.core.namespace.Terminator$Terminator - 2 actors left to terminate: link-to-the-past-a5042, link-to-the-past-a5042-default-rtdb
+17:00:56.557 [NamespaceSystem-akka.actor.default-dispatcher-213] INFO com.firebase.core.namespace.NamespaceActor - stopped namespace actor for link-to-the-past-a5042
+17:00:56.557 [NamespaceSystem-akka.actor.default-dispatcher-127] INFO com.firebase.core.namespace.NamespaceActor - stopped namespace actor for link-to-the-past-a5042-default-rtdb
+17:00:56.562 [Thread-0] INFO com.firebase.server.forge.App$ - Graceful shutdown complete.
