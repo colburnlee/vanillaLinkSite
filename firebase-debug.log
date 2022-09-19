@@ -1,0 +1,974 @@
+[debug] [2022-09-19T17:26:02.628Z] ----------------------------------------------------------------------
+[debug] [2022-09-19T17:26:02.630Z] Command:       /usr/bin/node /home/pop/.yarn/bin/firebase emulators:start --import=./dir --export-on-exit
+[debug] [2022-09-19T17:26:02.631Z] CLI Version:   11.9.0
+[debug] [2022-09-19T17:26:02.631Z] Platform:      linux
+[debug] [2022-09-19T17:26:02.631Z] Node Version:  v16.17.0
+[debug] [2022-09-19T17:26:02.631Z] Time:          Mon Sep 19 2022 07:26:02 GMT-1000 (Hawaii-Aleutian Standard Time)
+[debug] [2022-09-19T17:26:02.632Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-09-19T17:26:02.634Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2022-09-19T17:26:02.694Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-09-19T17:26:02.695Z] > authorizing via signed-in user (colburn.lee@gmail.com)
+[debug] [2022-09-19T17:26:02.756Z] openjdk version "11.0.16" 2022-07-19
+
+[debug] [2022-09-19T17:26:02.757Z] OpenJDK Runtime Environment (build 11.0.16+8-post-Ubuntu-0ubuntu122.04)
+OpenJDK 64-Bit Server VM (build 11.0.16+8-post-Ubuntu-0ubuntu122.04, mixed mode, sharing)
+
+[debug] [2022-09-19T17:26:02.764Z] Parsed Java major version: 11
+[info] i  emulators: Starting emulators: functions, firestore, database, hosting, storage {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions, firestore, database, hosting, storage"}}
+[debug] [2022-09-19T17:26:02.774Z] [hub] writing locator at /tmp/hub-link-to-the-past-a5042.json
+[warn] ⚠  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, pubsub, eventarc {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, pubsub, eventarc\u001b[22m"}}
+[info] ✔  functions: Using node@16 from host. {"metadata":{"emulator":{"name":"functions"},"message":"Using node@16 from host."}}
+[debug] [2022-09-19T17:26:02.794Z] defaultcredentials: writing to file /home/pop/.config/firebase/colburn_lee_gmail.com_application_default_credentials.json
+[debug] [2022-09-19T17:26:02.795Z] Setting GAC to /home/pop/.config/firebase/colburn_lee_gmail.com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /home/pop/.config/firebase/colburn_lee_gmail.com_application_default_credentials.json"}}
+[debug] [2022-09-19T17:26:02.796Z] > refreshing access token with scopes: []
+[debug] [2022-09-19T17:26:02.797Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2022-09-19T17:26:02.797Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-09-19T17:26:03.067Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2022-09-19T17:26:03.067Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2022-09-19T17:26:03.092Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2022-09-19T17:26:03.092Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-09-19T17:26:03.109Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/link-to-the-past-a5042/adminSdkConfig [none]
+[debug] [2022-09-19T17:26:03.646Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/link-to-the-past-a5042/adminSdkConfig 200
+[debug] [2022-09-19T17:26:03.646Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/link-to-the-past-a5042/adminSdkConfig {"projectId":"link-to-the-past-a5042","databaseURL":"https://link-to-the-past-a5042-default-rtdb.firebaseio.com","storageBucket":"link-to-the-past-a5042.appspot.com","locationId":"us-central"}
+[info] i  firestore: Importing data from /home/pop/Documents/projects/vanillalinksite/dir/firestore_export/firestore_export.overall_export_metadata {"metadata":{"emulator":{"name":"firestore"},"message":"Importing data from /home/pop/Documents/projects/vanillalinksite/dir/firestore_export/firestore_export.overall_export_metadata"}}
+[warn] ⚠  firestore: Did not find a Cloud Firestore rules file specified in a firebase.json config file. {"metadata":{"emulator":{"name":"firestore"},"message":"Did not find a Cloud Firestore rules file specified in a firebase.json config file."}}
+[warn] ⚠  firestore: The emulator will default to allowing all reads and writes. Learn more about this option: https://firebase.google.com/docs/emulator-suite/install_and_configure#security_rules_configuration. {"metadata":{"emulator":{"name":"firestore"},"message":"The emulator will default to allowing all reads and writes. Learn more about this option: https://firebase.google.com/docs/emulator-suite/install_and_configure#security_rules_configuration."}}
+[debug] [2022-09-19T17:26:03.692Z] Ignoring unsupported arg: projectId {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: projectId"}}
+[debug] [2022-09-19T17:26:03.692Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2022-09-19T17:26:03.692Z] Starting Firestore Emulator with command {"binary":"java","args":["-Dgoogle.cloud_firestore.debug_log_level=FINE","-Duser.language=en","-jar","/home/pop/.cache/firebase/emulators/cloud-firestore-emulator-v1.14.4.jar","--host","localhost","--port",8080,"--seed_from_export","/home/pop/Documents/projects/vanillalinksite/dir/firestore_export/firestore_export.overall_export_metadata","--functions_emulator","localhost:5001"],"optionalArgs":["port","webchannel_port","host","rules","functions_emulator","seed_from_export"],"joinArgs":false} {"metadata":{"emulator":{"name":"firestore"},"message":"Starting Firestore Emulator with command {\"binary\":\"java\",\"args\":[\"-Dgoogle.cloud_firestore.debug_log_level=FINE\",\"-Duser.language=en\",\"-jar\",\"/home/pop/.cache/firebase/emulators/cloud-firestore-emulator-v1.14.4.jar\",\"--host\",\"localhost\",\"--port\",8080,\"--seed_from_export\",\"/home/pop/Documents/projects/vanillalinksite/dir/firestore_export/firestore_export.overall_export_metadata\",\"--functions_emulator\",\"localhost:5001\"],\"optionalArgs\":[\"port\",\"webchannel_port\",\"host\",\"rules\",\"functions_emulator\",\"seed_from_export\"],\"joinArgs\":false}"}}
+[info] i  firestore: Firestore Emulator logging to firestore-debug.log {"metadata":{"emulator":{"name":"firestore"},"message":"Firestore Emulator logging to \u001b[1mfirestore-debug.log\u001b[22m"}}
+[debug] [2022-09-19T17:26:04.512Z] Sep 19, 2022 7:26:04 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketServer start
+INFO: Started WebSocket server on ws://localhost:44229
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 7:26:04 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketServer start\nINFO: Started WebSocket server on ws://localhost:44229\n"}}
+[debug] [2022-09-19T17:26:04.532Z] API endpoint: http://localhost:8080
+ {"metadata":{"emulator":{"name":"firestore"},"message":"API endpoint: http://localhost:8080\n"}}
+[debug] [2022-09-19T17:26:04.532Z] If you are using a library that supports the FIRESTORE_EMULATOR_HOST environment variable, run:
+
+   export FIRESTORE_EMULATOR_HOST=localhost:8080
+
+Dev App Server is now running.
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"If you are using a library that supports the FIRESTORE_EMULATOR_HOST environment variable, run:\n\n   export FIRESTORE_EMULATOR_HOST=localhost:8080\n\nDev App Server is now running.\n\n"}}
+[debug] [2022-09-19T17:26:04.720Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/link-to-the-past-a5042 [none]
+[debug] [2022-09-19T17:26:05.089Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/link-to-the-past-a5042 200
+[debug] [2022-09-19T17:26:05.089Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/link-to-the-past-a5042 {"projectId":"link-to-the-past-a5042","projectNumber":"1050404766506","displayName":"Link to the Past","name":"projects/link-to-the-past-a5042","resources":{"hostingSite":"link-to-the-past-a5042","realtimeDatabaseInstance":"link-to-the-past-a5042-default-rtdb","storageBucket":"link-to-the-past-a5042.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_7c6a9854-56ac-4276-91de-870f7af78587"}
+[debug] [2022-09-19T17:26:05.090Z] database rules config:  []
+[warn] ⚠  database: Did not find a Realtime Database rules file specified in a firebase.json config file. The emulator will default to allowing all reads and writes. Learn more about this option: https://firebase.google.com/docs/emulator-suite/install_and_configure#security_rules_configuration. {"metadata":{"emulator":{"name":"database"},"message":"Did not find a Realtime Database rules file specified in a firebase.json config file. The emulator will default to allowing all reads and writes. Learn more about this option: https://firebase.google.com/docs/emulator-suite/install_and_configure#security_rules_configuration."}}
+[debug] [2022-09-19T17:26:05.093Z] Ignoring unsupported arg: projectId {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: projectId"}}
+[debug] [2022-09-19T17:26:05.093Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2022-09-19T17:26:05.093Z] Ignoring unsupported arg: rules {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: rules"}}
+[debug] [2022-09-19T17:26:05.093Z] Starting Database Emulator with command {"binary":"java","args":["-Duser.language=en","-jar","/home/pop/.cache/firebase/emulators/firebase-database-emulator-v4.8.0.jar","--host","localhost","--port",9000,"--functions_emulator_host","localhost","--functions_emulator_port",5001],"optionalArgs":["port","host","functions_emulator_port","functions_emulator_host"],"joinArgs":false} {"metadata":{"emulator":{"name":"database"},"message":"Starting Database Emulator with command {\"binary\":\"java\",\"args\":[\"-Duser.language=en\",\"-jar\",\"/home/pop/.cache/firebase/emulators/firebase-database-emulator-v4.8.0.jar\",\"--host\",\"localhost\",\"--port\",9000,\"--functions_emulator_host\",\"localhost\",\"--functions_emulator_port\",5001],\"optionalArgs\":[\"port\",\"host\",\"functions_emulator_port\",\"functions_emulator_host\"],\"joinArgs\":false}"}}
+[info] i  database: Database Emulator logging to database-debug.log {"metadata":{"emulator":{"name":"database"},"message":"Database Emulator logging to \u001b[1mdatabase-debug.log\u001b[22m"}}
+[debug] [2022-09-19T17:26:05.648Z] WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by io.netty.util.internal.ReflectionUtil (file:/home/pop/.cache/firebase/emulators/firebase-database-emulator-v4.8.0.jar) to field sun.nio.ch.SelectorImpl.selectedKeys
+WARNING: Please consider reporting this to the maintainers of io.netty.util.internal.ReflectionUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+ {"metadata":{"emulator":{"name":"database"},"message":"WARNING: An illegal reflective access operation has occurred\nWARNING: Illegal reflective access by io.netty.util.internal.ReflectionUtil (file:/home/pop/.cache/firebase/emulators/firebase-database-emulator-v4.8.0.jar) to field sun.nio.ch.SelectorImpl.selectedKeys\nWARNING: Please consider reporting this to the maintainers of io.netty.util.internal.ReflectionUtil\nWARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations\nWARNING: All illegal access operations will be denied in a future release\n"}}
+[debug] [2022-09-19T17:26:06.212Z] 07:26:06.211 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+ {"metadata":{"emulator":{"name":"database"},"message":"07:26:06.211 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started\n"}}
+[debug] [2022-09-19T17:26:06.365Z] 07:26:06.364 [main] INFO com.firebase.server.forge.App$ - Listening at localhost:9000
+ {"metadata":{"emulator":{"name":"database"},"message":"07:26:06.364 [main] INFO com.firebase.server.forge.App$ - Listening at localhost:9000\n"}}
+[info] i  database: Importing data from /home/pop/Documents/projects/vanillalinksite/dir/database_export/link-to-the-past-a5042-default-rtdb.json {"metadata":{"emulator":{"name":"database"},"message":"Importing data from /home/pop/Documents/projects/vanillalinksite/dir/database_export/link-to-the-past-a5042-default-rtdb.json"}}
+[debug] [2022-09-19T17:26:06.940Z] 07:26:06.940 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO com.firebase.core.namespace.NamespaceActor - link-to-the-past-a5042-default-rtdb successfully activated FBKV (SurveyIdle(0)) wait: 131ms, init: 0ms
+ {"metadata":{"emulator":{"name":"database"},"message":"07:26:06.940 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO com.firebase.core.namespace.NamespaceActor - link-to-the-past-a5042-default-rtdb successfully activated FBKV (SurveyIdle(0)) wait: 131ms, init: 0ms\n"}}
+[debug] [2022-09-19T17:26:08.505Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"storage"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2022-09-19T17:26:09.168Z] Temp file directory for storage emulator: /tmp/firebase/storage/blobs {"metadata":{"emulator":{"name":"storage"},"message":"Temp file directory for storage emulator: /tmp/firebase/storage/blobs"}}
+[debug] [2022-09-19T17:26:09.571Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/link-to-the-past-a5042/sites 
+[debug] [2022-09-19T17:26:10.403Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/link-to-the-past-a5042/sites 200
+[debug] [2022-09-19T17:26:10.403Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/link-to-the-past-a5042/sites {"sites":[{"name":"projects/link-to-the-past-a5042/sites/link-to-the-past-a5042","defaultUrl":"https://link-to-the-past-a5042.web.app","appId":"1:1050404766506:web:20a98e41de038618205453","type":"DEFAULT_SITE"}]}
+[debug] [2022-09-19T17:26:10.404Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/link-to-the-past-a5042/webApps/1:1050404766506:web:20a98e41de038618205453/config [none]
+[debug] [2022-09-19T17:26:11.186Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/link-to-the-past-a5042/webApps/1:1050404766506:web:20a98e41de038618205453/config 200
+[debug] [2022-09-19T17:26:11.186Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/link-to-the-past-a5042/webApps/1:1050404766506:web:20a98e41de038618205453/config {"projectId":"link-to-the-past-a5042","appId":"1:1050404766506:web:20a98e41de038618205453","databaseURL":"https://link-to-the-past-a5042-default-rtdb.firebaseio.com","storageBucket":"link-to-the-past-a5042.appspot.com","locationId":"us-central","apiKey":"AIzaSyC4XdigZKyiQI0oAndOvKmyfbkq8HvVem4","authDomain":"link-to-the-past-a5042.firebaseapp.com","messagingSenderId":"1050404766506","measurementId":"G-G25SGGN1GY"}
+[info] i  hosting: Serving hosting files from: build {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mbuild\u001b[22m"}}
+[info] ✔  hosting: Local server: http://localhost:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5000\u001b[22m\u001b[24m"}}
+[debug] [2022-09-19T17:26:11.236Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2022-09-19T17:26:11.236Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2022-09-19T17:26:11.236Z] Starting Emulator UI with command {"binary":"node","args":["/home/pop/.cache/firebase/emulators/ui-v1.9.0/server/server.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"/home/pop/.cache/firebase/emulators/ui-v1.9.0/server/server.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2022-09-19T17:26:11.368Z] Web / API server started at localhost:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at localhost:4000\n"}}
+[info] i  functions: Watching "/home/pop/Documents/projects/vanillalinksite/functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/home/pop/Documents/projects/vanillalinksite/functions\" for Cloud Functions..."}}
+[debug] [2022-09-19T17:26:11.508Z] Validating nodejs source
+[debug] [2022-09-19T17:26:12.623Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-09-19T17:26:12.623Z] Building nodejs source
+[debug] [2022-09-19T17:26:12.623Z] Analyzing nodejs backend spec
+[debug] [2022-09-19T17:26:12.626Z] Could not find functions.yaml. Must use http discovery
+[debug] [2022-09-19T17:26:12.761Z] Serving at port 9005
+
+[debug] [2022-09-19T17:26:12.799Z] Got response from /__/functions.yaml {"endpoints":{"helloWorld":{"platform":"gcfv1","httpsTrigger":{},"entryPoint":"helloWorld"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2022-09-19T17:26:12.804Z] shutdown requested via /__/quitquitquit
+
+[info] ✔  functions: Loaded functions definitions from source: helloWorld. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: helloWorld."}}
+[info] ✔  functions[us-central1-helloWorld]: http function initialized (http://localhost:5001/link-to-the-past-a5042/us-central1/helloWorld). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5001/link-to-the-past-a5042/us-central1/helloWorld)."}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://localhost:4000                │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port      │ View in Emulator UI             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Functions │ localhost:5001 │ http://localhost:4000/functions │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Firestore │ localhost:8080 │ http://localhost:4000/firestore │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Database  │ localhost:9000 │ http://localhost:4000/database  │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Hosting   │ localhost:5000 │ n/a                             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Storage   │ localhost:9199 │ http://localhost:4000/storage   │
+└───────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub running at localhost:4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2022-09-19T17:26:20.350Z] Sep 19, 2022 7:26:20 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 7:26:20 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T17:26:20.388Z] Sep 19, 2022 7:26:20 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 7:26:20 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T17:26:20.416Z] Sep 19, 2022 7:26:20 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel
+INFO: Connected to new websocket client
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 7:26:20 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel\nINFO: Connected to new websocket client\n"}}
+[debug] [2022-09-19T17:26:20.422Z] Sep 19, 2022 7:26:20 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 7:26:20 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T17:26:20.450Z] Sep 19, 2022 7:26:20 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 7:26:20 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T17:26:20.469Z] Sep 19, 2022 7:26:20 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 7:26:20 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T17:26:23.707Z] Sep 19, 2022 7:26:23 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 7:26:23 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T17:26:24.377Z] Sep 19, 2022 7:26:24 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 7:26:24 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T17:26:26.409Z] Sep 19, 2022 7:26:26 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 7:26:26 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T17:26:28.435Z] Sep 19, 2022 7:26:28 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 7:26:28 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T17:26:33.102Z] Sep 19, 2022 7:26:33 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 7:26:33 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T17:26:35.124Z] Sep 19, 2022 7:26:35 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 7:26:35 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T17:26:37.146Z] Sep 19, 2022 7:26:37 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 7:26:37 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T17:26:39.176Z] Sep 19, 2022 7:26:39 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 7:26:39 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T17:26:41.202Z] Sep 19, 2022 7:26:41 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 7:26:41 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T17:26:43.232Z] Sep 19, 2022 7:26:43 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 7:26:43 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T17:26:45.266Z] Sep 19, 2022 7:26:45 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 7:26:45 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:02:31.537Z] Sep 19, 2022 8:02:31 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:02:31 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:02:33.569Z] Sep 19, 2022 8:02:33 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:02:33 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:02:33.639Z] Sep 19, 2022 8:02:33 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:02:33 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:02:34.872Z] Sep 19, 2022 8:02:34 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:02:34 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:02:35.600Z] Sep 19, 2022 8:02:35 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:02:35 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:02:37.621Z] Sep 19, 2022 8:02:37 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:02:37 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:02:39.638Z] Sep 19, 2022 8:02:39 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:02:39 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:02:41.657Z] Sep 19, 2022 8:02:41 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:02:41 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:02:43.673Z] Sep 19, 2022 8:02:43 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:02:43 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:02:45.687Z] Sep 19, 2022 8:02:45 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:02:45 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:02:47.707Z] Sep 19, 2022 8:02:47 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:02:47 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:02:49.722Z] Sep 19, 2022 8:02:49 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:02:49 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:02:51.739Z] Sep 19, 2022 8:02:51 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:02:51 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:02:53.757Z] Sep 19, 2022 8:02:53 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:02:53 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:02:55.775Z] Sep 19, 2022 8:02:55 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:02:55 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:02:57.793Z] Sep 19, 2022 8:02:57 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:02:57 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:02:59.810Z] Sep 19, 2022 8:02:59 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:02:59 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:03:01.826Z] Sep 19, 2022 8:03:01 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:03:01 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:03:03.841Z] Sep 19, 2022 8:03:03 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:03:03 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:03:05.856Z] Sep 19, 2022 8:03:05 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:03:05 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:03:07.872Z] Sep 19, 2022 8:03:07 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:03:07 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:03:09.711Z] Sep 19, 2022 8:03:09 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:03:09 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:03:09.887Z] Sep 19, 2022 8:03:09 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:03:09 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:03:10.984Z] Sep 19, 2022 8:03:10 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:03:10 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:03:11.901Z] Sep 19, 2022 8:03:11 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:03:11 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:03:13.130Z] >>> [apiv2][query] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast [none]
+[debug] [2022-09-19T18:03:13.130Z] >>> [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"eventId":"1663610593129","timestamp":"2022-09-19T18:03:13.129Z","eventType":"google.storage.object.delete","resource":{"service":"storage.googleapis.com","name":"projects/_/buckets/link-to-the-past-a5042.appspot.com/objects/ETH/","type":"storage#object"},"data":{"kind":"storage#object","name":"ETH/","bucket":"link-to-the-past-a5042.appspot.com","generation":"1660708655673","metageneration":"1","contentType":"text/plain","contentDisposition":"inline","timeCreated":"2022-08-17T03:57:35.672Z","updated":"2022-08-17T03:57:35.673Z","storageClass":"STANDARD","size":"0","md5Hash":"1B2M2Y8AsgTpgAmY7PhCfg==","etag":"b/bGTyRh8XkFSd26wIDeORRZcos","cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"AAAAAA==","timeStorageClassUpdated":"2022-08-17T03:57:35.672Z","id":"link-to-the-past-a5042.appspot.com/ETH//1660708655673","selfLink":"http://localhost:9199/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ETH%2F","mediaLink":"http://localhost:9199/download/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ETH%2F?generation=1660708655673&alt=media"}}
+[debug] [2022-09-19T18:03:13.134Z] <<< [apiv2][status] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast 200
+[debug] [2022-09-19T18:03:13.135Z] <<< [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-09-19T18:03:13.135Z] >>> [apiv2][query] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast [none]
+[debug] [2022-09-19T18:03:13.135Z] >>> [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"specversion":"1","id":"1cad38b4-6d18-4a71-9632-663a4a92bb35","type":"google.cloud.storage.object.v1.deleted","source":"//storage.googleapis.com/projects/_/buckets/link-to-the-past-a5042.appspot.com/objects/ETH/","time":"2022-08-17T03:57:35.673Z","data":{"kind":"storage#object","name":"ETH/","bucket":"link-to-the-past-a5042.appspot.com","generation":"1660708655673","metageneration":"1","contentType":"text/plain","contentDisposition":"inline","timeCreated":"2022-08-17T03:57:35.672Z","updated":"2022-08-17T03:57:35.673Z","storageClass":"STANDARD","size":"0","md5Hash":"1B2M2Y8AsgTpgAmY7PhCfg==","etag":"b/bGTyRh8XkFSd26wIDeORRZcos","cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"AAAAAA==","timeStorageClassUpdated":"2022-08-17T03:57:35.672Z","id":"link-to-the-past-a5042.appspot.com/ETH//1660708655673","selfLink":"http://localhost:9199/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ETH%2F","mediaLink":"http://localhost:9199/download/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ETH%2F?generation=1660708655673&alt=media"}}
+[debug] [2022-09-19T18:03:13.137Z] <<< [apiv2][status] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast 200
+[debug] [2022-09-19T18:03:13.137Z] <<< [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-09-19T18:03:13.159Z] >>> [apiv2][query] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast [none]
+[debug] [2022-09-19T18:03:13.159Z] >>> [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"eventId":"1663610593159","timestamp":"2022-09-19T18:03:13.159Z","eventType":"google.storage.object.delete","resource":{"service":"storage.googleapis.com","name":"projects/_/buckets/link-to-the-past-a5042.appspot.com/objects/ETH/BTCUSD/","type":"storage#object"},"data":{"kind":"storage#object","name":"ETH/BTCUSD/","bucket":"link-to-the-past-a5042.appspot.com","generation":"1662575420900","metageneration":"1","contentType":"text/plain","contentDisposition":"inline","timeCreated":"2022-09-07T18:30:20.899Z","updated":"2022-09-07T18:30:20.899Z","storageClass":"STANDARD","size":"0","md5Hash":"1B2M2Y8AsgTpgAmY7PhCfg==","etag":"FzjLgESJeHnvyT96jV9iDOUyMvQ","cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"AAAAAA==","timeStorageClassUpdated":"2022-09-07T18:30:20.899Z","id":"link-to-the-past-a5042.appspot.com/ETH/BTCUSD//1662575420900","selfLink":"http://localhost:9199/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ETH%2FBTCUSD%2F","mediaLink":"http://localhost:9199/download/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ETH%2FBTCUSD%2F?generation=1662575420900&alt=media"}}
+[debug] [2022-09-19T18:03:13.161Z] <<< [apiv2][status] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast 200
+[debug] [2022-09-19T18:03:13.162Z] <<< [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-09-19T18:03:13.162Z] >>> [apiv2][query] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast [none]
+[debug] [2022-09-19T18:03:13.162Z] >>> [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"specversion":"1","id":"ab74ab5d-d805-4fa0-914d-c4d9999cd751","type":"google.cloud.storage.object.v1.deleted","source":"//storage.googleapis.com/projects/_/buckets/link-to-the-past-a5042.appspot.com/objects/ETH/BTCUSD/","time":"2022-09-07T18:30:20.899Z","data":{"kind":"storage#object","name":"ETH/BTCUSD/","bucket":"link-to-the-past-a5042.appspot.com","generation":"1662575420900","metageneration":"1","contentType":"text/plain","contentDisposition":"inline","timeCreated":"2022-09-07T18:30:20.899Z","updated":"2022-09-07T18:30:20.899Z","storageClass":"STANDARD","size":"0","md5Hash":"1B2M2Y8AsgTpgAmY7PhCfg==","etag":"FzjLgESJeHnvyT96jV9iDOUyMvQ","cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"AAAAAA==","timeStorageClassUpdated":"2022-09-07T18:30:20.899Z","id":"link-to-the-past-a5042.appspot.com/ETH/BTCUSD//1662575420900","selfLink":"http://localhost:9199/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ETH%2FBTCUSD%2F","mediaLink":"http://localhost:9199/download/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ETH%2FBTCUSD%2F?generation=1662575420900&alt=media"}}
+[debug] [2022-09-19T18:03:13.163Z] >>> [apiv2][query] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast [none]
+[debug] [2022-09-19T18:03:13.163Z] >>> [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"eventId":"1663610593163","timestamp":"2022-09-19T18:03:13.163Z","eventType":"google.storage.object.delete","resource":{"service":"storage.googleapis.com","name":"projects/_/buckets/link-to-the-past-a5042.appspot.com/objects/ETH/ETHUSD/","type":"storage#object"},"data":{"kind":"storage#object","name":"ETH/ETHUSD/","bucket":"link-to-the-past-a5042.appspot.com","generation":"1660708661511","metageneration":"1","contentType":"text/plain","contentDisposition":"inline","timeCreated":"2022-08-17T03:57:41.510Z","updated":"2022-08-17T03:57:41.510Z","storageClass":"STANDARD","size":"0","md5Hash":"1B2M2Y8AsgTpgAmY7PhCfg==","etag":"R9xJU5jsEt4bcwMka5nWAiuVT2k","cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"AAAAAA==","timeStorageClassUpdated":"2022-08-17T03:57:41.510Z","id":"link-to-the-past-a5042.appspot.com/ETH/ETHUSD//1660708661511","selfLink":"http://localhost:9199/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ETH%2FETHUSD%2F","mediaLink":"http://localhost:9199/download/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ETH%2FETHUSD%2F?generation=1660708661511&alt=media"}}
+[debug] [2022-09-19T18:03:13.167Z] <<< [apiv2][status] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast 200
+[debug] [2022-09-19T18:03:13.167Z] <<< [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-09-19T18:03:13.169Z] <<< [apiv2][status] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast 200
+[debug] [2022-09-19T18:03:13.169Z] <<< [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-09-19T18:03:13.169Z] >>> [apiv2][query] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast [none]
+[debug] [2022-09-19T18:03:13.169Z] >>> [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"specversion":"1","id":"43ef1f3e-804c-414d-a228-1ca004cec06b","type":"google.cloud.storage.object.v1.deleted","source":"//storage.googleapis.com/projects/_/buckets/link-to-the-past-a5042.appspot.com/objects/ETH/ETHUSD/","time":"2022-08-17T03:57:41.510Z","data":{"kind":"storage#object","name":"ETH/ETHUSD/","bucket":"link-to-the-past-a5042.appspot.com","generation":"1660708661511","metageneration":"1","contentType":"text/plain","contentDisposition":"inline","timeCreated":"2022-08-17T03:57:41.510Z","updated":"2022-08-17T03:57:41.510Z","storageClass":"STANDARD","size":"0","md5Hash":"1B2M2Y8AsgTpgAmY7PhCfg==","etag":"R9xJU5jsEt4bcwMka5nWAiuVT2k","cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"AAAAAA==","timeStorageClassUpdated":"2022-08-17T03:57:41.510Z","id":"link-to-the-past-a5042.appspot.com/ETH/ETHUSD//1660708661511","selfLink":"http://localhost:9199/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ETH%2FETHUSD%2F","mediaLink":"http://localhost:9199/download/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ETH%2FETHUSD%2F?generation=1660708661511&alt=media"}}
+[debug] [2022-09-19T18:03:13.174Z] <<< [apiv2][status] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast 200
+[debug] [2022-09-19T18:03:13.174Z] <<< [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-09-19T18:03:13.179Z] >>> [apiv2][query] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast [none]
+[debug] [2022-09-19T18:03:13.180Z] >>> [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"eventId":"1663610593179","timestamp":"2022-09-19T18:03:13.179Z","eventType":"google.storage.object.delete","resource":{"service":"storage.googleapis.com","name":"projects/_/buckets/link-to-the-past-a5042.appspot.com/objects/ETH/BTCUSD/BTCUSD.csv","type":"storage#object"},"data":{"kind":"storage#object","name":"ETH/BTCUSD/BTCUSD.csv","bucket":"link-to-the-past-a5042.appspot.com","generation":"1662575430932","metageneration":"1","contentType":"text/csv","contentDisposition":"inline","timeCreated":"2022-09-07T18:30:30.931Z","updated":"2022-09-07T18:30:30.941Z","storageClass":"STANDARD","size":"2466863","md5Hash":"TCkPviYuwfQRzMvw1QnrSQ==","etag":"AlrZbLE6izDhJ0kKt/mCD5UTgpQ","metadata":{"firebaseStorageDownloadTokens":"662487ce-fb10-420b-ad24-bc2fc1f0d74c"},"cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"wpAQRA==","timeStorageClassUpdated":"2022-09-07T18:30:30.931Z","id":"link-to-the-past-a5042.appspot.com/ETH/BTCUSD/BTCUSD.csv/1662575430932","selfLink":"http://localhost:9199/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ETH%2FBTCUSD%2FBTCUSD.csv","mediaLink":"http://localhost:9199/download/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ETH%2FBTCUSD%2FBTCUSD.csv?generation=1662575430932&alt=media"}}
+[debug] [2022-09-19T18:03:13.181Z] <<< [apiv2][status] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast 200
+[debug] [2022-09-19T18:03:13.181Z] <<< [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-09-19T18:03:13.182Z] >>> [apiv2][query] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast [none]
+[debug] [2022-09-19T18:03:13.182Z] >>> [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"specversion":"1","id":"3025b439-0788-48ac-8b99-141e37e36e92","type":"google.cloud.storage.object.v1.deleted","source":"//storage.googleapis.com/projects/_/buckets/link-to-the-past-a5042.appspot.com/objects/ETH/BTCUSD/BTCUSD.csv","time":"2022-09-07T18:30:30.941Z","data":{"kind":"storage#object","name":"ETH/BTCUSD/BTCUSD.csv","bucket":"link-to-the-past-a5042.appspot.com","generation":"1662575430932","metageneration":"1","contentType":"text/csv","contentDisposition":"inline","timeCreated":"2022-09-07T18:30:30.931Z","updated":"2022-09-07T18:30:30.941Z","storageClass":"STANDARD","size":"2466863","md5Hash":"TCkPviYuwfQRzMvw1QnrSQ==","etag":"AlrZbLE6izDhJ0kKt/mCD5UTgpQ","metadata":{"firebaseStorageDownloadTokens":"662487ce-fb10-420b-ad24-bc2fc1f0d74c"},"cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"wpAQRA==","timeStorageClassUpdated":"2022-09-07T18:30:30.931Z","id":"link-to-the-past-a5042.appspot.com/ETH/BTCUSD/BTCUSD.csv/1662575430932","selfLink":"http://localhost:9199/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ETH%2FBTCUSD%2FBTCUSD.csv","mediaLink":"http://localhost:9199/download/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ETH%2FBTCUSD%2FBTCUSD.csv?generation=1662575430932&alt=media"}}
+[debug] [2022-09-19T18:03:13.184Z] >>> [apiv2][query] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast [none]
+[debug] [2022-09-19T18:03:13.184Z] >>> [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"eventId":"1663610593184","timestamp":"2022-09-19T18:03:13.184Z","eventType":"google.storage.object.delete","resource":{"service":"storage.googleapis.com","name":"projects/_/buckets/link-to-the-past-a5042.appspot.com/objects/ETH/BTCUSD/BTCUSD.json","type":"storage#object"},"data":{"kind":"storage#object","name":"ETH/BTCUSD/BTCUSD.json","bucket":"link-to-the-past-a5042.appspot.com","generation":"1662575448604","metageneration":"1","contentType":"application/json","contentDisposition":"inline","timeCreated":"2022-09-07T18:30:48.603Z","updated":"2022-09-07T18:30:48.621Z","storageClass":"STANDARD","size":"5047013","md5Hash":"ATsxnODQHQoKEbkLnjr6OA==","etag":"gXdb70SN3eKyOKhzKHFKvV0S0GE","metadata":{"firebaseStorageDownloadTokens":"6ec88a26-a771-4a9d-b2e1-64f9ae8b236c"},"cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"wSwFgA==","timeStorageClassUpdated":"2022-09-07T18:30:48.603Z","id":"link-to-the-past-a5042.appspot.com/ETH/BTCUSD/BTCUSD.json/1662575448604","selfLink":"http://localhost:9199/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ETH%2FBTCUSD%2FBTCUSD.json","mediaLink":"http://localhost:9199/download/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ETH%2FBTCUSD%2FBTCUSD.json?generation=1662575448604&alt=media"}}
+[debug] [2022-09-19T18:03:13.186Z] >>> [apiv2][query] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast [none]
+[debug] [2022-09-19T18:03:13.186Z] >>> [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"eventId":"1663610593186","timestamp":"2022-09-19T18:03:13.186Z","eventType":"google.storage.object.delete","resource":{"service":"storage.googleapis.com","name":"projects/_/buckets/link-to-the-past-a5042.appspot.com/objects/ETH/BTCUSD/BTCUSDChart.json","type":"storage#object"},"data":{"kind":"storage#object","name":"ETH/BTCUSD/BTCUSDChart.json","bucket":"link-to-the-past-a5042.appspot.com","generation":"1662575430921","metageneration":"1","contentType":"application/json","contentDisposition":"inline","timeCreated":"2022-09-07T18:30:30.920Z","updated":"2022-09-07T18:30:30.921Z","storageClass":"STANDARD","size":"48738","md5Hash":"5FTcz76c/UXGJCFAGc0SFQ==","etag":"1kDSmrCuxbBv4zti5MV7HSoihSA","metadata":{"firebaseStorageDownloadTokens":"8d80dd94-4b4a-45e0-bdb3-81fbbf5e0450"},"cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"QDayyw==","timeStorageClassUpdated":"2022-09-07T18:30:30.920Z","id":"link-to-the-past-a5042.appspot.com/ETH/BTCUSD/BTCUSDChart.json/1662575430921","selfLink":"http://localhost:9199/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ETH%2FBTCUSD%2FBTCUSDChart.json","mediaLink":"http://localhost:9199/download/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ETH%2FBTCUSD%2FBTCUSDChart.json?generation=1662575430921&alt=media"}}
+[debug] [2022-09-19T18:03:13.188Z] >>> [apiv2][query] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast [none]
+[debug] [2022-09-19T18:03:13.188Z] >>> [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"eventId":"1663610593188","timestamp":"2022-09-19T18:03:13.188Z","eventType":"google.storage.object.delete","resource":{"service":"storage.googleapis.com","name":"projects/_/buckets/link-to-the-past-a5042.appspot.com/objects/ETH/ETHUSD/ETHUSD.csv","type":"storage#object"},"data":{"kind":"storage#object","name":"ETH/ETHUSD/ETHUSD.csv","bucket":"link-to-the-past-a5042.appspot.com","generation":"1662575748495","metageneration":"1","contentType":"text/csv","contentDisposition":"inline","timeCreated":"2022-09-07T18:35:48.494Z","updated":"2022-09-07T18:35:48.510Z","storageClass":"STANDARD","size":"4080533","md5Hash":"igE/D6ddJcsf9tzGuzrUDA==","etag":"ebwtjzXmWh/+P8BgP+sDpibQZUg","metadata":{"firebaseStorageDownloadTokens":"36ce2c05-2329-405a-a41f-9b7763cfab3b"},"cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"yREEPg==","timeStorageClassUpdated":"2022-09-07T18:35:48.494Z","id":"link-to-the-past-a5042.appspot.com/ETH/ETHUSD/ETHUSD.csv/1662575748495","selfLink":"http://localhost:9199/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ETH%2FETHUSD%2FETHUSD.csv","mediaLink":"http://localhost:9199/download/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ETH%2FETHUSD%2FETHUSD.csv?generation=1662575748495&alt=media"}}
+[debug] [2022-09-19T18:03:13.192Z] >>> [apiv2][query] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast [none]
+[debug] [2022-09-19T18:03:13.192Z] >>> [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"eventId":"1663610593192","timestamp":"2022-09-19T18:03:13.192Z","eventType":"google.storage.object.delete","resource":{"service":"storage.googleapis.com","name":"projects/_/buckets/link-to-the-past-a5042.appspot.com/objects/ETH/ETHUSD/ETHUSD.json","type":"storage#object"},"data":{"kind":"storage#object","name":"ETH/ETHUSD/ETHUSD.json","bucket":"link-to-the-past-a5042.appspot.com","generation":"1660708676523","metageneration":"1","contentType":"application/json","contentDisposition":"inline","timeCreated":"2022-08-17T03:57:56.522Z","updated":"2022-08-17T03:57:56.596Z","storageClass":"STANDARD","size":"22257652","md5Hash":"H4TrBqKP2gPcaGB9FTjfiA==","etag":"hwB5GhfiUSseBzTIsNLLOvde9Zc","metadata":{"firebaseStorageDownloadTokens":"ace89bc1-111e-4160-baab-5d181759a95b"},"cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"TXMXjA==","timeStorageClassUpdated":"2022-08-17T03:57:56.522Z","id":"link-to-the-past-a5042.appspot.com/ETH/ETHUSD/ETHUSD.json/1660708676523","selfLink":"http://localhost:9199/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ETH%2FETHUSD%2FETHUSD.json","mediaLink":"http://localhost:9199/download/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ETH%2FETHUSD%2FETHUSD.json?generation=1660708676523&alt=media"}}
+[debug] [2022-09-19T18:03:13.193Z] >>> [apiv2][query] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast [none]
+[debug] [2022-09-19T18:03:13.193Z] >>> [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"eventId":"1663610593193","timestamp":"2022-09-19T18:03:13.193Z","eventType":"google.storage.object.delete","resource":{"service":"storage.googleapis.com","name":"projects/_/buckets/link-to-the-past-a5042.appspot.com/objects/ETH/ETHUSD/ETHUSDChart.json","type":"storage#object"},"data":{"kind":"storage#object","name":"ETH/ETHUSD/ETHUSDChart.json","bucket":"link-to-the-past-a5042.appspot.com","generation":"1662434632821","metageneration":"1","contentType":"application/json","contentDisposition":"inline","timeCreated":"2022-09-06T03:23:52.821Z","updated":"2022-09-06T03:23:52.826Z","storageClass":"STANDARD","size":"55986","md5Hash":"ZJhKnqLJRgpP/F0N2aJTyw==","etag":"aMLz70/jgWMi/O7xd+actDl03ok","metadata":{"firebaseStorageDownloadTokens":"f502d1b7-3e2b-4eb6-9ce4-0f7f72fa910e"},"cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"AaRmjw==","timeStorageClassUpdated":"2022-09-06T03:23:52.821Z","id":"link-to-the-past-a5042.appspot.com/ETH/ETHUSD/ETHUSDChart.json/1662434632821","selfLink":"http://localhost:9199/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ETH%2FETHUSD%2FETHUSDChart.json","mediaLink":"http://localhost:9199/download/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ETH%2FETHUSD%2FETHUSDChart.json?generation=1662434632821&alt=media"}}
+[debug] [2022-09-19T18:03:13.195Z] >>> [apiv2][query] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast [none]
+[debug] [2022-09-19T18:03:13.195Z] >>> [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"eventId":"1663610593195","timestamp":"2022-09-19T18:03:13.195Z","eventType":"google.storage.object.delete","resource":{"service":"storage.googleapis.com","name":"projects/_/buckets/link-to-the-past-a5042.appspot.com/objects/ETH/ETHUSD/ETH_USD_OHLC.json","type":"storage#object"},"data":{"kind":"storage#object","name":"ETH/ETHUSD/ETH_USD_OHLC.json","bucket":"link-to-the-past-a5042.appspot.com","generation":"1660708676369","metageneration":"1","contentType":"application/json","contentDisposition":"inline","timeCreated":"2022-08-17T03:57:56.368Z","updated":"2022-08-17T03:57:56.374Z","storageClass":"STANDARD","size":"173339","md5Hash":"SzO6XJUuCpDqRquJ65lVpA==","etag":"xCn+nEnkLcHxCjA51oltdiABGZA","metadata":{"firebaseStorageDownloadTokens":"b0bcf112-73be-4e0c-b3bf-14508bb1ac37"},"cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"XMU8+A==","timeStorageClassUpdated":"2022-08-17T03:57:56.368Z","id":"link-to-the-past-a5042.appspot.com/ETH/ETHUSD/ETH_USD_OHLC.json/1660708676369","selfLink":"http://localhost:9199/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ETH%2FETHUSD%2FETH_USD_OHLC.json","mediaLink":"http://localhost:9199/download/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ETH%2FETHUSD%2FETH_USD_OHLC.json?generation=1660708676369&alt=media"}}
+[debug] [2022-09-19T18:03:13.198Z] <<< [apiv2][status] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast 200
+[debug] [2022-09-19T18:03:13.198Z] <<< [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-09-19T18:03:13.199Z] <<< [apiv2][status] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast 200
+[debug] [2022-09-19T18:03:13.199Z] <<< [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-09-19T18:03:13.199Z] >>> [apiv2][query] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast [none]
+[debug] [2022-09-19T18:03:13.199Z] >>> [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"specversion":"1","id":"57c667eb-d2ee-4057-aadb-e817372ef694","type":"google.cloud.storage.object.v1.deleted","source":"//storage.googleapis.com/projects/_/buckets/link-to-the-past-a5042.appspot.com/objects/ETH/BTCUSD/BTCUSD.json","time":"2022-09-07T18:30:48.621Z","data":{"kind":"storage#object","name":"ETH/BTCUSD/BTCUSD.json","bucket":"link-to-the-past-a5042.appspot.com","generation":"1662575448604","metageneration":"1","contentType":"application/json","contentDisposition":"inline","timeCreated":"2022-09-07T18:30:48.603Z","updated":"2022-09-07T18:30:48.621Z","storageClass":"STANDARD","size":"5047013","md5Hash":"ATsxnODQHQoKEbkLnjr6OA==","etag":"gXdb70SN3eKyOKhzKHFKvV0S0GE","metadata":{"firebaseStorageDownloadTokens":"6ec88a26-a771-4a9d-b2e1-64f9ae8b236c"},"cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"wSwFgA==","timeStorageClassUpdated":"2022-09-07T18:30:48.603Z","id":"link-to-the-past-a5042.appspot.com/ETH/BTCUSD/BTCUSD.json/1662575448604","selfLink":"http://localhost:9199/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ETH%2FBTCUSD%2FBTCUSD.json","mediaLink":"http://localhost:9199/download/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ETH%2FBTCUSD%2FBTCUSD.json?generation=1662575448604&alt=media"}}
+[debug] [2022-09-19T18:03:13.202Z] <<< [apiv2][status] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast 200
+[debug] [2022-09-19T18:03:13.202Z] <<< [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-09-19T18:03:13.202Z] >>> [apiv2][query] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast [none]
+[debug] [2022-09-19T18:03:13.203Z] >>> [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"specversion":"1","id":"73251beb-71bd-4a49-8f74-b6e7316677d6","type":"google.cloud.storage.object.v1.deleted","source":"//storage.googleapis.com/projects/_/buckets/link-to-the-past-a5042.appspot.com/objects/ETH/BTCUSD/BTCUSDChart.json","time":"2022-09-07T18:30:30.921Z","data":{"kind":"storage#object","name":"ETH/BTCUSD/BTCUSDChart.json","bucket":"link-to-the-past-a5042.appspot.com","generation":"1662575430921","metageneration":"1","contentType":"application/json","contentDisposition":"inline","timeCreated":"2022-09-07T18:30:30.920Z","updated":"2022-09-07T18:30:30.921Z","storageClass":"STANDARD","size":"48738","md5Hash":"5FTcz76c/UXGJCFAGc0SFQ==","etag":"1kDSmrCuxbBv4zti5MV7HSoihSA","metadata":{"firebaseStorageDownloadTokens":"8d80dd94-4b4a-45e0-bdb3-81fbbf5e0450"},"cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"QDayyw==","timeStorageClassUpdated":"2022-09-07T18:30:30.920Z","id":"link-to-the-past-a5042.appspot.com/ETH/BTCUSD/BTCUSDChart.json/1662575430921","selfLink":"http://localhost:9199/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ETH%2FBTCUSD%2FBTCUSDChart.json","mediaLink":"http://localhost:9199/download/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ETH%2FBTCUSD%2FBTCUSDChart.json?generation=1662575430921&alt=media"}}
+[debug] [2022-09-19T18:03:13.203Z] <<< [apiv2][status] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast 200
+[debug] [2022-09-19T18:03:13.204Z] <<< [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-09-19T18:03:13.204Z] >>> [apiv2][query] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast [none]
+[debug] [2022-09-19T18:03:13.204Z] >>> [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"specversion":"1","id":"6b14d74e-e244-4b22-b016-f6883e9ef97d","type":"google.cloud.storage.object.v1.deleted","source":"//storage.googleapis.com/projects/_/buckets/link-to-the-past-a5042.appspot.com/objects/ETH/ETHUSD/ETHUSD.csv","time":"2022-09-07T18:35:48.510Z","data":{"kind":"storage#object","name":"ETH/ETHUSD/ETHUSD.csv","bucket":"link-to-the-past-a5042.appspot.com","generation":"1662575748495","metageneration":"1","contentType":"text/csv","contentDisposition":"inline","timeCreated":"2022-09-07T18:35:48.494Z","updated":"2022-09-07T18:35:48.510Z","storageClass":"STANDARD","size":"4080533","md5Hash":"igE/D6ddJcsf9tzGuzrUDA==","etag":"ebwtjzXmWh/+P8BgP+sDpibQZUg","metadata":{"firebaseStorageDownloadTokens":"36ce2c05-2329-405a-a41f-9b7763cfab3b"},"cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"yREEPg==","timeStorageClassUpdated":"2022-09-07T18:35:48.494Z","id":"link-to-the-past-a5042.appspot.com/ETH/ETHUSD/ETHUSD.csv/1662575748495","selfLink":"http://localhost:9199/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ETH%2FETHUSD%2FETHUSD.csv","mediaLink":"http://localhost:9199/download/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ETH%2FETHUSD%2FETHUSD.csv?generation=1662575748495&alt=media"}}
+[debug] [2022-09-19T18:03:13.205Z] <<< [apiv2][status] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast 200
+[debug] [2022-09-19T18:03:13.205Z] <<< [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-09-19T18:03:13.205Z] >>> [apiv2][query] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast [none]
+[debug] [2022-09-19T18:03:13.205Z] >>> [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"specversion":"1","id":"2dad8db9-0d7e-471a-a774-b82faba94f3a","type":"google.cloud.storage.object.v1.deleted","source":"//storage.googleapis.com/projects/_/buckets/link-to-the-past-a5042.appspot.com/objects/ETH/ETHUSD/ETHUSD.json","time":"2022-08-17T03:57:56.596Z","data":{"kind":"storage#object","name":"ETH/ETHUSD/ETHUSD.json","bucket":"link-to-the-past-a5042.appspot.com","generation":"1660708676523","metageneration":"1","contentType":"application/json","contentDisposition":"inline","timeCreated":"2022-08-17T03:57:56.522Z","updated":"2022-08-17T03:57:56.596Z","storageClass":"STANDARD","size":"22257652","md5Hash":"H4TrBqKP2gPcaGB9FTjfiA==","etag":"hwB5GhfiUSseBzTIsNLLOvde9Zc","metadata":{"firebaseStorageDownloadTokens":"ace89bc1-111e-4160-baab-5d181759a95b"},"cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"TXMXjA==","timeStorageClassUpdated":"2022-08-17T03:57:56.522Z","id":"link-to-the-past-a5042.appspot.com/ETH/ETHUSD/ETHUSD.json/1660708676523","selfLink":"http://localhost:9199/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ETH%2FETHUSD%2FETHUSD.json","mediaLink":"http://localhost:9199/download/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ETH%2FETHUSD%2FETHUSD.json?generation=1660708676523&alt=media"}}
+[debug] [2022-09-19T18:03:13.206Z] <<< [apiv2][status] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast 200
+[debug] [2022-09-19T18:03:13.206Z] <<< [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-09-19T18:03:13.207Z] >>> [apiv2][query] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast [none]
+[debug] [2022-09-19T18:03:13.207Z] >>> [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"specversion":"1","id":"8e9d1b17-c5de-444c-9b1f-6e2b45179de3","type":"google.cloud.storage.object.v1.deleted","source":"//storage.googleapis.com/projects/_/buckets/link-to-the-past-a5042.appspot.com/objects/ETH/ETHUSD/ETHUSDChart.json","time":"2022-09-06T03:23:52.826Z","data":{"kind":"storage#object","name":"ETH/ETHUSD/ETHUSDChart.json","bucket":"link-to-the-past-a5042.appspot.com","generation":"1662434632821","metageneration":"1","contentType":"application/json","contentDisposition":"inline","timeCreated":"2022-09-06T03:23:52.821Z","updated":"2022-09-06T03:23:52.826Z","storageClass":"STANDARD","size":"55986","md5Hash":"ZJhKnqLJRgpP/F0N2aJTyw==","etag":"aMLz70/jgWMi/O7xd+actDl03ok","metadata":{"firebaseStorageDownloadTokens":"f502d1b7-3e2b-4eb6-9ce4-0f7f72fa910e"},"cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"AaRmjw==","timeStorageClassUpdated":"2022-09-06T03:23:52.821Z","id":"link-to-the-past-a5042.appspot.com/ETH/ETHUSD/ETHUSDChart.json/1662434632821","selfLink":"http://localhost:9199/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ETH%2FETHUSD%2FETHUSDChart.json","mediaLink":"http://localhost:9199/download/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ETH%2FETHUSD%2FETHUSDChart.json?generation=1662434632821&alt=media"}}
+[debug] [2022-09-19T18:03:13.207Z] <<< [apiv2][status] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast 200
+[debug] [2022-09-19T18:03:13.207Z] <<< [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-09-19T18:03:13.207Z] >>> [apiv2][query] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast [none]
+[debug] [2022-09-19T18:03:13.208Z] >>> [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"specversion":"1","id":"45c3d942-6a4c-421f-af13-e21cbfb2fd91","type":"google.cloud.storage.object.v1.deleted","source":"//storage.googleapis.com/projects/_/buckets/link-to-the-past-a5042.appspot.com/objects/ETH/ETHUSD/ETH_USD_OHLC.json","time":"2022-08-17T03:57:56.374Z","data":{"kind":"storage#object","name":"ETH/ETHUSD/ETH_USD_OHLC.json","bucket":"link-to-the-past-a5042.appspot.com","generation":"1660708676369","metageneration":"1","contentType":"application/json","contentDisposition":"inline","timeCreated":"2022-08-17T03:57:56.368Z","updated":"2022-08-17T03:57:56.374Z","storageClass":"STANDARD","size":"173339","md5Hash":"SzO6XJUuCpDqRquJ65lVpA==","etag":"xCn+nEnkLcHxCjA51oltdiABGZA","metadata":{"firebaseStorageDownloadTokens":"b0bcf112-73be-4e0c-b3bf-14508bb1ac37"},"cacheControl":"public, max-age=3600","contentEncoding":"identity","crc32c":"XMU8+A==","timeStorageClassUpdated":"2022-08-17T03:57:56.368Z","id":"link-to-the-past-a5042.appspot.com/ETH/ETHUSD/ETH_USD_OHLC.json/1660708676369","selfLink":"http://localhost:9199/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ETH%2FETHUSD%2FETH_USD_OHLC.json","mediaLink":"http://localhost:9199/download/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ETH%2FETHUSD%2FETH_USD_OHLC.json?generation=1660708676369&alt=media"}}
+[debug] [2022-09-19T18:03:13.211Z] <<< [apiv2][status] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast 200
+[debug] [2022-09-19T18:03:13.211Z] <<< [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-09-19T18:03:13.211Z] <<< [apiv2][status] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast 200
+[debug] [2022-09-19T18:03:13.211Z] <<< [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-09-19T18:03:13.212Z] <<< [apiv2][status] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast 200
+[debug] [2022-09-19T18:03:13.212Z] <<< [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-09-19T18:03:13.213Z] <<< [apiv2][status] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast 200
+[debug] [2022-09-19T18:03:13.213Z] <<< [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-09-19T18:03:13.213Z] <<< [apiv2][status] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast 200
+[debug] [2022-09-19T18:03:13.213Z] <<< [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-09-19T18:03:13.214Z] <<< [apiv2][status] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast 200
+[debug] [2022-09-19T18:03:13.214Z] <<< [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-09-19T18:03:13.915Z] Sep 19, 2022 8:03:13 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:03:13 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:03:15.931Z] Sep 19, 2022 8:03:15 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:03:15 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:03:17.948Z] Sep 19, 2022 8:03:17 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:03:17 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:03:19.967Z] Sep 19, 2022 8:03:19 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:03:19 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:03:21.985Z] Sep 19, 2022 8:03:21 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:03:21 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:03:24.002Z] Sep 19, 2022 8:03:24 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:03:24 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:03:26.020Z] Sep 19, 2022 8:03:26 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:03:26 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:03:28.038Z] Sep 19, 2022 8:03:28 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:03:28 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:03:30.058Z] Sep 19, 2022 8:03:30 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:03:30 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:03:32.073Z] Sep 19, 2022 8:03:32 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:03:32 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:03:34.090Z] Sep 19, 2022 8:03:34 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:03:34 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:03:36.108Z] Sep 19, 2022 8:03:36 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:03:36 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:03:38.125Z] Sep 19, 2022 8:03:38 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:03:38 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:03:40.144Z] Sep 19, 2022 8:03:40 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:03:40 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:03:42.157Z] Sep 19, 2022 8:03:42 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:03:42 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:03:44.171Z] Sep 19, 2022 8:03:44 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:03:44 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:03:46.188Z] Sep 19, 2022 8:03:46 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:03:46 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:03:48.204Z] Sep 19, 2022 8:03:48 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:03:48 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:03:50.222Z] Sep 19, 2022 8:03:50 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:03:50 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:03:52.236Z] Sep 19, 2022 8:03:52 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:03:52 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:03:54.252Z] Sep 19, 2022 8:03:54 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:03:54 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:03:56.268Z] Sep 19, 2022 8:03:56 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:03:56 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:03:58.284Z] Sep 19, 2022 8:03:58 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:03:58 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:04:00.301Z] Sep 19, 2022 8:04:00 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:04:00 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:04:02.319Z] Sep 19, 2022 8:04:02 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:04:02 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:04:04.336Z] Sep 19, 2022 8:04:04 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:04:04 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:04:06.354Z] Sep 19, 2022 8:04:06 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:04:06 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:04:08.372Z] Sep 19, 2022 8:04:08 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:04:08 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:04:10.390Z] Sep 19, 2022 8:04:10 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:04:10 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:04:12.406Z] Sep 19, 2022 8:04:12 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:04:12 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:04:14.422Z] Sep 19, 2022 8:04:14 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:04:14 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:04:16.438Z] Sep 19, 2022 8:04:16 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:04:16 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:04:18.452Z] Sep 19, 2022 8:04:18 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:04:18 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:04:20.468Z] Sep 19, 2022 8:04:20 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:04:20 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:04:22.485Z] Sep 19, 2022 8:04:22 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:04:22 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:04:24.503Z] Sep 19, 2022 8:04:24 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:04:24 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:04:26.519Z] Sep 19, 2022 8:04:26 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:04:26 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:04:28.535Z] Sep 19, 2022 8:04:28 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:04:28 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:04:30.553Z] Sep 19, 2022 8:04:30 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:04:30 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:04:32.569Z] Sep 19, 2022 8:04:32 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:04:32 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:04:34.588Z] Sep 19, 2022 8:04:34 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:04:34 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:04:36.606Z] Sep 19, 2022 8:04:36 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:04:36 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:04:38.620Z] Sep 19, 2022 8:04:38 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:04:38 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:04:40.635Z] Sep 19, 2022 8:04:40 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:04:40 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:04:42.652Z] Sep 19, 2022 8:04:42 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:04:42 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:04:44.670Z] Sep 19, 2022 8:04:44 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:04:44 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:04:46.688Z] Sep 19, 2022 8:04:46 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:04:46 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:04:48.705Z] Sep 19, 2022 8:04:48 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:04:48 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:04:50.721Z] Sep 19, 2022 8:04:50 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:04:50 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:04:52.738Z] Sep 19, 2022 8:04:52 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:04:52 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:04:54.755Z] Sep 19, 2022 8:04:54 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:04:54 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:04:56.771Z] Sep 19, 2022 8:04:56 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:04:56 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:04:58.789Z] Sep 19, 2022 8:04:58 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:04:58 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:05:00.805Z] Sep 19, 2022 8:05:00 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:05:00 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:05:02.823Z] Sep 19, 2022 8:05:02 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:05:02 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:05:04.306Z] >>> [apiv2][query] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast [none]
+[debug] [2022-09-19T18:05:04.306Z] >>> [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"eventId":"1663610704306","timestamp":"2022-09-19T18:05:04.306Z","eventType":"google.storage.object.finalize","resource":{"service":"storage.googleapis.com","name":"projects/_/buckets/link-to-the-past-a5042.appspot.com/objects/data/ETH_ETHUSD.json","type":"storage#object"},"data":{"kind":"storage#object","name":"data/ETH_ETHUSD.json","bucket":"link-to-the-past-a5042.appspot.com","generation":"1663610704256","metageneration":"1","contentType":"application/octet-stream","timeCreated":"2022-09-19T18:05:04.256Z","updated":"2022-09-19T18:05:04.256Z","storageClass":"STANDARD","size":"10430417","md5Hash":"4un/b0o/S63t+a5ZJIyuNQ==","etag":"V4gcI53yIfKxthPGKWhiJk3vX1I","metadata":{"firebaseStorageDownloadTokens":"2bee3a60-85df-4e8f-9b53-ce5885fb0c60"},"crc32c":"WH/P8Q==","timeStorageClassUpdated":"2022-09-19T18:05:04.256Z","id":"link-to-the-past-a5042.appspot.com/data/ETH_ETHUSD.json/1663610704256","selfLink":"http://localhost:9199/storage/v1/b/link-to-the-past-a5042.appspot.com/o/data%2FETH_ETHUSD.json","mediaLink":"http://localhost:9199/download/storage/v1/b/link-to-the-past-a5042.appspot.com/o/data%2FETH_ETHUSD.json?generation=1663610704256&alt=media"}}
+[debug] [2022-09-19T18:05:04.308Z] <<< [apiv2][status] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast 200
+[debug] [2022-09-19T18:05:04.308Z] <<< [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-09-19T18:05:04.308Z] >>> [apiv2][query] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast [none]
+[debug] [2022-09-19T18:05:04.308Z] >>> [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"specversion":"1","id":"55ebfa00-1053-496d-8f24-7a1962faea8e","type":"google.cloud.storage.object.v1.finalized","source":"//storage.googleapis.com/projects/_/buckets/link-to-the-past-a5042.appspot.com/objects/data/ETH_ETHUSD.json","time":"2022-09-19T18:05:04.256Z","data":{"kind":"storage#object","name":"data/ETH_ETHUSD.json","bucket":"link-to-the-past-a5042.appspot.com","generation":"1663610704256","metageneration":"1","contentType":"application/octet-stream","timeCreated":"2022-09-19T18:05:04.256Z","updated":"2022-09-19T18:05:04.256Z","storageClass":"STANDARD","size":"10430417","md5Hash":"4un/b0o/S63t+a5ZJIyuNQ==","etag":"V4gcI53yIfKxthPGKWhiJk3vX1I","metadata":{"firebaseStorageDownloadTokens":"2bee3a60-85df-4e8f-9b53-ce5885fb0c60"},"crc32c":"WH/P8Q==","timeStorageClassUpdated":"2022-09-19T18:05:04.256Z","id":"link-to-the-past-a5042.appspot.com/data/ETH_ETHUSD.json/1663610704256","selfLink":"http://localhost:9199/storage/v1/b/link-to-the-past-a5042.appspot.com/o/data%2FETH_ETHUSD.json","mediaLink":"http://localhost:9199/download/storage/v1/b/link-to-the-past-a5042.appspot.com/o/data%2FETH_ETHUSD.json?generation=1663610704256&alt=media"}}
+[debug] [2022-09-19T18:05:04.310Z] <<< [apiv2][status] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast 200
+[debug] [2022-09-19T18:05:04.310Z] <<< [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-09-19T18:05:04.840Z] Sep 19, 2022 8:05:04 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:05:04 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:05:06.857Z] Sep 19, 2022 8:05:06 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:05:06 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:05:08.179Z] >>> [apiv2][query] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast [none]
+[debug] [2022-09-19T18:05:08.179Z] >>> [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"eventId":"1663610708178","timestamp":"2022-09-19T18:05:08.178Z","eventType":"google.storage.object.finalize","resource":{"service":"storage.googleapis.com","name":"projects/_/buckets/link-to-the-past-a5042.appspot.com/objects/ohlChart/ETH_ETHUSD.json","type":"storage#object"},"data":{"kind":"storage#object","name":"ohlChart/ETH_ETHUSD.json","bucket":"link-to-the-past-a5042.appspot.com","generation":"1663610708135","metageneration":"1","contentType":"application/octet-stream","timeCreated":"2022-09-19T18:05:08.135Z","updated":"2022-09-19T18:05:08.135Z","storageClass":"STANDARD","size":"1614008","md5Hash":"ir1/0mcV6w6hXBeC4JYcrQ==","etag":"rURiLKKdmKDkaKML9nLK5lYsYlg","metadata":{"firebaseStorageDownloadTokens":"fd80ed1c-d323-4fe7-8e0e-c428dec5631c"},"crc32c":"FFazXw==","timeStorageClassUpdated":"2022-09-19T18:05:08.135Z","id":"link-to-the-past-a5042.appspot.com/ohlChart/ETH_ETHUSD.json/1663610708135","selfLink":"http://localhost:9199/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ohlChart%2FETH_ETHUSD.json","mediaLink":"http://localhost:9199/download/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ohlChart%2FETH_ETHUSD.json?generation=1663610708135&alt=media"}}
+[debug] [2022-09-19T18:05:08.184Z] <<< [apiv2][status] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast 200
+[debug] [2022-09-19T18:05:08.184Z] <<< [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-09-19T18:05:08.185Z] >>> [apiv2][query] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast [none]
+[debug] [2022-09-19T18:05:08.185Z] >>> [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"specversion":"1","id":"094e5999-cbca-4238-a8f2-76ad8aa287a8","type":"google.cloud.storage.object.v1.finalized","source":"//storage.googleapis.com/projects/_/buckets/link-to-the-past-a5042.appspot.com/objects/ohlChart/ETH_ETHUSD.json","time":"2022-09-19T18:05:08.135Z","data":{"kind":"storage#object","name":"ohlChart/ETH_ETHUSD.json","bucket":"link-to-the-past-a5042.appspot.com","generation":"1663610708135","metageneration":"1","contentType":"application/octet-stream","timeCreated":"2022-09-19T18:05:08.135Z","updated":"2022-09-19T18:05:08.135Z","storageClass":"STANDARD","size":"1614008","md5Hash":"ir1/0mcV6w6hXBeC4JYcrQ==","etag":"rURiLKKdmKDkaKML9nLK5lYsYlg","metadata":{"firebaseStorageDownloadTokens":"fd80ed1c-d323-4fe7-8e0e-c428dec5631c"},"crc32c":"FFazXw==","timeStorageClassUpdated":"2022-09-19T18:05:08.135Z","id":"link-to-the-past-a5042.appspot.com/ohlChart/ETH_ETHUSD.json/1663610708135","selfLink":"http://localhost:9199/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ohlChart%2FETH_ETHUSD.json","mediaLink":"http://localhost:9199/download/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ohlChart%2FETH_ETHUSD.json?generation=1663610708135&alt=media"}}
+[debug] [2022-09-19T18:05:08.190Z] <<< [apiv2][status] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast 200
+[debug] [2022-09-19T18:05:08.191Z] <<< [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-09-19T18:05:08.874Z] Sep 19, 2022 8:05:08 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:05:08 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:05:10.890Z] Sep 19, 2022 8:05:10 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:05:10 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:05:12.905Z] Sep 19, 2022 8:05:12 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:05:12 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:05:14.922Z] Sep 19, 2022 8:05:14 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:05:14 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:05:16.939Z] Sep 19, 2022 8:05:16 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:05:16 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:05:18.956Z] Sep 19, 2022 8:05:18 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:05:18 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:05:20.972Z] Sep 19, 2022 8:05:20 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:05:20 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:05:22.986Z] Sep 19, 2022 8:05:22 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:05:22 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:05:25.001Z] Sep 19, 2022 8:05:25 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:05:25 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:05:27.017Z] Sep 19, 2022 8:05:27 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:05:27 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:05:29.031Z] Sep 19, 2022 8:05:29 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:05:29 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:05:29.985Z] Sep 19, 2022 8:05:29 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler channelClosed
+INFO: Websocket client disconnected
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:05:29 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler channelClosed\nINFO: Websocket client disconnected\n"}}
+[debug] [2022-09-19T18:05:30.284Z] Sep 19, 2022 8:05:30 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:05:30 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:05:30.310Z] Sep 19, 2022 8:05:30 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:05:30 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:05:30.346Z] Sep 19, 2022 8:05:30 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:05:30 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:05:30.348Z] Sep 19, 2022 8:05:30 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel
+INFO: Connected to new websocket client
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:05:30 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel\nINFO: Connected to new websocket client\n"}}
+[debug] [2022-09-19T18:05:30.356Z] Sep 19, 2022 8:05:30 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:05:30 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:05:34.315Z] Sep 19, 2022 8:05:34 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:05:34 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:05:34.558Z] >>> [apiv2][query] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast [none]
+[debug] [2022-09-19T18:05:34.558Z] >>> [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"eventId":"1663610734557","timestamp":"2022-09-19T18:05:34.557Z","eventType":"google.storage.object.finalize","resource":{"service":"storage.googleapis.com","name":"projects/_/buckets/link-to-the-past-a5042.appspot.com/objects/data/ETH_BTCUSD.json","type":"storage#object"},"data":{"kind":"storage#object","name":"data/ETH_BTCUSD.json","bucket":"link-to-the-past-a5042.appspot.com","generation":"1663610734535","metageneration":"1","contentType":"application/octet-stream","timeCreated":"2022-09-19T18:05:34.535Z","updated":"2022-09-19T18:05:34.535Z","storageClass":"STANDARD","size":"4843449","md5Hash":"hC1hWl3AfIJyDanU9bkhlw==","etag":"uZWOpgavQTy4ikGJWBDKiTn1aso","metadata":{"firebaseStorageDownloadTokens":"306af12b-7a9d-4ee7-ba13-e870dccef298"},"crc32c":"KHlZlw==","timeStorageClassUpdated":"2022-09-19T18:05:34.535Z","id":"link-to-the-past-a5042.appspot.com/data/ETH_BTCUSD.json/1663610734535","selfLink":"http://localhost:9199/storage/v1/b/link-to-the-past-a5042.appspot.com/o/data%2FETH_BTCUSD.json","mediaLink":"http://localhost:9199/download/storage/v1/b/link-to-the-past-a5042.appspot.com/o/data%2FETH_BTCUSD.json?generation=1663610734535&alt=media"}}
+[debug] [2022-09-19T18:05:34.560Z] <<< [apiv2][status] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast 200
+[debug] [2022-09-19T18:05:34.561Z] <<< [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-09-19T18:05:34.561Z] >>> [apiv2][query] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast [none]
+[debug] [2022-09-19T18:05:34.561Z] >>> [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"specversion":"1","id":"ef64e558-7c2a-4df2-bd00-a9f0a6bd908b","type":"google.cloud.storage.object.v1.finalized","source":"//storage.googleapis.com/projects/_/buckets/link-to-the-past-a5042.appspot.com/objects/data/ETH_BTCUSD.json","time":"2022-09-19T18:05:34.535Z","data":{"kind":"storage#object","name":"data/ETH_BTCUSD.json","bucket":"link-to-the-past-a5042.appspot.com","generation":"1663610734535","metageneration":"1","contentType":"application/octet-stream","timeCreated":"2022-09-19T18:05:34.535Z","updated":"2022-09-19T18:05:34.535Z","storageClass":"STANDARD","size":"4843449","md5Hash":"hC1hWl3AfIJyDanU9bkhlw==","etag":"uZWOpgavQTy4ikGJWBDKiTn1aso","metadata":{"firebaseStorageDownloadTokens":"306af12b-7a9d-4ee7-ba13-e870dccef298"},"crc32c":"KHlZlw==","timeStorageClassUpdated":"2022-09-19T18:05:34.535Z","id":"link-to-the-past-a5042.appspot.com/data/ETH_BTCUSD.json/1663610734535","selfLink":"http://localhost:9199/storage/v1/b/link-to-the-past-a5042.appspot.com/o/data%2FETH_BTCUSD.json","mediaLink":"http://localhost:9199/download/storage/v1/b/link-to-the-past-a5042.appspot.com/o/data%2FETH_BTCUSD.json?generation=1663610734535&alt=media"}}
+[debug] [2022-09-19T18:05:34.562Z] <<< [apiv2][status] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast 200
+[debug] [2022-09-19T18:05:34.562Z] <<< [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-09-19T18:05:36.332Z] Sep 19, 2022 8:05:36 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:05:36 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:05:37.906Z] >>> [apiv2][query] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast [none]
+[debug] [2022-09-19T18:05:37.906Z] >>> [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"eventId":"1663610737906","timestamp":"2022-09-19T18:05:37.906Z","eventType":"google.storage.object.finalize","resource":{"service":"storage.googleapis.com","name":"projects/_/buckets/link-to-the-past-a5042.appspot.com/objects/ohlChart/ETH_BTCUSD.json","type":"storage#object"},"data":{"kind":"storage#object","name":"ohlChart/ETH_BTCUSD.json","bucket":"link-to-the-past-a5042.appspot.com","generation":"1663610737899","metageneration":"1","contentType":"application/octet-stream","timeCreated":"2022-09-19T18:05:37.899Z","updated":"2022-09-19T18:05:37.899Z","storageClass":"STANDARD","size":"770725","md5Hash":"fAFdUgvII0fSyM2LGATFxQ==","etag":"Gmm50FvHVRkbv43610GDo6R2jNY","metadata":{"firebaseStorageDownloadTokens":"6472abe2-6ab7-441f-8ddc-745df1b5eb2c"},"crc32c":"wb8beA==","timeStorageClassUpdated":"2022-09-19T18:05:37.899Z","id":"link-to-the-past-a5042.appspot.com/ohlChart/ETH_BTCUSD.json/1663610737899","selfLink":"http://localhost:9199/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ohlChart%2FETH_BTCUSD.json","mediaLink":"http://localhost:9199/download/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ohlChart%2FETH_BTCUSD.json?generation=1663610737899&alt=media"}}
+[debug] [2022-09-19T18:05:37.908Z] <<< [apiv2][status] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast 200
+[debug] [2022-09-19T18:05:37.909Z] <<< [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-09-19T18:05:37.909Z] >>> [apiv2][query] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast [none]
+[debug] [2022-09-19T18:05:37.909Z] >>> [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"specversion":"1","id":"97188bc3-29f4-4d57-a354-5f869e5815db","type":"google.cloud.storage.object.v1.finalized","source":"//storage.googleapis.com/projects/_/buckets/link-to-the-past-a5042.appspot.com/objects/ohlChart/ETH_BTCUSD.json","time":"2022-09-19T18:05:37.899Z","data":{"kind":"storage#object","name":"ohlChart/ETH_BTCUSD.json","bucket":"link-to-the-past-a5042.appspot.com","generation":"1663610737899","metageneration":"1","contentType":"application/octet-stream","timeCreated":"2022-09-19T18:05:37.899Z","updated":"2022-09-19T18:05:37.899Z","storageClass":"STANDARD","size":"770725","md5Hash":"fAFdUgvII0fSyM2LGATFxQ==","etag":"Gmm50FvHVRkbv43610GDo6R2jNY","metadata":{"firebaseStorageDownloadTokens":"6472abe2-6ab7-441f-8ddc-745df1b5eb2c"},"crc32c":"wb8beA==","timeStorageClassUpdated":"2022-09-19T18:05:37.899Z","id":"link-to-the-past-a5042.appspot.com/ohlChart/ETH_BTCUSD.json/1663610737899","selfLink":"http://localhost:9199/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ohlChart%2FETH_BTCUSD.json","mediaLink":"http://localhost:9199/download/storage/v1/b/link-to-the-past-a5042.appspot.com/o/ohlChart%2FETH_BTCUSD.json?generation=1663610737899&alt=media"}}
+[debug] [2022-09-19T18:05:37.911Z] <<< [apiv2][status] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast 200
+[debug] [2022-09-19T18:05:37.911Z] <<< [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-09-19T18:05:38.348Z] Sep 19, 2022 8:05:38 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:05:38 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:05:40.364Z] Sep 19, 2022 8:05:40 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:05:40 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:05:42.381Z] Sep 19, 2022 8:05:42 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:05:42 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:05:44.397Z] Sep 19, 2022 8:05:44 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:05:44 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:05:46.412Z] Sep 19, 2022 8:05:46 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:05:46 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:05:48.428Z] Sep 19, 2022 8:05:48 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:05:48 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:05:50.444Z] Sep 19, 2022 8:05:50 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:05:50 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:05:52.461Z] Sep 19, 2022 8:05:52 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:05:52 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:05:54.478Z] Sep 19, 2022 8:05:54 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:05:54 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:05:56.495Z] Sep 19, 2022 8:05:56 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:05:56 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:05:58.511Z] Sep 19, 2022 8:05:58 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:05:58 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:06:00.529Z] Sep 19, 2022 8:06:00 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:06:00 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:06:02.546Z] Sep 19, 2022 8:06:02 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:06:02 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:06:04.561Z] Sep 19, 2022 8:06:04 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:06:04 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:06:06.573Z] Sep 19, 2022 8:06:06 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:06:06 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:18:08.893Z] >>> [apiv2][query] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast [none]
+[debug] [2022-09-19T18:18:08.893Z] >>> [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"eventId":"1663611488893","timestamp":"2022-09-19T18:18:08.893Z","eventType":"google.storage.object.finalize","resource":{"service":"storage.googleapis.com","name":"projects/_/buckets/link-to-the-past-a5042.appspot.com/objects/csv/ETH_ETHUSD.csv","type":"storage#object"},"data":{"kind":"storage#object","name":"csv/ETH_ETHUSD.csv","bucket":"link-to-the-past-a5042.appspot.com","generation":"1663611488833","metageneration":"1","contentType":"application/octet-stream","timeCreated":"2022-09-19T18:18:08.833Z","updated":"2022-09-19T18:18:08.833Z","storageClass":"STANDARD","size":"5593832","md5Hash":"AVaRIucWTvBqEJw0QXSn0w==","etag":"3edzsPdxqzZeis3agcGKPSYx80Y","metadata":{"firebaseStorageDownloadTokens":"3f434cbf-cc14-4559-84da-ae47f598a6fe"},"crc32c":"URkeMw==","timeStorageClassUpdated":"2022-09-19T18:18:08.833Z","id":"link-to-the-past-a5042.appspot.com/csv/ETH_ETHUSD.csv/1663611488833","selfLink":"http://localhost:9199/storage/v1/b/link-to-the-past-a5042.appspot.com/o/csv%2FETH_ETHUSD.csv","mediaLink":"http://localhost:9199/download/storage/v1/b/link-to-the-past-a5042.appspot.com/o/csv%2FETH_ETHUSD.csv?generation=1663611488833&alt=media"}}
+[debug] [2022-09-19T18:18:08.896Z] <<< [apiv2][status] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast 200
+[debug] [2022-09-19T18:18:08.897Z] <<< [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-09-19T18:18:08.897Z] >>> [apiv2][query] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast [none]
+[debug] [2022-09-19T18:18:08.897Z] >>> [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"specversion":"1","id":"b67a3f69-c1cf-471a-85a1-6d63f25a6647","type":"google.cloud.storage.object.v1.finalized","source":"//storage.googleapis.com/projects/_/buckets/link-to-the-past-a5042.appspot.com/objects/csv/ETH_ETHUSD.csv","time":"2022-09-19T18:18:08.833Z","data":{"kind":"storage#object","name":"csv/ETH_ETHUSD.csv","bucket":"link-to-the-past-a5042.appspot.com","generation":"1663611488833","metageneration":"1","contentType":"application/octet-stream","timeCreated":"2022-09-19T18:18:08.833Z","updated":"2022-09-19T18:18:08.833Z","storageClass":"STANDARD","size":"5593832","md5Hash":"AVaRIucWTvBqEJw0QXSn0w==","etag":"3edzsPdxqzZeis3agcGKPSYx80Y","metadata":{"firebaseStorageDownloadTokens":"3f434cbf-cc14-4559-84da-ae47f598a6fe"},"crc32c":"URkeMw==","timeStorageClassUpdated":"2022-09-19T18:18:08.833Z","id":"link-to-the-past-a5042.appspot.com/csv/ETH_ETHUSD.csv/1663611488833","selfLink":"http://localhost:9199/storage/v1/b/link-to-the-past-a5042.appspot.com/o/csv%2FETH_ETHUSD.csv","mediaLink":"http://localhost:9199/download/storage/v1/b/link-to-the-past-a5042.appspot.com/o/csv%2FETH_ETHUSD.csv?generation=1663611488833&alt=media"}}
+[debug] [2022-09-19T18:18:08.899Z] <<< [apiv2][status] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast 200
+[debug] [2022-09-19T18:18:08.899Z] <<< [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-09-19T18:18:15.176Z] Sep 19, 2022 8:18:15 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:18:15 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:18:16.814Z] Sep 19, 2022 8:18:16 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:18:16 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:18:17.195Z] Sep 19, 2022 8:18:17 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:18:17 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:18:19.212Z] Sep 19, 2022 8:18:19 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:18:19 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:18:21.228Z] Sep 19, 2022 8:18:21 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:18:21 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:18:25.327Z] Sep 19, 2022 8:18:25 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:18:25 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:18:27.802Z] Sep 19, 2022 8:18:27 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:18:27 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:18:29.819Z] Sep 19, 2022 8:18:29 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:18:29 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:18:31.833Z] Sep 19, 2022 8:18:31 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:18:31 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:18:33.844Z] Sep 19, 2022 8:18:33 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:18:33 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:18:35.857Z] Sep 19, 2022 8:18:35 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:18:35 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:18:37.872Z] Sep 19, 2022 8:18:37 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:18:37 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:18:39.892Z] Sep 19, 2022 8:18:39 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:18:39 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:18:41.908Z] Sep 19, 2022 8:18:41 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:18:41 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:18:43.924Z] Sep 19, 2022 8:18:43 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:18:43 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:18:45.940Z] Sep 19, 2022 8:18:45 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:18:45 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:18:47.954Z] Sep 19, 2022 8:18:47 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:18:47 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:18:49.970Z] Sep 19, 2022 8:18:49 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:18:49 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:18:51.982Z] Sep 19, 2022 8:18:51 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:18:51 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:18:53.995Z] Sep 19, 2022 8:18:53 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:18:53 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:18:56.011Z] Sep 19, 2022 8:18:56 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:18:56 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:18:58.026Z] Sep 19, 2022 8:18:58 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:18:58 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:19:00.042Z] Sep 19, 2022 8:19:00 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:19:00 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:19:02.058Z] Sep 19, 2022 8:19:02 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:19:02 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:19:04.075Z] Sep 19, 2022 8:19:04 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:19:04 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:19:06.091Z] Sep 19, 2022 8:19:06 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:19:06 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:19:08.107Z] Sep 19, 2022 8:19:08 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:19:08 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:19:10.123Z] Sep 19, 2022 8:19:10 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:19:10 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:19:12.140Z] Sep 19, 2022 8:19:12 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:19:12 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:19:14.157Z] Sep 19, 2022 8:19:14 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:19:14 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:19:16.174Z] Sep 19, 2022 8:19:16 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:19:16 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:19:18.192Z] Sep 19, 2022 8:19:18 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:19:18 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:19:51.871Z] >>> [apiv2][query] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast [none]
+[debug] [2022-09-19T18:19:51.872Z] >>> [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"eventId":"1663611591871","timestamp":"2022-09-19T18:19:51.871Z","eventType":"google.storage.object.finalize","resource":{"service":"storage.googleapis.com","name":"projects/_/buckets/link-to-the-past-a5042.appspot.com/objects/csv/ETH_BTCUSD.csv","type":"storage#object"},"data":{"kind":"storage#object","name":"csv/ETH_BTCUSD.csv","bucket":"link-to-the-past-a5042.appspot.com","generation":"1663611591836","metageneration":"1","contentType":"application/octet-stream","timeCreated":"2022-09-19T18:19:51.836Z","updated":"2022-09-19T18:19:51.836Z","storageClass":"STANDARD","size":"2627500","md5Hash":"GLvYRHYxAGc3xZJd7YT97w==","etag":"JuruGgIvIzueMq59diz2bNdCCFI","metadata":{"firebaseStorageDownloadTokens":"6a28bc76-4e7f-4d75-92b2-1c386c94459e"},"crc32c":"W2RwKw==","timeStorageClassUpdated":"2022-09-19T18:19:51.836Z","id":"link-to-the-past-a5042.appspot.com/csv/ETH_BTCUSD.csv/1663611591836","selfLink":"http://localhost:9199/storage/v1/b/link-to-the-past-a5042.appspot.com/o/csv%2FETH_BTCUSD.csv","mediaLink":"http://localhost:9199/download/storage/v1/b/link-to-the-past-a5042.appspot.com/o/csv%2FETH_BTCUSD.csv?generation=1663611591836&alt=media"}}
+[debug] [2022-09-19T18:19:51.874Z] <<< [apiv2][status] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast 200
+[debug] [2022-09-19T18:19:51.875Z] <<< [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-09-19T18:19:51.875Z] >>> [apiv2][query] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast [none]
+[debug] [2022-09-19T18:19:51.875Z] >>> [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"specversion":"1","id":"7966bb46-2385-4377-b3c8-0a11f9349ca3","type":"google.cloud.storage.object.v1.finalized","source":"//storage.googleapis.com/projects/_/buckets/link-to-the-past-a5042.appspot.com/objects/csv/ETH_BTCUSD.csv","time":"2022-09-19T18:19:51.836Z","data":{"kind":"storage#object","name":"csv/ETH_BTCUSD.csv","bucket":"link-to-the-past-a5042.appspot.com","generation":"1663611591836","metageneration":"1","contentType":"application/octet-stream","timeCreated":"2022-09-19T18:19:51.836Z","updated":"2022-09-19T18:19:51.836Z","storageClass":"STANDARD","size":"2627500","md5Hash":"GLvYRHYxAGc3xZJd7YT97w==","etag":"JuruGgIvIzueMq59diz2bNdCCFI","metadata":{"firebaseStorageDownloadTokens":"6a28bc76-4e7f-4d75-92b2-1c386c94459e"},"crc32c":"W2RwKw==","timeStorageClassUpdated":"2022-09-19T18:19:51.836Z","id":"link-to-the-past-a5042.appspot.com/csv/ETH_BTCUSD.csv/1663611591836","selfLink":"http://localhost:9199/storage/v1/b/link-to-the-past-a5042.appspot.com/o/csv%2FETH_BTCUSD.csv","mediaLink":"http://localhost:9199/download/storage/v1/b/link-to-the-past-a5042.appspot.com/o/csv%2FETH_BTCUSD.csv?generation=1663611591836&alt=media"}}
+[debug] [2022-09-19T18:19:51.877Z] <<< [apiv2][status] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast 200
+[debug] [2022-09-19T18:19:51.877Z] <<< [apiv2][body] POST http://localhost:5001/functions/projects/link-to-the-past-a5042/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2022-09-19T18:19:55.175Z] Sep 19, 2022 8:19:55 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:19:55 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:19:57.807Z] Sep 19, 2022 8:19:57 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:19:57 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:19:59.824Z] Sep 19, 2022 8:19:59 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:19:59 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:20:01.840Z] Sep 19, 2022 8:20:01 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:20:01 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:20:03.856Z] Sep 19, 2022 8:20:03 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:20:03 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:20:05.873Z] Sep 19, 2022 8:20:05 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:20:05 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:20:07.890Z] Sep 19, 2022 8:20:07 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:20:07 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:20:09.906Z] Sep 19, 2022 8:20:09 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:20:09 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:20:11.921Z] Sep 19, 2022 8:20:11 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:20:11 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:20:13.937Z] Sep 19, 2022 8:20:13 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:20:13 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:20:15.954Z] Sep 19, 2022 8:20:15 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:20:15 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:20:19.856Z] Sep 19, 2022 8:20:19 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:20:19 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:20:22.802Z] Sep 19, 2022 8:20:22 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:20:22 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:20:24.815Z] Sep 19, 2022 8:20:24 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:20:24 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:20:26.828Z] Sep 19, 2022 8:20:26 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:20:26 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:20:28.844Z] Sep 19, 2022 8:20:28 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:20:28 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:20:30.859Z] Sep 19, 2022 8:20:30 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:20:30 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:20:32.872Z] Sep 19, 2022 8:20:32 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:20:32 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:20:34.885Z] Sep 19, 2022 8:20:34 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:20:34 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:20:36.902Z] Sep 19, 2022 8:20:36 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:20:36 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:20:37.744Z] Sep 19, 2022 8:20:37 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:20:37 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:20:38.919Z] Sep 19, 2022 8:20:38 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:20:38 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:20:40.934Z] Sep 19, 2022 8:20:40 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:20:40 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:20:42.950Z] Sep 19, 2022 8:20:42 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:20:42 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:20:44.966Z] Sep 19, 2022 8:20:44 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:20:44 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:20:46.982Z] Sep 19, 2022 8:20:46 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:20:46 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:20:48.997Z] Sep 19, 2022 8:20:48 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:20:48 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:20:51.014Z] Sep 19, 2022 8:20:51 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:20:51 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:20:53.029Z] Sep 19, 2022 8:20:53 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:20:53 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:20:55.046Z] Sep 19, 2022 8:20:55 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:20:55 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:20:57.062Z] Sep 19, 2022 8:20:57 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:20:57 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:20:59.077Z] Sep 19, 2022 8:20:59 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:20:59 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:21:01.092Z] Sep 19, 2022 8:21:01 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:21:01 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:21:03.107Z] Sep 19, 2022 8:21:03 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:21:03 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:21:05.121Z] Sep 19, 2022 8:21:05 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:21:05 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:21:07.137Z] Sep 19, 2022 8:21:07 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:21:07 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:21:09.154Z] Sep 19, 2022 8:21:09 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:21:09 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:21:11.170Z] Sep 19, 2022 8:21:11 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:21:11 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:21:13.186Z] Sep 19, 2022 8:21:13 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:21:13 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:21:15.200Z] Sep 19, 2022 8:21:15 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:21:15 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:21:17.214Z] Sep 19, 2022 8:21:17 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:21:17 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:21:19.229Z] Sep 19, 2022 8:21:19 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:21:19 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:21:21.244Z] Sep 19, 2022 8:21:21 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:21:21 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:21:23.259Z] Sep 19, 2022 8:21:23 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:21:23 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:21:25.276Z] Sep 19, 2022 8:21:25 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:21:25 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:21:27.289Z] Sep 19, 2022 8:21:27 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:21:27 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:21:29.301Z] Sep 19, 2022 8:21:29 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:21:29 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:21:31.313Z] Sep 19, 2022 8:21:31 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:21:31 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:21:33.326Z] Sep 19, 2022 8:21:33 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:21:33 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:21:35.338Z] Sep 19, 2022 8:21:35 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:21:35 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:21:37.353Z] Sep 19, 2022 8:21:37 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:21:37 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:21:39.369Z] Sep 19, 2022 8:21:39 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:21:39 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:21:41.386Z] Sep 19, 2022 8:21:41 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:21:41 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:21:43.403Z] Sep 19, 2022 8:21:43 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:21:43 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:21:45.415Z] Sep 19, 2022 8:21:45 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:21:45 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:21:47.428Z] Sep 19, 2022 8:21:47 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:21:47 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:21:49.445Z] Sep 19, 2022 8:21:49 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:21:49 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:21:51.461Z] Sep 19, 2022 8:21:51 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:21:51 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:21:53.477Z] Sep 19, 2022 8:21:53 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:21:53 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:21:55.493Z] Sep 19, 2022 8:21:55 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:21:55 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:21:57.508Z] Sep 19, 2022 8:21:57 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:21:57 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:21:59.524Z] Sep 19, 2022 8:21:59 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:21:59 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:22:01.538Z] Sep 19, 2022 8:22:01 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:22:01 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:22:03.553Z] Sep 19, 2022 8:22:03 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:22:03 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:22:05.568Z] Sep 19, 2022 8:22:05 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:22:05 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2022-09-19T18:22:07.583Z] Sep 19, 2022 8:22:07 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Sep 19, 2022 8:22:07 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}

@@ -19,6 +19,7 @@ const Pair = ({ chain, pair }) => {
   // Set the initial state variables for the chart
   const [chartUrl, setChartUrl] = useState(null);
   const [JSONfileUrl, setJSONFileUrl] = useState(null);
+  const [CSVfileUrl, setCSVFileUrl] = useState(null);
   const [updateCount, setUpdateCount] = useState(null);
   const [decimals, setDecimals] = useState(null);
   const [proxyAddress, setProxyAddress] = useState(null);
@@ -30,7 +31,7 @@ const Pair = ({ chain, pair }) => {
   const pairRef = ref(storage);
   const chartRef = ref(pairRef, `ohlChart/${chain}_${pair}.json`);
   const jsonFileRef = ref(pairRef, `data/${chain}_${pair}.json`);
-  // const csvFileRef = ref(pairRef, `${pair}.csv`); // Todo: add csv file to storage
+  const csvFileRef = ref(pairRef, `csv/${chain}_${pair}.csv`);
 
   // Build RTDB References
   const rtdbRef = ref_rtdb(rtdb, `oracles/${chain}_${pair}`);
@@ -58,6 +59,15 @@ const Pair = ({ chain, pair }) => {
         console.log(err);
       });
 
+    // CSV File URL
+    getDownloadURL(csvFileRef)
+      .then((res) => {
+        setCSVFileUrl(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
     if (chartData) {
       const updateCount = chartData.map((chartData) => chartData.updateCount);
       const totalUpdates = updateCount.reduce((a, b) => a + b);
@@ -71,7 +81,7 @@ const Pair = ({ chain, pair }) => {
       );
       setLatestRound(latestRound);
     }
-  }, [chartData, chartRef, jsonFileRef]);
+  }, [chartData, chartRef, jsonFileRef, csvFileRef]);
 
   useEffect(() => {
     // get the data from the RTDB
@@ -174,6 +184,18 @@ const Pair = ({ chain, pair }) => {
                         rel="noopener noreferrer"
                       >
                         <p className="leading-relaxed"> JSON file</p>
+                        {/* <p>
+                          Contains information on each round produced and a
+                          caluculated price value (answer * 10**-decimal value)
+                        </p> */}
+                        {/* {"answer":134423000000,"answeredInRound":"92233720368547791847","price":1344.23,"roundId":"92233720368547791847","startedAt":1663548959,"updatedAt":1663548959} */}
+                      </a>
+                      <a
+                        href={CSVfileUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <p className="leading-relaxed"> CSV file</p>
                         {/* <p>
                           Contains information on each round produced and a
                           caluculated price value (answer * 10**-decimal value)
