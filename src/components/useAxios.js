@@ -13,7 +13,6 @@ function useAxios(url) {
         setIsPending(false);
         setData(res.data);
         setError(null);
-        console.log("UseAxios Pull Successful");
       })
       .catch((err) => {
         if (err.name === "AbortError") {
