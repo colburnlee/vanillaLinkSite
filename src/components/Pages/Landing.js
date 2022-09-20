@@ -4,7 +4,7 @@ const Landing = () => {
   return (
     <div className="relative">
       {/* Pane Container */}
-      <div className="sticky top-0 h-screen flex flex-col items-center justify-center bg-gradient-to-r from-gray-200 ...">
+      <div className="flex flex-col items-center justify-center bg-gradient-to-r from-gray-200 ...">
         {/* Content Container */}
         <div className="container px-4 py-24 mx-auto">
           {/* Hero Line Container */}

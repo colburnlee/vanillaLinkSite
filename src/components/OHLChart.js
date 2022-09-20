@@ -12,7 +12,13 @@ import {
 import * as d3 from "d3";
 
 const OHLChart = (LineChartProps = {}) => {
-  const { width, height, description = "Pair", data } = LineChartProps;
+  const {
+    width,
+    height,
+    description = "Pair",
+    data,
+    onChange,
+  } = LineChartProps;
   const priceConstructor = `${description} Price`;
   let [, yMax] = d3.extent(data, (d) => parseFloat(d.High));
   let [xMin, xMax] = d3.extent(data, (d) => d.date);
@@ -22,7 +28,7 @@ const OHLChart = (LineChartProps = {}) => {
         width={width}
         height={height}
         data={data}
-        margin={{ top: 5, right: 20, left: 20, bottom: 5 }}
+        margin={{ top: 5, right: 25, left: 25, bottom: 5 }}
       >
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis
@@ -41,7 +47,13 @@ const OHLChart = (LineChartProps = {}) => {
         />
         <Tooltip />
         <Legend />
-        <Brush dataKey="date" height={40} stroke="#82ca9d" />
+        <Brush
+          dataKey="date"
+          height={40}
+          stroke="#82ca9d"
+          startIndex={data.length > 365 ? data.length - 365 : 0}
+        />
+        {/* Brush is the bottom bar that allows you to zoom in and out */}
         <Line
           connectNulls
           type="monotone"
@@ -57,6 +69,9 @@ const OHLChart = (LineChartProps = {}) => {
           name="High"
           stroke="#82ca9d"
           dot={false}
+          onClick={(e) => {
+            onChange(e);
+          }}
         />
         <Line
           connectNulls

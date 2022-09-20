@@ -10,12 +10,11 @@ import RtdbPair from "./components/Pages/RtdbPair";
 function App() {
   return (
     <Router>
-      <div className="App min-h-screen bg-gradient-to-r from-gray-200 to-emerald-50">
-        <div className="Navbar">
-          <Navbar />
-        </div>
-
-        <div className="Content px-2 ">
+      <div className="App min-h-screen bg-gradient-to-r from-gray-200 to-emerald-50 ">
+        <div className="Content   ">
+          <div className="Navbar">
+            <Navbar />
+          </div>
           <Routes>
             <Route path="/" element={<Landing />}></Route>
             <Route
@@ -41,9 +40,9 @@ function App() {
             ></Route>
           </Routes>
         </div>
-      </div>
-      <div className="Footer sticky top-[100vh]">
-        <Footer />
+        <div className="Footer sticky top-[100vh]">
+          <Footer />
+        </div>
       </div>
     </Router>
   );

@@ -21,11 +21,17 @@ const Pair = ({ chain, pair }) => {
   const [JSONfileUrl, setJSONFileUrl] = useState(null);
   const [CSVfileUrl, setCSVFileUrl] = useState(null);
   const [updateCount, setUpdateCount] = useState(null);
-  const [decimals, setDecimals] = useState(null);
+  // const [decimals, setDecimals] = useState(null);
   const [proxyAddress, setProxyAddress] = useState(null);
   const [deviationThreshold, setDeviationThreshold] = useState(null);
   const [heartbeat, setHeartbeat] = useState(null);
   const [latestRound, setLatestRound] = useState(null);
+
+  function handleChange(e) {
+    // setRoundsInDay(e);
+    // console.log("Rounds in day fired: ", e.value);
+    console.log("Round: ", e);
+  }
 
   // Build Storage References
   const pairRef = ref(storage);
@@ -87,7 +93,7 @@ const Pair = ({ chain, pair }) => {
     // get the data from the RTDB
     get(rtdbRef).then((snapshot) => {
       if (snapshot.exists()) {
-        setDecimals(snapshot.val().decimals);
+        // setDecimals(snapshot.val().decimals);
         setProxyAddress(snapshot.val().proxyAddress);
         setDeviationThreshold(snapshot.val().deviationThreshold);
         setHeartbeat(snapshot.val().heartbeat);
@@ -146,7 +152,7 @@ const Pair = ({ chain, pair }) => {
                       Oracle Information
                     </h2>
                     <p>Start Date: {chartData[0].date}</p>
-                    <p>Decimals: {decimals} </p>
+                    {/* <p>Decimals: {decimals} </p> */}
 
                     <p>Updates to Blockchain: {updateCount} </p>
                     <p>Latest Round on Record: {latestRound}</p>
@@ -219,6 +225,7 @@ const Pair = ({ chain, pair }) => {
                 width={1200}
                 height={800}
                 description={pair}
+                onChange={handleChange}
               />
             ) : (
               <div className="lg:w-3/5 md:w-1/2 object-cover object-center rounded-lg md:mt-0 mt-12 text-center relative">
