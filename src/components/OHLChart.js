@@ -23,7 +23,7 @@ const OHLChart = (LineChartProps = {}) => {
   let [, yMax] = d3.extent(data, (d) => parseFloat(d.High));
   let [xMin, xMax] = d3.extent(data, (d) => d.date);
   return (
-    <ResponsiveContainer width="100%" height="100%">
+    <ResponsiveContainer width="100%" height="100%" minHeight={200}>
       <LineChart
         width={width}
         height={height}
