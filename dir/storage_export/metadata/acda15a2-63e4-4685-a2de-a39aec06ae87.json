@@ -1,0 +1,19 @@
+{
+  "name": "csv/ETH_ETHUSD.csv",
+  "bucket": "link-to-the-past-a5042.appspot.com",
+  "metageneration": 1,
+  "generation": 1663647802609,
+  "contentType": "application/octet-stream",
+  "storageClass": "STANDARD",
+  "contentDisposition": "inline",
+  "downloadTokens": [
+    "1218ad6e-4f06-431c-899e-11d4f7bc90ae"
+  ],
+  "etag": "K/ySQ5ttRRaelTqStK4G9wdDsjs",
+  "customMetadata": {},
+  "timeCreated": "2022-09-20T04:23:22.609Z",
+  "updated": "2022-09-20T04:23:22.609Z",
+  "size": 5596748,
+  "md5Hash": "rPYv9yVyxQz26vWCMaT7Fw==",
+  "crc32c": "2655170408"
+}

@@ -6,3 +6,9 @@ WARNING: All illegal access operations will be denied in a future release
 07:26:06.211 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
 07:26:06.364 [main] INFO com.firebase.server.forge.App$ - Listening at localhost:9000
 07:26:06.940 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO com.firebase.core.namespace.NamespaceActor - link-to-the-past-a5042-default-rtdb successfully activated FBKV (SurveyIdle(0)) wait: 131ms, init: 0ms
+18:41:21.942 [NamespaceSystem-akka.actor.default-dispatcher-1759] INFO com.firebase.core.namespace.NamespaceActor - link-to-the-past-a5042 successfully activated FBKV (SurveyIdle(0)) wait: 2ms, init: 0ms
+18:41:22.469 [Thread-0] INFO com.firebase.server.forge.App$ - Attempting graceful shutdown.
+18:41:22.477 [NamespaceSystem-akka.actor.default-dispatcher-1759] INFO com.firebase.core.namespace.Terminator$Terminator - 2 actors left to terminate: link-to-the-past-a5042, link-to-the-past-a5042-default-rtdb
+18:41:22.482 [NamespaceSystem-akka.actor.default-dispatcher-1768] INFO com.firebase.core.namespace.NamespaceActor - stopped namespace actor for link-to-the-past-a5042
+18:41:22.482 [NamespaceSystem-akka.actor.default-dispatcher-1728] INFO com.firebase.core.namespace.NamespaceActor - stopped namespace actor for link-to-the-past-a5042-default-rtdb
+18:41:22.487 [Thread-0] INFO com.firebase.server.forge.App$ - Graceful shutdown complete.
