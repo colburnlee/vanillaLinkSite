@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { VerticalHexigon, Twitter, LinkedIn } from "./Icons";
+import { LTTP, Twitter, LinkedIn } from "./Icons";
 
 const Footer = () => {
   return (
@@ -9,7 +9,7 @@ const Footer = () => {
           to="/"
           className="flex title-font font-medium items-center md:justify-start justify-center text-white"
         >
-          <VerticalHexigon />
+          <LTTP />
         </Link>
         <p className="text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4">
           © 2022 Link to the Past

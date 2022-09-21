@@ -225,19 +225,35 @@ const LoadingWheel = () => (
 
 const LinkedIn = ({ size = 24, color = "currentColor" }) => (
   <svg
-    fill={color}
+    fill="none"
     stroke={color}
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    stroke-width="0"
-    class="w-5 h-5"
+    width={size}
+    height={size}
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="w-5 h-5"
     viewBox="0 0 24 24"
   >
     <path
-      stroke="none"
+      // stroke="none"
       d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
     ></path>
     <circle cx="4" cy="4" r="2" stroke="none"></circle>
+  </svg>
+);
+
+const LTTP = ({ size = 24, color = "currentColor" }) => (
+  <svg
+    fill="none"
+    stroke={color}
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
+    className="w-10 h-10 text-black p-2 bg-emerald-600 rounded-full"
+  >
+    <path d="M 12 2 l 9 5 V 17 L 12 22 l -9 -5 m 9 -1 A 10 10 0 0 0 4 7 v 6 m 0 -6 l 4.5 -3"></path>
   </svg>
 );
 
@@ -256,4 +272,5 @@ export {
   Github,
   LoadingWheel,
   LinkedIn,
+  LTTP,
 };

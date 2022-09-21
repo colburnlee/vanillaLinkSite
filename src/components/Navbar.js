@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { VerticalHexigon } from "./Icons";
+import { LTTP } from "./Icons";
 
 const Navbar = () => {
   return (
@@ -9,7 +9,7 @@ const Navbar = () => {
           to="/"
           className="flex title-font font-medium items-center text-white mb-4 md:mb-0"
         >
-          <VerticalHexigon />
+          <LTTP />
           <span className="ml-3 text-xl">Link to the Past</span>
         </Link>
         <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-700	flex flex-wrap items-center text-base justify-center">
