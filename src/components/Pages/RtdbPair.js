@@ -218,14 +218,13 @@ const Pair = ({ chain, pair }) => {
               </>
             )}
           </div>
-          <div className="flex flex-auto object-cover object-center rounded-lg md:mt-0 mt-12 text-center ">
+          <div className="lg:w-2/3 md:w-5/6 md:pr-4 md:py-6 flex flex-auto object-center rounded-lg  text-center md:mt-0 mt-12">
             {chartData ? (
               <OHLChart
                 data={chartData}
-                width="100%"
-                height={800}
                 description={pair}
                 onChange={handleChange}
+                margin={{ top: 10, right: 10, left: 10, bottom: 10 }}
               />
             ) : (
               <LoadingWheel />

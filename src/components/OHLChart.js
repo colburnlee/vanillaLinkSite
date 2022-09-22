@@ -12,24 +12,13 @@ import {
 import * as d3 from "d3";
 
 const OHLChart = (LineChartProps = {}) => {
-  const {
-    width,
-    height,
-    description = "Pair",
-    data,
-    onChange,
-  } = LineChartProps;
+  const { description = "Pair", data, onChange } = LineChartProps;
   const priceConstructor = `${description} Price`;
   let [, yMax] = d3.extent(data, (d) => parseFloat(d.High));
   let [xMin, xMax] = d3.extent(data, (d) => d.date);
   return (
-    <ResponsiveContainer width="100%" height="100%" minHeight={400}>
-      <LineChart
-        width={width}
-        height={height}
-        data={data}
-        margin={{ top: 5, right: 25, left: 25, bottom: 5 }}
-      >
+    <ResponsiveContainer minHeight={350} minWidth={250} height="100%">
+      <LineChart data={data}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis
           dataKey="date"
