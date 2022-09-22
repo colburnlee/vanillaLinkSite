@@ -107,13 +107,13 @@ const Introduction = () => {
           </div>
         </section>
         <section className="text-gray-600 body-font sticky flex flex-col items-center justify-center min-h-screen">
-          <h1 className="title-font sm:text-4xl text-3xl pt-10 my-4 font-medium text-gray-900">
-            What can you get from an oracle?
-          </h1>
-          <h2 className="title-font sm:text-xl text-xl mb-4 font-medium text-gray-800">
-            Introducing Chainlink's V3 Aggregator
-          </h2>
           <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+            <h1 className="title-font sm:text-4xl text-3xl pt-10 my-4 font-medium text-gray-900 text-center">
+              What can you get from an oracle?
+            </h1>
+            <h2 className="title-font sm:text-xl text-xl mb-4 font-medium text-gray-800 py-2 text-center">
+              Introducing Chainlink's V3 Aggregator
+            </h2>
             <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
               <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
                 <p>
@@ -156,7 +156,7 @@ const Introduction = () => {
             <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
               <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
                 <h1 className="title-font sm:text-xl text-xl mb-4 font-medium text-gray-900">
-                  Sample ETH-USD Price Feed Response
+                  Current ETH-USD Price Feed Response
                 </h1>
                 {roundId ? (
                   <div>

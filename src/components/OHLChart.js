@@ -13,7 +13,8 @@ import * as d3 from "d3";
 
 const OHLChart = (LineChartProps = {}) => {
   const { description = "Pair", data, onChange } = LineChartProps;
-  const priceConstructor = `${description} Price`;
+  // const priceConstructor = `${description} Price`;
+  const isUsd = description.includes("USD");
   let [, yMax] = d3.extent(data, (d) => parseFloat(d.High));
   let [xMin, xMax] = d3.extent(data, (d) => d.date);
   return (
@@ -28,13 +29,36 @@ const OHLChart = (LineChartProps = {}) => {
         />
         <YAxis
           domain={[0, yMax]}
-          label={{
-            value: priceConstructor,
-            angle: -90,
-            position: "insideBottomLeft",
+          // label={{
+          //   value: priceConstructor,
+          //   angle: -90,
+          //   position: "insideBottomLeft",
+          // }}
+          tickFormatter={(tick) => {
+            if (isUsd) {
+              // format in dollars with commas, rounded to thousands
+              return `$${tick.toLocaleString("en-US", {
+                maximumFractionDigits: 0,
+              })}`;
+            } else {
+              return `${tick}`;
+            }
           }}
         />
-        <Tooltip />
+        <Tooltip
+          formatter={(value, name) => {
+            // format in dollars with commas, rounded to thousands. limit to only "Low", "High", "Open"
+            if (
+              isUsd &&
+              (name === "Low" || name === "High" || name === "Open")
+            ) {
+              return `$${value.toLocaleString("en-US", {
+                maximumFractionDigits: 0,
+              })}`;
+            }
+            return value;
+          }}
+        />
         <Legend />
         <Brush
           dataKey="date"
