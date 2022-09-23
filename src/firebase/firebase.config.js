@@ -38,11 +38,6 @@ if (window.location.hostname === "localhost") {
 } else {
   storage = getStorage(app);
   db = getFirestore(app);
-  console.log(
-    "Connected to Firebase Server Project: ",
-    db.app.options.projectId
-  );
   rtdb = getDatabase(app);
-  console.log("Connected to Firebase RTDB: ", rtdb.app.options.projectId);
 }
 export { storage, app, db, rtdb };

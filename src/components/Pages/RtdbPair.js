@@ -224,7 +224,7 @@ const Pair = ({ chain, pair }) => {
                 data={chartData}
                 description={pair}
                 onChange={handleChange}
-                margin={{ top: 10, right: 10, left: 10, bottom: 10 }}
+                margin={{ top: 10, right: 10, left: 5, bottom: 10 }}
               />
             ) : (
               <LoadingWheel />

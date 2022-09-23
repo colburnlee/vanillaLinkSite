@@ -12,10 +12,10 @@ import {
 import * as d3 from "d3";
 
 const OHLChart = (LineChartProps = {}) => {
-  const { description = "Pair", data, onChange } = LineChartProps;
+  const { description = "Pair", data } = LineChartProps; // const { description = "Pair", data, onChange } = LineChartProps;
   // const priceConstructor = `${description} Price`;
   const isUsd = description.includes("USD");
-  let [, yMax] = d3.extent(data, (d) => parseFloat(d.High));
+  // let [, yMax] = d3.extent(data, (d) => parseFloat(d.High));
   let [xMin, xMax] = d3.extent(data, (d) => d.date);
   return (
     <ResponsiveContainer minHeight={350} minWidth={250} height="100%">
@@ -28,7 +28,7 @@ const OHLChart = (LineChartProps = {}) => {
           domain={[xMin, xMax]}
         />
         <YAxis
-          domain={[0, yMax]}
+          // domain={[0, yMax]}
           // label={{
           //   value: priceConstructor,
           //   angle: -90,
@@ -65,6 +65,10 @@ const OHLChart = (LineChartProps = {}) => {
           height={40}
           stroke="#82ca9d"
           startIndex={data.length > 365 ? data.length - 365 : 0}
+          // onChange={(e) => {
+          //   console.log(e);
+          //   onChange(e);
+          // }}
         />
         {/* Brush is the bottom bar that allows you to zoom in and out */}
         <Line
@@ -74,6 +78,7 @@ const OHLChart = (LineChartProps = {}) => {
           name="Low"
           stroke="#8884d8"
           dot={false}
+          strokeWidth={1}
         />
         <Line
           connectNulls
@@ -82,9 +87,7 @@ const OHLChart = (LineChartProps = {}) => {
           name="High"
           stroke="#82ca9d"
           dot={false}
-          onClick={(e) => {
-            onChange(e);
-          }}
+          strokeWidth={1}
         />
         <Line
           connectNulls
@@ -92,6 +95,7 @@ const OHLChart = (LineChartProps = {}) => {
           dataKey="open"
           name="Open"
           stroke="#3d2cbf"
+          strokeWidth={1}
           dot={false}
         />
         <Line
