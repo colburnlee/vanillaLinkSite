@@ -32,7 +32,7 @@ const Introduction = () => {
     })();
   });
   return (
-    <div className="flex flex-col items-center justify-center bg-gradient-to-r from-gray-200 to bg-emerald-50">
+    <div className="flex flex-col items-center justify-center ">
       <div className="relative">
         <section className="text-gray-600 body-font sticky flex flex-col items-center justify-center min-h-screen">
           <div className="container mx-auto flex px-5 py-12 md:flex-row flex-col items-center">

@@ -2,11 +2,11 @@ import { FolderPlus, SkipBack, TrendingUp } from "../Icons";
 
 const Landing = () => {
   return (
-    <div className="relative">
+    <div className=" flex flex-col min-h-screen items-center justify-center ">
       {/* Pane Container */}
-      <div className="flex flex-col items-center justify-center bg-gradient-to-r from-gray-200 ...">
+      <div className="relative ">
         {/* Content Container */}
-        <div className="container px-4 py-24 mx-auto">
+        <div className="container px-4 py-24 mx-auto min-h-full items-center justify-center ">
           {/* Hero Line Container */}
           <p className="sm:text-3xl text-3xl font-medium title-font text-center text-black mb-20">
             Historical data sets referenced directly from Chainlink price

@@ -91,21 +91,9 @@ const About = () => {
   // End Testing
 
   return (
-    <section className="text-gray-600 body-font">
-      <div className="container px-5 py-24 mx-auto">
+    <section className="text-gray-600 body-font flex flex-col min-h-full ">
+      <div className="container px-5 py-24 mx-auto items-center justify-center min-h-full">
         <div className="xl:w-1/2 lg:w-3/4 w-full mx-auto text-center">
-          {/* For Testing - Delete or Comment prior to commit  */}
-          {/* {rtdbDecimals && <p className="text-5xl"> RTDB: {rtdbDecimals} </p>}
-          {fbDecimals && <p className="text-5xl"> {fbDecimals} </p>}
-          {fbDescription && <p className="text-5xl"> {fbDescription} </p>}
-          {rtdbLatestRound && (
-            <p className="text-5xl">
-              {" "}
-              RTDB Latest Round info: {rtdbLatestRound}{" "}
-            </p>
-          )} */}
-
-          {/* End Testing */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"
