@@ -21,6 +21,8 @@ const Pair = ({ chain, pair }) => {
   const [JSONfileUrl, setJSONFileUrl] = useState(null);
   const [CSVfileUrl, setCSVFileUrl] = useState(null);
   const [updateCount, setUpdateCount] = useState(null);
+  const [startIndex, setStartIndex] = useState(null);
+  const [chartKey, setChartKey] = useState(0);
   // const [decimals, setDecimals] = useState(null);
   const [proxyAddress, setProxyAddress] = useState(null);
   const [deviationThreshold, setDeviationThreshold] = useState(null);
@@ -73,7 +75,9 @@ const Pair = ({ chain, pair }) => {
       .catch((err) => {
         console.log(err);
       });
+  }, [chartRef, jsonFileRef, csvFileRef]);
 
+  useEffect(() => {
     if (chartData) {
       const updateCount = chartData.map((chartData) => chartData.updateCount);
       const totalUpdates = updateCount.reduce((a, b) => a + b);
@@ -86,8 +90,11 @@ const Pair = ({ chain, pair }) => {
         totalUpdates.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
       );
       setLatestRound(latestRound);
+      chartData.length > 365
+        ? setStartIndex(chartData.length - 365)
+        : setStartIndex(chartData.length - 7);
     }
-  }, [chartData, chartRef, jsonFileRef, csvFileRef]);
+  }, [chartData]);
 
   useEffect(() => {
     // get the data from the RTDB
@@ -219,24 +226,72 @@ const Pair = ({ chain, pair }) => {
             )}
           </div>
           <div className="lg:w-2/3 md:w-5/6 md:pr-2 md:py-2 rounded-lg md:px-4  flex-col md:mt-0 mt-12 w-full justify-end">
-            {/* <span className="flex relative justify-end ">
+            <span className="flex relative justify-end text-gray-600 ">
               {chartData ? (
                 <>
-                  <a className="text-primary mr-4" Link="/">
+                  <button
+                    className="text-primary mr-4"
+                    disabled={chartData.length < 8}
+                    onClick={() => {
+                      setStartIndex(chartData.length - 7);
+                      setChartKey(chartKey + 1);
+                    }}
+                  >
+                    7
+                  </button>
+                  <button
+                    className="text-primary mr-4"
+                    disabled={chartData.length < 30}
+                    onClick={() => {
+                      setStartIndex(chartData.length - 30);
+                      setChartKey(chartKey + 1);
+                    }}
+                  >
                     30
-                  </a>
-                  <a className="text-primary mr-4" Link="/">
+                  </button>
+                  <button
+                    className="text-primary mr-4"
+                    disabled={chartData.length < 90}
+                    onClick={() => {
+                      setStartIndex(chartData.length - 60);
+                      setChartKey(chartKey + 1);
+                    }}
+                  >
                     60
-                  </a>
-                  <a className="text-primary mr-4" Link="/">
+                  </button>
+                  <button
+                    className="text-primary mr-4"
+                    disabled={chartData.length < 90}
+                    onClick={() => {
+                      setStartIndex(chartData.length - 90);
+                      setChartKey(chartKey + 1);
+                    }}
+                  >
                     90
-                  </a>
-                  <a className="text-primary mr-4" Link="/">
+                  </button>
+                  <button
+                    className="text-primary mr-4"
+                    disabled={chartData.length < 180}
+                    onClick={() => {
+                      setStartIndex(chartData.length - 180);
+                      setChartKey(chartKey + 1);
+                    }}
+                  >
+                    180
+                  </button>
+                  <button
+                    className="text-primary mr-4"
+                    disabled={chartData.length < 366}
+                    onClick={() => {
+                      setStartIndex(chartData.length - 365);
+                      setChartKey(chartKey + 1);
+                    }}
+                  >
                     yr
-                  </a>
+                  </button>
                 </>
               ) : null}
-            </span> */}
+            </span>
             {chartData ? (
               <div className="relative flex grow  ">
                 <OHLChart
@@ -244,6 +299,8 @@ const Pair = ({ chain, pair }) => {
                   description={pair}
                   onChange={handleChange}
                   margin={{ top: 10, right: 10, left: 5, bottom: 10 }}
+                  startIndex={startIndex}
+                  key={chartKey}
                 />
               </div>
             ) : (

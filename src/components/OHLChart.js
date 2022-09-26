@@ -12,7 +12,7 @@ import {
 import * as d3 from "d3";
 
 const OHLChart = (LineChartProps = {}) => {
-  const { description = "Pair", data } = LineChartProps; // const { description = "Pair", data, onChange } = LineChartProps;
+  const { description = "Pair", data, margin, startIndex } = LineChartProps; // const { description = "Pair", data, onChange } = LineChartProps;
   // const priceConstructor = `${description} Price`;
   const isUsd = description.includes("USD");
   // let [, yMax] = d3.extent(data, (d) => parseFloat(d.High));
@@ -26,6 +26,7 @@ const OHLChart = (LineChartProps = {}) => {
         // maxHeight={100}
         height="100%"
         width="99%"
+        margin={margin}
       >
         <LineChart data={data}>
           <CartesianGrid strokeDasharray="3 3" />
@@ -72,10 +73,10 @@ const OHLChart = (LineChartProps = {}) => {
             dataKey="date"
             height={40}
             stroke="#82ca9d"
-            startIndex={data.length > 365 ? data.length - 365 : 0}
+            startIndex={startIndex}
             // onChange={(e) => {
             //   console.log(e);
-            //   onChange(e);
+            //   // onChange(e);
             // }}
           />
           {/* Brush is the bottom bar that allows you to zoom in and out */}
