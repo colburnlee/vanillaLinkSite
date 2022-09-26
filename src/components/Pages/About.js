@@ -91,7 +91,7 @@ const About = () => {
   // End Testing
 
   return (
-    <section className="text-gray-600 body-font flex flex-col min-h-full ">
+    <section className="text-gray-600 body-font flex flex-col min-h-screen ">
       <div className="container px-5 py-24 mx-auto items-center justify-center min-h-full">
         <div className="xl:w-1/2 lg:w-3/4 w-full mx-auto text-center">
           <svg

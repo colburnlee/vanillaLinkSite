@@ -14,7 +14,7 @@ function App() {
         <Navbar />
       </div>
       <div className="Content   ">
-        <div className="App min-h-screen bg-gradient-to-r from-gray-200 to-emerald-50 items-center justify-center  ">
+        <div className="App bg-gradient-to-r from-gray-200 to-emerald-50 items-center justify-center  ">
           <Routes>
             <Route path="/" element={<Landing />}></Route>
             <Route

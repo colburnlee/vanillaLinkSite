@@ -104,11 +104,11 @@ const Pair = ({ chain, pair }) => {
   }, [rtdbRef]);
 
   return (
-    <section className="text-black py-20 body-font w-full bg-background-light flex justify-center align-middle">
-      <div className="container pt-28 flex rounded-xl border border-foreground-alt-500 shadow pb-4 sm:p-8 px-2 mb-14 mt-2 mx-1 ">
-        <div className="flex flex-wrap w-full">
+    <section className="text-black py-20 body-font w-full bg-background-light flex grow justify-evenly align-middle ">
+      <div className="container pt-28 flex rounded-xl border border-foreground-alt-500 shadow pb-4 sm:p-8 px-2  mx-1  justify-evenly align-middle">
+        <div className="flex flex-wrap h-full">
           {/* Div for Pair Name, Description, and Information */}
-          <div className="lg:w-1/3 md:w-1/3 md:pr-4 md:py-6">
+          <div className="lg:w-1/3 md:w-1/3 md:px-4 md:py-6 ">
             {/* Pair Name and Loading Status */}
             <div className="flex relative pb-12">
               <div class="h-full w-1 bg-gray-800 pointer-events-none"></div>
@@ -121,8 +121,8 @@ const Pair = ({ chain, pair }) => {
             {chartData ? (
               <>
                 <div className="flex relative pb-12">
-                  <div className="h-full w-10 absolute inset-0 flex items-center justify-center">
-                    <div className="h-full w-1 bg-gray-800 pointer-events-none"></div>
+                  <div className="w-10 absolute inset-0 flex items-center justify-center">
+                    <div className="w-1 bg-gray-800 pointer-events-none"></div>
                   </div>
                   <div className="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-600 inline-flex items-center justify-center text-black relative z-10">
                     <Settings />
@@ -218,14 +218,34 @@ const Pair = ({ chain, pair }) => {
               </>
             )}
           </div>
-          <div className="lg:w-2/3 md:w-5/6 md:pr-4 md:py-6 flex flex-auto object-center rounded-lg  text-center md:mt-0 mt-12">
+          <div className="lg:w-2/3 md:w-5/6 md:pr-2 md:py-2 rounded-lg md:px-4  flex-col md:mt-0 mt-12 w-full justify-end">
+            {/* <span className="flex relative justify-end ">
+              {chartData ? (
+                <>
+                  <a className="text-primary mr-4" Link="/">
+                    30
+                  </a>
+                  <a className="text-primary mr-4" Link="/">
+                    60
+                  </a>
+                  <a className="text-primary mr-4" Link="/">
+                    90
+                  </a>
+                  <a className="text-primary mr-4" Link="/">
+                    yr
+                  </a>
+                </>
+              ) : null}
+            </span> */}
             {chartData ? (
-              <OHLChart
-                data={chartData}
-                description={pair}
-                onChange={handleChange}
-                margin={{ top: 10, right: 10, left: 5, bottom: 10 }}
-              />
+              <div className="relative flex grow  ">
+                <OHLChart
+                  data={chartData}
+                  description={pair}
+                  onChange={handleChange}
+                  margin={{ top: 10, right: 10, left: 5, bottom: 10 }}
+                />
+              </div>
             ) : (
               <LoadingWheel />
             )}

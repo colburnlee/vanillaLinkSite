@@ -19,7 +19,14 @@ const OHLChart = (LineChartProps = {}) => {
   let [xMin, xMax] = d3.extent(data, (d) => d.date);
   return (
     <>
-      <ResponsiveContainer minHeight={350} minWidth={250} height="100%">
+      <ResponsiveContainer
+        minHeight={500}
+        minWidth={350}
+        // maxWidth={1000}
+        // maxHeight={100}
+        height="100%"
+        width="99%"
+      >
         <LineChart data={data}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis
