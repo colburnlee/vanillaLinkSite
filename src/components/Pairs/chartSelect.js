@@ -46,7 +46,7 @@ const ChartSelect = ({ chartChange }) => {
       defaultValue={{ label: "Price History", value: "priceHistory" }}
       onChange={(chart) => chartChange(chart)}
       options={Charts}
-      className="flex mr-2 mb-2 text-gray-600"
+      className="flex ml-2 mb-2 text-gray-600"
     />
   );
 };
@@ -59,6 +59,10 @@ const Charts = [
   {
     value: "updateHistory",
     label: "Update History",
+  },
+  {
+    value: "JSONExample",
+    label: "JSON Data Example",
   },
   //   {
   //     value: "updateDetail",

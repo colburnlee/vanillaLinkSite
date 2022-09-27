@@ -11,6 +11,7 @@ import { rtdb } from "../../firebase/firebase.config";
 import { TimeUnitPanel } from "../Pairs/timeUnitPanel";
 import { ChartSelect } from "../Pairs/chartSelect";
 import { UpdateHistoryChart } from "../Pairs/UpdateHistoryChart";
+import { JSONSnippet } from "../Pairs/JSONSnippet";
 
 const Pair = ({ chain, pair }) => {
   // Declare the initial state variable types for the chart
@@ -58,7 +59,6 @@ const Pair = ({ chain, pair }) => {
 
   const chartChange = (f) => {
     setSelectedChart(f.value);
-    console.log("Chart Change: ", f);
     setChartKey((prev) => prev + 1);
   };
 
@@ -233,9 +233,12 @@ const Pair = ({ chain, pair }) => {
                 <div className="flex justify-between items-end">
                   <ChartSelect chartChange={chartChange} />
                   {/* <div className="flex justify-end items-end">  */}
-                  <TimeUnitPanel timeChange={timeChange} />
+                  {(selectedChart === "priceHistory" ||
+                    selectedChart === "updateHistory") && (
+                    <TimeUnitPanel timeChange={timeChange} />
+                  )}
                 </div>
-                <div className="relative flex grow">
+                <div className="relative flex grow justify-center">
                   {selectedChart === "priceHistory" && (
                     <OHLChart
                       data={chartData}
@@ -256,6 +259,7 @@ const Pair = ({ chain, pair }) => {
                       selectedTime={selectedTime}
                     />
                   )}
+                  {selectedChart === "JSONExample" && <JSONSnippet />}
                 </div>
               </>
             ) : (
