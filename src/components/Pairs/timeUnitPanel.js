@@ -8,7 +8,7 @@ const TimeButton = ({ timeUnit, displaytext, timeChange }) => {
 
 const TimeUnitPanel = ({ timeChange }) => {
   return (
-    <span className="flex relative justify-end text-gray-600">
+    <span className="flex  text-gray-600">
       <TimeButton timeUnit="7" displaytext="Wk" timeChange={timeChange} />
       <TimeButton timeUnit="30" displaytext="Mon" timeChange={timeChange} />
       <TimeButton timeUnit="90" displaytext="Qtr" timeChange={timeChange} />

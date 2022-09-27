@@ -9,6 +9,7 @@ import PropTypes from "prop-types";
 import { get, ref as ref_rtdb } from "firebase/database";
 import { rtdb } from "../../firebase/firebase.config";
 import { TimeUnitPanel } from "../Pairs/timeUnitPanel";
+// import { ChartSelect } from "../Pairs/chartSelect";
 
 const Pair = ({ chain, pair }) => {
   // Declare the initial state variable types for the chart
@@ -22,13 +23,13 @@ const Pair = ({ chain, pair }) => {
   const [JSONfileUrl, setJSONFileUrl] = useState(null);
   const [CSVfileUrl, setCSVFileUrl] = useState(null);
   const [updateCount, setUpdateCount] = useState(null);
-  const [startIndex, setStartIndex] = useState(null);
   const [chartKey, setChartKey] = useState(0);
   const [proxyAddress, setProxyAddress] = useState(null);
   const [deviationThreshold, setDeviationThreshold] = useState(null);
   const [heartbeat, setHeartbeat] = useState(null);
   const [latestRound, setLatestRound] = useState(null);
   const [selectedTime, setSelectedTime] = useState(365);
+  // const [selectedChart, setSelectedChart] = useState("priceHistory");
 
   function handleChange(e) {
     // setRoundsInDay(e);
@@ -53,6 +54,11 @@ const Pair = ({ chain, pair }) => {
     setSelectedTime(f);
     setChartKey((prev) => prev + 1);
   };
+
+  // const chartChange = (f) => {
+  //   setSelectedChart(f);
+  //   setChartKey((prev) => prev + 1);
+  // };
 
   useEffect(() => {
     // Chart URL
@@ -97,9 +103,6 @@ const Pair = ({ chain, pair }) => {
         totalUpdates.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
       );
       setLatestRound(latestRound);
-      chartData.length > 365
-        ? setStartIndex(chartData.length - 365)
-        : setStartIndex(chartData.length - 7);
     }
   }, [chartData]);
 
@@ -225,14 +228,18 @@ const Pair = ({ chain, pair }) => {
           <div className="lg:w-2/3 md:w-5/6 md:pr-2 md:py-2 rounded-lg md:px-4  flex-col md:mt-0 mt-12 w-full justify-end object-cover">
             {chartData ? (
               <>
-                <TimeUnitPanel timeChange={timeChange} />
+                {/* <p>Test selectedChart: {selectedChart}</p>
+                <div className="flex justify-between items-end">
+                  <ChartSelect /> */}
+                <div className="flex justify-end items-end">
+                  <TimeUnitPanel timeChange={timeChange} />
+                </div>
                 <div className="relative flex grow">
                   <OHLChart
                     data={chartData}
                     description={pair}
                     onChange={handleChange}
                     margin={{ top: 10, right: 10, left: 5, bottom: 10 }}
-                    startIndex={!startIndex ? 0 : startIndex}
                     key={chartKey}
                     selectedTime={selectedTime}
                   />

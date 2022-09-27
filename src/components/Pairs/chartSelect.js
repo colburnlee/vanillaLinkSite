@@ -1,0 +1,77 @@
+import Select from "react-select";
+
+const ChartSelect = ({ chartChange }) => {
+  return (
+    <Select
+      styles={{
+        input: (base) => ({
+          ...base,
+          color: "rgb(var(--color-foreground-alt-200))",
+        }),
+        control: (base) => ({
+          ...base,
+          maxWidth: 350,
+          marginLeft: 25,
+          backgroundColor: "rgb(var(--color-background))",
+          borderWidth: "1px",
+          borderColor: "rgb(var(--color-foreground-alt-400))",
+          color: "rgb(var(--color-foreground-alt-200))",
+        }),
+        menu: (provided) => ({
+          ...provided,
+          top: 40,
+          maxWidth: 400,
+          marginLeft: 25,
+          borderRadius: 5,
+          borderWidth: "2px",
+          borderColor: "rgb(var(--color-foreground-alt-400))",
+          backgroundColor: "rgb(var(--color-background))",
+          color: "rgb(var(--color-foreground-alt-200))",
+        }),
+      }}
+      theme={(theme) => ({
+        ...theme,
+        borderRadius: 5,
+        colors: {
+          ...theme.colors,
+          text: "rgb(var(--color-foreground-alt-200))",
+          primary: "rgb(var(--color-foreground-alt-300))",
+          primary25: "rgb(var(--color-foreground-alt-400))",
+          primary50: "black",
+          primary75: "black",
+          neutral10: "black",
+          neutral80: "rgb(var(--color-foreground-alt-200))",
+        },
+      })}
+      defaultValue={{ label: "Price History", value: "priceHistory" }}
+      onChange={(chart) => chartChange(chart)}
+      options={Charts}
+      className="flex mr-2 text-gray-600"
+    />
+  );
+};
+
+const Charts = [
+  {
+    value: "priceHistory",
+    label: "Price History",
+  },
+  {
+    value: "updateHistory",
+    label: "Update History",
+  },
+  {
+    value: "updateDetail",
+    label: "Update Detail",
+  },
+  {
+    value: "oracleInfo",
+    label: "Oracle Information",
+  },
+  {
+    value: "lookupDate",
+    label: "Lookup Date",
+  },
+];
+
+export { ChartSelect };
