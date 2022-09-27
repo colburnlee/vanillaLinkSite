@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { storage } from "../../firebase/firebase.config"; // add: rtdb
 import { ref, getDownloadURL } from "firebase/storage";
 import useAxios from "../useAxios";
-import OHLChart from "../OHLChart";
+import OHLChart from "../Pairs/OHLChart";
 import { Settings, Link, Download, LoadingWheel } from "../Icons";
 import { truncateEthAddress } from "../addressFormatter";
 import PropTypes from "prop-types";

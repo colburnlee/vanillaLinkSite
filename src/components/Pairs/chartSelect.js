@@ -11,21 +11,21 @@ const ChartSelect = ({ chartChange }) => {
         control: (base) => ({
           ...base,
           maxWidth: 350,
-          marginLeft: 25,
+          marginLeft: 5,
           backgroundColor: "rgb(var(--color-background))",
           borderWidth: "1px",
-          borderColor: "rgb(var(--color-foreground-alt-400))",
+          borderColor: "rgb(var(--color-foreground-alt-200))",
           color: "rgb(var(--color-foreground-alt-200))",
         }),
         menu: (provided) => ({
           ...provided,
-          top: 40,
+          //   top: 40,
           maxWidth: 400,
-          marginLeft: 25,
-          borderRadius: 5,
+          marginLeft: 5,
+          borderRadius: 10,
           borderWidth: "2px",
           borderColor: "rgb(var(--color-foreground-alt-400))",
-          backgroundColor: "rgb(var(--color-background))",
+          //   backgroundColor: "rgb(var(--color-background))",
           color: "rgb(var(--color-foreground-alt-200))",
         }),
       }}
@@ -46,7 +46,7 @@ const ChartSelect = ({ chartChange }) => {
       defaultValue={{ label: "Price History", value: "priceHistory" }}
       onChange={(chart) => chartChange(chart)}
       options={Charts}
-      className="flex mr-2 text-gray-600"
+      className="flex mr-2 mb-2 text-gray-600"
     />
   );
 };
@@ -60,18 +60,18 @@ const Charts = [
     value: "updateHistory",
     label: "Update History",
   },
-  {
-    value: "updateDetail",
-    label: "Update Detail",
-  },
-  {
-    value: "oracleInfo",
-    label: "Oracle Information",
-  },
-  {
-    value: "lookupDate",
-    label: "Lookup Date",
-  },
+  //   {
+  //     value: "updateDetail",
+  //     label: "Update Detail",
+  //   },
+  //   {
+  //     value: "oracleInfo",
+  //     label: "Oracle Information",
+  //   },
+  //   {
+  //     value: "lookupDate",
+  //     label: "Lookup Date",
+  //   },
 ];
 
 export { ChartSelect };
