@@ -8,6 +8,7 @@ import { truncateEthAddress } from "../addressFormatter";
 import PropTypes from "prop-types";
 import { get, ref as ref_rtdb } from "firebase/database";
 import { rtdb } from "../../firebase/firebase.config";
+import { TimeUnitPanel } from "../Pairs/timeUnitPanel";
 
 const Pair = ({ chain, pair }) => {
   // Declare the initial state variable types for the chart
@@ -23,11 +24,11 @@ const Pair = ({ chain, pair }) => {
   const [updateCount, setUpdateCount] = useState(null);
   const [startIndex, setStartIndex] = useState(null);
   const [chartKey, setChartKey] = useState(0);
-  // const [decimals, setDecimals] = useState(null);
   const [proxyAddress, setProxyAddress] = useState(null);
   const [deviationThreshold, setDeviationThreshold] = useState(null);
   const [heartbeat, setHeartbeat] = useState(null);
   const [latestRound, setLatestRound] = useState(null);
+  const [selectedTime, setSelectedTime] = useState(365);
 
   function handleChange(e) {
     // setRoundsInDay(e);
@@ -47,6 +48,11 @@ const Pair = ({ chain, pair }) => {
   // Get data for chart
   let chartData = null;
   ({ data: chartData } = useAxios(chartUrl));
+
+  const timeChange = (f) => {
+    setSelectedTime(f);
+    setChartKey((prev) => prev + 1);
+  };
 
   useEffect(() => {
     // Chart URL
@@ -77,6 +83,7 @@ const Pair = ({ chain, pair }) => {
       });
   }, [chartRef, jsonFileRef, csvFileRef]);
 
+  // Set chart data
   useEffect(() => {
     if (chartData) {
       const updateCount = chartData.map((chartData) => chartData.updateCount);
@@ -197,11 +204,6 @@ const Pair = ({ chain, pair }) => {
                         rel="noopener noreferrer"
                       >
                         <p className="leading-relaxed"> JSON file</p>
-                        {/* <p>
-                          Contains information on each round produced and a
-                          caluculated price value (answer * 10**-decimal value)
-                        </p> */}
-                        {/* {"answer":134423000000,"answeredInRound":"92233720368547791847","price":1344.23,"roundId":"92233720368547791847","startedAt":1663548959,"updatedAt":1663548959} */}
                       </a>
                       <a
                         href={CSVfileUrl}
@@ -209,11 +211,6 @@ const Pair = ({ chain, pair }) => {
                         rel="noopener noreferrer"
                       >
                         <p className="leading-relaxed"> CSV file</p>
-                        {/* <p>
-                          Contains information on each round produced and a
-                          caluculated price value (answer * 10**-decimal value)
-                        </p> */}
-                        {/* {"answer":134423000000,"answeredInRound":"92233720368547791847","price":1344.23,"roundId":"92233720368547791847","startedAt":1663548959,"updatedAt":1663548959} */}
                       </a>
                     </>
                   </div>
@@ -225,84 +222,22 @@ const Pair = ({ chain, pair }) => {
               </>
             )}
           </div>
-          <div className="lg:w-2/3 md:w-5/6 md:pr-2 md:py-2 rounded-lg md:px-4  flex-col md:mt-0 mt-12 w-full justify-end">
-            <span className="flex relative justify-end text-gray-600 ">
-              {chartData ? (
-                <>
-                  <button
-                    className="text-primary mr-4"
-                    disabled={chartData.length < 8}
-                    onClick={() => {
-                      setStartIndex(chartData.length - 7);
-                      setChartKey(chartKey + 1);
-                    }}
-                  >
-                    7
-                  </button>
-                  <button
-                    className="text-primary mr-4"
-                    disabled={chartData.length < 30}
-                    onClick={() => {
-                      setStartIndex(chartData.length - 30);
-                      setChartKey(chartKey + 1);
-                    }}
-                  >
-                    30
-                  </button>
-                  <button
-                    className="text-primary mr-4"
-                    disabled={chartData.length < 90}
-                    onClick={() => {
-                      setStartIndex(chartData.length - 60);
-                      setChartKey(chartKey + 1);
-                    }}
-                  >
-                    60
-                  </button>
-                  <button
-                    className="text-primary mr-4"
-                    disabled={chartData.length < 90}
-                    onClick={() => {
-                      setStartIndex(chartData.length - 90);
-                      setChartKey(chartKey + 1);
-                    }}
-                  >
-                    90
-                  </button>
-                  <button
-                    className="text-primary mr-4"
-                    disabled={chartData.length < 180}
-                    onClick={() => {
-                      setStartIndex(chartData.length - 180);
-                      setChartKey(chartKey + 1);
-                    }}
-                  >
-                    180
-                  </button>
-                  <button
-                    className="text-primary mr-4"
-                    disabled={chartData.length < 366}
-                    onClick={() => {
-                      setStartIndex(chartData.length - 365);
-                      setChartKey(chartKey + 1);
-                    }}
-                  >
-                    yr
-                  </button>
-                </>
-              ) : null}
-            </span>
+          <div className="lg:w-2/3 md:w-5/6 md:pr-2 md:py-2 rounded-lg md:px-4  flex-col md:mt-0 mt-12 w-full justify-end object-cover">
             {chartData ? (
-              <div className="relative flex grow  ">
-                <OHLChart
-                  data={chartData}
-                  description={pair}
-                  onChange={handleChange}
-                  margin={{ top: 10, right: 10, left: 5, bottom: 10 }}
-                  startIndex={startIndex}
-                  key={chartKey}
-                />
-              </div>
+              <>
+                <TimeUnitPanel timeChange={timeChange} />
+                <div className="relative flex grow">
+                  <OHLChart
+                    data={chartData}
+                    description={pair}
+                    onChange={handleChange}
+                    margin={{ top: 10, right: 10, left: 5, bottom: 10 }}
+                    startIndex={!startIndex ? 0 : startIndex}
+                    key={chartKey}
+                    selectedTime={selectedTime}
+                  />
+                </div>
+              </>
             ) : (
               <LoadingWheel />
             )}

@@ -12,11 +12,13 @@ import {
 import * as d3 from "d3";
 
 const OHLChart = (LineChartProps = {}) => {
-  const { description = "Pair", data, margin, startIndex } = LineChartProps; // const { description = "Pair", data, onChange } = LineChartProps;
-  // const priceConstructor = `${description} Price`;
+  const { description = "Pair", data, margin, selectedTime } = LineChartProps; // const { description = "Pair", data, onChange } = LineChartProps;
   const isUsd = description.includes("USD");
-  // let [, yMax] = d3.extent(data, (d) => parseFloat(d.High));
   let [xMin, xMax] = d3.extent(data, (d) => d.date);
+
+  let startIndex = data.length - 1 - selectedTime;
+  if (startIndex === isNaN) startIndex = 0;
+
   return (
     <>
       <ResponsiveContainer
