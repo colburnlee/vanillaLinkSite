@@ -12,6 +12,7 @@ import { TimeUnitPanel } from "../Pairs/timeUnitPanel";
 import { ChartSelect } from "../Pairs/chartSelect";
 import { UpdateHistoryChart } from "../Pairs/UpdateHistoryChart";
 import { JSONSnippet } from "../Pairs/JSONSnippet";
+import { CSVSnippet } from "../Pairs/CSVSnippet";
 
 const Pair = ({ chain, pair }) => {
   // Declare the initial state variable types for the chart
@@ -259,7 +260,10 @@ const Pair = ({ chain, pair }) => {
                       selectedTime={selectedTime}
                     />
                   )}
+                </div>
+                <div className="flex flex-shrink">
                   {selectedChart === "JSONExample" && <JSONSnippet />}
+                  {selectedChart === "CSVExample" && <CSVSnippet />}
                 </div>
               </>
             ) : (

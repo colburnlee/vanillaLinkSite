@@ -64,6 +64,10 @@ const Charts = [
     value: "JSONExample",
     label: "JSON Data Example",
   },
+  {
+    value: "CSVExample",
+    label: "CSV Data Example",
+  },
   //   {
   //     value: "updateDetail",
   //     label: "Update Detail",
