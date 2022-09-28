@@ -47,6 +47,7 @@ const ChartSelect = ({ chartChange }) => {
       onChange={(chart) => chartChange(chart)}
       options={Charts}
       className="flex ml-2 mb-2 text-gray-600"
+      isSearchable={false}
     />
   );
 };

@@ -31,7 +31,7 @@ const Pair = ({ chain, pair }) => {
   const [deviationThreshold, setDeviationThreshold] = useState(null);
   const [heartbeat, setHeartbeat] = useState(null);
   const [latestRound, setLatestRound] = useState(null);
-  const [selectedTime, setSelectedTime] = useState(365);
+  const [selectedTime, setSelectedTime] = useState(90);
   const [selectedChart, setSelectedChart] = useState("priceHistory");
 
   function handleChange(e) {
