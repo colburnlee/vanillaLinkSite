@@ -12,7 +12,13 @@ import {
 import * as d3 from "d3";
 
 const OHLChart = (LineChartProps = {}) => {
-  const { description = "Pair", data, margin, selectedTime } = LineChartProps; // const { description = "Pair", data, onChange } = LineChartProps;
+  const {
+    description = "Pair",
+    data,
+    margin,
+    selectedTime,
+    // rangeChange,
+  } = LineChartProps; // const { description = "Pair", data, onChange } = LineChartProps;
   const isUsd = description.includes("USD");
   let [xMin, xMax] = d3.extent(data, (d) => d.date);
 
@@ -77,8 +83,7 @@ const OHLChart = (LineChartProps = {}) => {
             stroke="#82ca9d"
             startIndex={startIndex}
             // onChange={(e) => {
-            //   console.log(e);
-            //   // onChange(e);
+            //   rangeChange(e);
             // }}
           />
           {/* Brush is the bottom bar that allows you to zoom in and out */}

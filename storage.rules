@@ -4,5 +4,8 @@ service firebase.storage {
     match /{allPaths=**} {
       allow read, write;
     }
+    }
   }
-}
+  
+  
+

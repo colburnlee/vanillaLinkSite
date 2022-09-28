@@ -13,6 +13,7 @@ import { ChartSelect } from "../Pairs/chartSelect";
 import { UpdateHistoryChart } from "../Pairs/UpdateHistoryChart";
 import { JSONSnippet } from "../Pairs/JSONSnippet";
 import { CSVSnippet } from "../Pairs/CSVSnippet";
+import { DateLookup } from "../Pairs/dateLookup";
 
 const Pair = ({ chain, pair }) => {
   // Declare the initial state variable types for the chart
@@ -33,12 +34,7 @@ const Pair = ({ chain, pair }) => {
   const [latestRound, setLatestRound] = useState(null);
   const [selectedTime, setSelectedTime] = useState(90);
   const [selectedChart, setSelectedChart] = useState("priceHistory");
-
-  function handleChange(e) {
-    // setRoundsInDay(e);
-    // console.log("Rounds in day fired: ", e.value);
-    console.log("Round: ", e);
-  }
+  // const [timeRange, setTimeRange] = useState([0, 0]);
 
   // Build Storage References
   const pairRef = ref(storage);
@@ -48,10 +44,16 @@ const Pair = ({ chain, pair }) => {
 
   // Build RTDB References
   const rtdbRef = ref_rtdb(rtdb, `oracles/${chain}_${pair}`);
+  const dateRef = ref_rtdb(rtdb, `data/${chain}_${pair}`);
 
   // Get data for chart
   let chartData = null;
   ({ data: chartData } = useAxios(chartUrl));
+
+  // const rangeChange = (e) => {
+  //   setTimeRange([e.startIndex, e.endIndex]);
+  //   console.log(e.startIndex);
+  // };
 
   const timeChange = (f) => {
     setSelectedTime(f);
@@ -244,7 +246,7 @@ const Pair = ({ chain, pair }) => {
                     <OHLChart
                       data={chartData}
                       description={pair}
-                      onChange={handleChange}
+                      // rangeChange={rangeChange}
                       margin={{ top: 10, right: 10, left: 5, bottom: 10 }}
                       key={chartKey}
                       selectedTime={selectedTime}
@@ -254,7 +256,7 @@ const Pair = ({ chain, pair }) => {
                     <UpdateHistoryChart
                       data={chartData}
                       description={pair}
-                      onChange={handleChange}
+                      // rangeChange={rangeChange}
                       margin={{ top: 10, right: 10, left: 5, bottom: 10 }}
                       key={chartKey}
                       selectedTime={selectedTime}
@@ -264,6 +266,9 @@ const Pair = ({ chain, pair }) => {
                 <div className="flex flex-shrink">
                   {selectedChart === "JSONExample" && <JSONSnippet />}
                   {selectedChart === "CSVExample" && <CSVSnippet />}
+                  {selectedChart === "DateLookup" && (
+                    <DateLookup data={chartData} dateRef={dateRef} />
+                  )}
                 </div>
               </>
             ) : (
