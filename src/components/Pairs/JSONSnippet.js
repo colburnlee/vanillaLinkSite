@@ -1,13 +1,28 @@
+const snippet = [
+  {
+    answer: 39178992539,
+    answeredInRound: "55340232221128654849",
+    price: 391.79,
+    roundId: "55340232221128654850",
+    startedAt: 1596756349,
+    updatedAt: 1596759303,
+  },
+  {
+    answer: 39178992539,
+    answeredInRound: "55340232221128654849",
+    price: 391.79,
+    roundId: "55340232221128654851",
+    startedAt: 1596759303,
+    updatedAt: 1596760234,
+  },
+];
+
 const JSONSnippet = () => {
   return (
-    <div className="flex p-2 text-gray-300 bg-gray-800 rounded-lg mt-12 overflow-auto text-xs md:text-base lg:w-full">
+    <div className="flex flex-auto p-2 text-gray-300 bg-gray-800 rounded-lg mt-6 overflow-auto text-xs max-w-sm sm:max-w-lg md:max-w-full  md:text-base lg:w-full ">
       <pre className="flex flex-col ">
-        <code>answer: 39178992539, // Number</code>
-        <code>answeredInRound: "55340232221128654849", // String</code>
-        <code>price: 391.79, // Number </code>
-        <code>roundId: "55340232221128654850", // String</code>
-        <code>startedAt: 1596756349, // Number</code>
-        <code>updatedAt: 1596759303, // Number</code>
+        <code className="flex ">{JSON.stringify(snippet, null, 2)}</code>
+        <br />
       </pre>
     </div>
   );
