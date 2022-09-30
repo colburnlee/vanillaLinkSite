@@ -275,7 +275,9 @@ const Pair = ({ chain, pair }) => {
                 </div>
               </>
             ) : (
-              <LoadingWheel />
+              <div className="flex justify-center items-center">
+                <LoadingWheel />
+              </div>
             )}
           </div>
         </div>
