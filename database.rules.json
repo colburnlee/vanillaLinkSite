@@ -1,0 +1,16 @@
+{
+  "rules": {
+    "data": {
+      "ETH_ETHUSD": {
+        ".indexOn": "startedAt"
+      },
+      "ETH_BTCUSD": {
+        ".indexOn": "startedAt"
+      }
+    },
+    "ohlChart": {},
+    "oracles": {},
+    ".read": true,
+    ".write": false
+  }
+}

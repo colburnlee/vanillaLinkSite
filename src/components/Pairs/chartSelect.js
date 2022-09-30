@@ -77,10 +77,10 @@ const Charts = [
   //     value: "oracleInfo",
   //     label: "Oracle Information",
   //   },
-  // {
-  //   value: "DateLookup",
-  //   label: "Date/Time Lookup",
-  // },
+  {
+    value: "DateLookup",
+    label: "Date/Time Lookup",
+  },
 ];
 
 export { ChartSelect };

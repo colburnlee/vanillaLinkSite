@@ -34,6 +34,7 @@ const Pair = ({ chain, pair }) => {
   const [latestRound, setLatestRound] = useState(null);
   const [selectedTime, setSelectedTime] = useState(90);
   const [selectedChart, setSelectedChart] = useState("priceHistory");
+  const [dateRange, setDateRange] = useState(null);
   // const [timeRange, setTimeRange] = useState([0, 0]);
 
   // Build Storage References
@@ -108,6 +109,8 @@ const Pair = ({ chain, pair }) => {
         totalUpdates.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
       );
       setLatestRound(latestRound);
+
+      setDateRange([chartData[0].date, chartData[chartData.length - 1].date]); // YYYY-MM-DDThh:mm  Mar 11, 2021
     }
   }, [chartData]);
 
@@ -242,6 +245,9 @@ const Pair = ({ chain, pair }) => {
                   )}
                 </div>
                 <div className="relative flex grow justify-center">
+                  {selectedChart === "DateLookup" && (
+                    <DateLookup range={dateRange} dateRef={dateRef} />
+                  )}
                   {selectedChart === "priceHistory" && (
                     <OHLChart
                       data={chartData}
@@ -266,9 +272,6 @@ const Pair = ({ chain, pair }) => {
                 <div className="flex flex-shrink">
                   {selectedChart === "JSONExample" && <JSONSnippet />}
                   {selectedChart === "CSVExample" && <CSVSnippet />}
-                  {selectedChart === "DateLookup" && (
-                    <DateLookup data={chartData} dateRef={dateRef} />
-                  )}
                 </div>
               </>
             ) : (
