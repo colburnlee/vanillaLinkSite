@@ -109,7 +109,8 @@ const Pair = ({ chain, pair }) => {
         totalUpdates.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
       );
       setLatestRound(latestRound);
-
+      setSelectedTime(90);
+      // setSelectedChart("priceHistory");
       setDateRange([chartData[0].date, chartData[chartData.length - 1].date]); // YYYY-MM-DDThh:mm  Mar 11, 2021
     }
   }, [chartData]);

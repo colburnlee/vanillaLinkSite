@@ -36,14 +36,14 @@ const Introduction = () => {
       <div className="relative">
         <section className="text-gray-600 body-font sticky flex flex-col items-center justify-center min-h-screen">
           <div className="container mx-auto flex px-5 py-12 md:flex-row flex-col items-center">
-            <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+            <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0 flex-col">
               <h2 className="font-medium title-font text-xl text-black mb-1 tracking-wider">
                 <p>Why oracles update:</p>
               </h2>
               <br></br>
               <div className="flex relative pb-12">
                 <div className="h-full w-10 absolute inset-0 flex items-center justify-center"></div>
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-600 inline-flex items-center justify-center text-black relative z-10">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full inline-flex items-center justify-center hover:bg-emerald-800 bg-emerald-600 text-gray-800 relative z-10">
                   <Sliders />
                 </div>
                 <div className="flex-grow pl-4">
@@ -58,7 +58,7 @@ const Introduction = () => {
                 </div>
               </div>
               <div className="flex relative pb-12">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-600 inline-flex items-center justify-center text-black relative z-10">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-600 inline-flex items-center justify-center text-gray-800 hover:bg-emerald-800 relative z-10">
                   <Heart />
                 </div>
                 <div className="flex-grow pl-4">
@@ -72,7 +72,7 @@ const Introduction = () => {
                 </div>
               </div>
             </div>
-            <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+            <div className="lg:flex-grow md:w-1/2  flex flex-col md:items-start md:text-left  mx-2">
               <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
                 So, what's an oracle?
               </h1>
@@ -98,7 +98,7 @@ const Introduction = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <button className="inline-flex text-black bg-emerald-600 border-0 py-2 px-6 focus:outline-none hover:bg-emerald-800 rounded text-lg">
+                  <button className=" flex mx-auto text-white bg-emerald-600 border-0 py-2 px-8 focus:outline-none hover:bg-emerald-800 rounded text-lg  mt-2 ">
                     Chainlink Docs
                   </button>
                 </a>
@@ -106,7 +106,7 @@ const Introduction = () => {
             </div>
           </div>
         </section>
-        <section className="text-gray-600 body-font sticky flex flex-col items-center justify-center min-h-screen">
+        <section className="text-gray-600 body-font  flex flex-col items-center justify-center min-h-screen">
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 md:mb-0">
             <h1 className="title-font sm:text-4xl text-3xl pt-10 my-4 font-medium text-gray-900 text-center">
               What can you get from an oracle?
@@ -115,13 +115,13 @@ const Introduction = () => {
               Introducing Chainlink's V3 Aggregator
             </h2>
           </div>
-          <div className="container mx-auto flex px-5 pt-6 pb-12 md:flex-row flex-col items-center">
+          <div className="container mx-auto flex px-5 py-12 md:flex-row flex-col items-center">
             <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
-              <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+              <div className="flex flex-col text-left lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
                 <p>
                   A few tools are needed to request information from the
                   blockchain,but the information returned is robust.
-                  <ul className="md:text-left">
+                  <ul className=" md:text-left">
                     <u>
                       <b>roundId</b>
                     </u>
@@ -155,28 +155,35 @@ const Introduction = () => {
                 <br></br>
               </div>
             </div>
-            <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
-              <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
-                <h1 className="title-font sm:text-xl text-xl mb-4 font-medium text-gray-900">
-                  Current ETH-USD Price Feed Response
-                </h1>
-                {roundId ? (
-                  <div>
-                    {" "}
-                    <ul>Round ID: {roundId}</ul>
-                    <ul>Answer: {answer}</ul>{" "}
-                    <ul>AnsweredInRound: {answeredInRound}</ul>{" "}
-                    <ul>Started At: {startedAt}</ul>{" "}
-                    <ul>Updated At: {updatedAt}</ul>{" "}
-                  </div>
-                ) : (
-                  <div className="items-center text-center">
-                    {" "}
-                    <LoadingWheel />{" "}
-                  </div>
-                )}
-                <br></br>
-              </div>
+            <div className="lg:flex-grow md:w-1/2 lg:pl-24  flex flex-col md:items-start md:text-left items-center text-center mx-1">
+              {/* <div className="lg:max-w-lg lg:w-full md:w-1/2 w-7/8 mb-10 md:mb-0"> */}
+              <h1 className="title-font sm:text-xl text-xl mb-4 font-medium text-gray-900">
+                Current ETH-USD Price Feed Response
+              </h1>
+              {roundId ? (
+                <div className="flex flex-grow p-2 text-gray-300 bg-gray-800 rounded-lg mt-6 overflow-auto text-sm max-w-lg md:max-w-full  md:text-base lg:w-full ">
+                  <pre className="flex flex-col flex-grow w-full">
+                    <code className="flex flex-grow">Round ID: {roundId}</code>
+                    <code className="flex flex-grow ">Answer: {answer}</code>
+                    <code className="flex flex-grow ">
+                      Answered In Round: {answeredInRound}
+                    </code>
+                    <code className="flex flex-grow ">
+                      Started At: {startedAt}
+                    </code>
+                    <code className="flex flex-grow ">
+                      Updated At: {updatedAt}
+                    </code>
+                  </pre>
+                </div>
+              ) : (
+                <div className="items-center text-center">
+                  {" "}
+                  <LoadingWheel />{" "}
+                </div>
+              )}
+              <br></br>
+              {/* </div> */}
             </div>
           </div>
         </section>

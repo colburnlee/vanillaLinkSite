@@ -1,95 +1,6 @@
 import { Github, Twitter } from "../Icons";
 
-// For Testing - Delete or Comment prior to commit
-
-// import { doc, getDoc, getDocs, collection } from "firebase/firestore";
-// import { useState, useEffect } from "react";
-// import { db, rtdb } from "../../firebase/firebase.config";
-// import { ref, get, child } from "firebase/database";
-
-// End Testing
-
 const About = () => {
-  // Realtime Database (RTDB) Testing
-  // const [rtdbDecimals, setrtdbDecimals] = useState(null);
-  // const [rtdbLatestRound, setrtdbLatestRound] = useState(null);
-
-  // const rtdbRef = ref(rtdb);
-  // const getRtdbDecimals = async (ref) => {
-  //   const snapshot = await get(child(ref, "/oracles/ETH_ETHUSD/decimals"));
-  //   if (snapshot.exists()) {
-  //     console.log("RTDB RESULT: ", snapshot.val());
-  //     setrtdbDecimals(snapshot.val());
-  //   } else {
-  //     console.log("No RTDB data available", rtdbRef);
-  //   }
-  // };
-
-  // const getLatestRound = async (ref) => {
-  //   const snapshot = await get(child(ref, "/oracles/ETH_ETHUSD/latestRound"));
-  //   if (snapshot.exists()) {
-  //     console.log("RTDB RESULT: ", snapshot.val());
-  //     setrtdbLatestRound(
-  //       `Latest Answer: ${snapshot.val().answer} at ${new Date(
-  //         snapshot.val().updatedAt * 1000
-  //       )}`
-  //     );
-  //   } else {
-  //     console.log("No RTDB data available", rtdbRef);
-  //   }
-  // };
-
-  // // For Firestore Testing
-  // const [fbDecimals, setfbDecimals] = useState(null);
-  // const [fbDescription, setfbDescription] = useState(null);
-
-  // // Firestore DB
-  // const docRef = doc(db, "ETH", "ETHUSD");
-  // const dataRef = collection(db, "ETH", "ETHUSD/history");
-  // const dataDocRef = doc(db, "ETH", "ETHUSD/history", "u5HcLE21gEUw3Ifo8tnE");
-  // // // Get decimals from firebase and set state
-  // const getDecimals = async (ref) => {
-  //   const docSnap = await getDoc(ref);
-  //   console.log(docSnap.data());
-  //   setfbDecimals(docSnap.data().decimals);
-  // };
-  // // // Get description from firebase and set state
-  // const getDescription = async (ref) => {
-  //   const docSnap = await getDoc(ref);
-  //   console.log(docSnap.data());
-  //   setfbDescription(docSnap.data().Description);
-  // };
-
-  // // // Get all data from firebase and set state
-  // const getData = async (ref) => {
-  //   const querySnapshot = await getDocs(ref);
-
-  //   // Two techniques for getting data - Map or forEach
-  //   // Map
-  //   console.log(querySnapshot.docs.map((doc) => doc.data()));
-
-  //   // forEach
-  //   querySnapshot.forEach((doc) => {
-  //     console.log(`${doc.id} => ${doc.data().answer}`);
-  //   });
-  // };
-
-  // const getDataDoc = async (ref) => {
-  //   const docSnap = await getDoc(ref);
-  //   console.log(docSnap.data());
-  // };
-
-  // useEffect(() => {
-  //   getDecimals(docRef);
-  //   getDescription(docRef);
-  //   getData(dataRef);
-  //   getDataDoc(dataDocRef);
-  //   getRtdbDecimals(rtdbRef);
-  //   getLatestRound(rtdbRef);
-  // }, [docRef, dataRef, dataDocRef, rtdbRef]);
-
-  // End Testing
-
   return (
     <section className="text-gray-600 body-font flex flex-col min-h-screen ">
       <div className="container px-5 py-24 mx-auto items-center justify-center min-h-full">
@@ -107,9 +18,25 @@ const About = () => {
             data science, and in particular - the Ethereum blockchain. My
             curiousity in Chainlink grew after realizing that, in one way or
             another, I have an insane amount of my life savings riding on the
-            protocol. I hope you find it useful. Feel free to reach out to me on
-            Twitter if you have any questions or suggestions.
+            protocol. I hope you find it useful.
           </p>
+
+          <br />
+          <p className="leading-relaxed text-lg">
+            I have no particular interest in monetizing this concept. I merely
+            want to assist others in their journey to learn about Chainlink; and
+            I would be stoked if anyone found this information useful. As I
+            continue this project, I plan to explore ways to incorporate
+            historical information into smart contracts. If you have any ideas,
+            comments, or questions - please reach out to me on Twitter.
+          </p>
+
+          <br />
+          <p className="leading-relaxed text-lg">
+            This project was build using React, TailwindCSS, and the Chainlink
+            API. It uses Firebase for database storage.
+          </p>
+
           <span className="inline-block h-1 w-10 rounded bg-emerald-600 mt-8 mb-6"></span>
           <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm">
             Lee Colburn

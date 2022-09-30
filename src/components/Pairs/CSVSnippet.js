@@ -88,6 +88,8 @@ const CSVSnippet = () => {
     <div className="flex flex-auto p-2 text-gray-300 bg-gray-800 rounded-lg mt-6 overflow-auto text-xs max-w-sm sm:max-w-lg md:max-w-full  md:text-base lg:w-full ">
       <pre className="flex flex-col ">
         <code className="flex "> {csv} </code>
+        <br />
+        <code className="flex ">Note: 'price' is a calculated value</code>
       </pre>
     </div>
   );

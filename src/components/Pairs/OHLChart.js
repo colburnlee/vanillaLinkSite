@@ -23,7 +23,7 @@ const OHLChart = (LineChartProps = {}) => {
   let [xMin, xMax] = d3.extent(data, (d) => d.date);
 
   let startIndex = data.length - 1 - selectedTime;
-  if (startIndex === isNaN) startIndex = 0;
+  if (startIndex === isNaN) startIndex = xMin;
 
   return (
     <>

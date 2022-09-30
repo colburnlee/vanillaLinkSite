@@ -23,6 +23,7 @@ const JSONSnippet = () => {
       <pre className="flex flex-col ">
         <code className="flex ">{JSON.stringify(snippet, null, 2)}</code>
         <br />
+        <code className="flex ">Note: 'price' is a calculated value</code>
       </pre>
     </div>
   );
