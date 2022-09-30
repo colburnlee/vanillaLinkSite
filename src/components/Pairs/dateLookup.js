@@ -22,7 +22,7 @@ const DateLookup = ({ range, dateRef }) => {
     timeZone: "UTC",
   };
 
-  const handleDateChange = (e, isUTC = false) => {
+  const handleDateChange = (e) => {
     let rawDate = e.target.value;
     let date = new Date(e.target.value).toISOString();
     let unixTime = new Date(date).getTime() / 1000;
@@ -38,8 +38,9 @@ const DateLookup = ({ range, dateRef }) => {
     setDate([date, unixTime, originalDate, originalTime, rawDate]);
   };
 
-  const codeBlock = (data) => {
+  const codeBlock = (data, inputTime) => {
     const result = JSON.parse(data);
+    const timeDiff = Math.abs(result.startedAt - inputTime);
     return (
       <div className="flex flex-auto p-2 text-gray-300 bg-gray-800 rounded-lg mb-8 mt-2 overflow-auto text-xs max-w-sm sm:max-w-lg md:max-w-full  sm:text-lg lg:w-full ">
         <pre className="flex flex-col ">
@@ -51,6 +52,14 @@ const DateLookup = ({ range, dateRef }) => {
           <code className="flex ">"roundId": "{result.roundId}"</code>
           <code className="flex ">"startedAt": {result.startedAt}</code>
           <code className="flex ">"updatedAt": {result.updatedAt}</code>
+          <br />
+          <code className="flex ">Time Difference: {timeDiff} seconds</code>
+          <code className="flex ">
+            Time Difference: {timeDiff / 60} minutes
+          </code>
+          <code className="flex ">
+            Time Difference: {timeDiff / 3600} hours
+          </code>
         </pre>
       </div>
     );
@@ -115,7 +124,7 @@ const DateLookup = ({ range, dateRef }) => {
     hours = hours < 10 ? "0" + hours : hours;
     let minutes = dateObj.getMinutes();
     minutes = minutes < 10 ? "0" + minutes : minutes;
-    // format date in this format: YYYY-MM-DDThh:mm  Mar 11, 2021
+    // format date in this format: YYYY-MM-DDThh:mm
     return `${year}-${month}-${dateNum}T${hours}:${minutes}`;
   };
   const dateRange = [formatDate(range[0]), formatDate(range[1])];
@@ -141,13 +150,13 @@ const DateLookup = ({ range, dateRef }) => {
                 <h2 className="text-2xl font-bold text-gray-600">
                   Closest Answer Previous to Date:
                 </h2>
-                {codeBlock(prevDate)}
+                {codeBlock(prevDate, date[1])}
 
                 <h2 className="text-2xl font-bold text-gray-600">
                   Closest Answer After Date:
                 </h2>
 
-                {codeBlock(nextDate)}
+                {codeBlock(nextDate, date[1])}
                 <button
                   className="flex mx-auto text-white bg-emerald-800 border-0 py-2 px-8 focus:outline-none hover:bg-emerald-600 rounded text-lg"
                   onClick={() => {
@@ -165,7 +174,11 @@ const DateLookup = ({ range, dateRef }) => {
         </>
       ) : (
         <div className="flex flex-col items-center justify-center my-8">
-          <p>Enter a date and time to find the closest on-chain answers</p>
+          <h1 className="text-2xl font-bold text-gray-600">
+            Enter a date and time to find the closest answer posted to the
+            chainlink oracle.
+          </h1>
+
           <input
             type="datetime-local"
             id=""
@@ -173,6 +186,7 @@ const DateLookup = ({ range, dateRef }) => {
             required
             min={dateRange[0]}
             max={dateRange[1]}
+            className="flex mx-auto text-white bg-emerald-800 border-0 py-2 px-8 focus:outline-none hover:bg-emerald-600 rounded text-lg my-4"
           />
 
           {date ? (
