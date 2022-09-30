@@ -15,17 +15,33 @@ const DateLookup = ({ range, dateRef }) => {
   const [nextDate, setNextDate] = useState("");
   const [answerGiven, setAnswerGiven] = useState(false);
 
+  const dateFormat = {
+    day: "numeric", // numeric, 2-digit
+    year: "numeric", // numeric, 2-digit
+    month: "short", // numeric, 2-digit, long, short, narrow
+    timeZone: "UTC",
+  };
+
   const handleDateChange = (e, isUTC = false) => {
+    let rawDate = e.target.value;
     let date = new Date(e.target.value).toISOString();
     let unixTime = new Date(date).getTime() / 1000;
-    let originalDate = e.target.value;
-    setDate([date, unixTime, originalDate]);
+    let originalDate = new Date(unixTime * 1000)
+      .toLocaleString("en-US", dateFormat)
+      .toString();
+    let originalTime = new Date(unixTime * 1000).toLocaleTimeString("en-US", {
+      timeZone: "UTC",
+      hour12: false,
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+    setDate([date, unixTime, originalDate, originalTime, rawDate]);
   };
 
   const codeBlock = (data) => {
     const result = JSON.parse(data);
     return (
-      <div className="flex flex-auto p-2 text-gray-300 bg-gray-800 rounded-lg mb-4 mt-2 overflow-auto text-xs max-w-sm sm:max-w-lg md:max-w-full  sm:text-lg lg:w-full ">
+      <div className="flex flex-auto p-2 text-gray-300 bg-gray-800 rounded-lg mb-8 mt-2 overflow-auto text-xs max-w-sm sm:max-w-lg md:max-w-full  sm:text-lg lg:w-full ">
         <pre className="flex flex-col ">
           <code className="flex ">"answer": {result.answer}</code>
           <code className="flex ">
@@ -109,32 +125,49 @@ const DateLookup = ({ range, dateRef }) => {
       {answerGiven ? (
         <>
           <div className="flex flex-col justify-center align-middle">
-            <div className="text-center my-4">
-              <p>Entered Time: {date[2]}</p> <p> (Unix time: {date[1]})</p>
+            <div className="text-center my-8">
+              <h2 className="text-2xl font-bold text-gray-600">
+                Time Entered: {date[4]}
+              </h2>
+              <h2 className="text-2xl font-bold text-gray-600">
+                UTC: {date[2]} {date[3]}
+              </h2>
+              <h2 className="text-2xl font-bold text-gray-600">
+                Unix time: {date[1]}
+              </h2>
             </div>
-            <p className="text-center">Previous Answer</p>
-            {codeBlock(prevDate)}
-            <p className="text-center">Next Answer</p>
-            {codeBlock(nextDate)}
-            <button
-              className="flex mx-auto text-white bg-emerald-800 border-0 py-2 px-8 focus:outline-none hover:bg-emerald-600 rounded text-lg"
-              onClick={() => {
-                setAnswerGiven(false);
-                setPrevDate("");
-                setNextDate("");
-                setDate("");
-              }}
-            >
-              Search Again
-            </button>
+            <div className="flex flex-col justify-center align-middle">
+              <div className="text-center my-8">
+                <h2 className="text-2xl font-bold text-gray-600">
+                  Closest Answer Previous to Date:
+                </h2>
+                {codeBlock(prevDate)}
+
+                <h2 className="text-2xl font-bold text-gray-600">
+                  Closest Answer After Date:
+                </h2>
+
+                {codeBlock(nextDate)}
+                <button
+                  className="flex mx-auto text-white bg-emerald-800 border-0 py-2 px-8 focus:outline-none hover:bg-emerald-600 rounded text-lg"
+                  onClick={() => {
+                    setAnswerGiven(false);
+                    setPrevDate("");
+                    setNextDate("");
+                    setDate("");
+                  }}
+                >
+                  Search Again
+                </button>
+              </div>
+            </div>
           </div>
         </>
       ) : (
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center my-8">
           <p>Enter a date and time to find the closest on-chain answers</p>
           <input
             type="datetime-local"
-            name=""
             id=""
             onChange={handleDateChange}
             required
@@ -157,9 +190,6 @@ const DateLookup = ({ range, dateRef }) => {
               Awaiting input
             </button>
           )}
-          <p>
-            Date Range: {dateRange[0]} - {dateRange[1]}
-          </p>
         </div>
       )}
     </>
