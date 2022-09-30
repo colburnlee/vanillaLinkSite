@@ -136,10 +136,9 @@ const Pair = ({ chain, pair }) => {
           <div className="lg:w-1/3 md:w-1/3 md:px-4 md:py-6 ">
             {/* Pair Name and Loading Status */}
             <div className="flex relative pb-12">
-              <div className="h-full w-1 bg-gray-800 pointer-events-none"></div>
-              <div className="flex-grow pl-4">
-                {chartData && <p className="text-5xl"> {pair} </p>}
-              </div>
+              <h1 className="pl-4 font-semibold text-5xl title-font text-gray-900 ">
+                {pair}
+              </h1>
             </div>
 
             {/* General Pair Info */}
@@ -153,8 +152,8 @@ const Pair = ({ chain, pair }) => {
                     <Settings />
                   </div>
                   <div className="flex-grow pl-4">
-                    <h2 className="font-medium title-font text-sm text-black mb-1 tracking-wider">
-                      <p>Update Parameters</p>
+                    <h2 className=" font-semibold text-xl title-font text-gray-900">
+                      Update Parameters
                     </h2>
                     <ul className="leading-relaxed">
                       <li>Deviation Threshold: {deviationThreshold}%</li>
@@ -173,7 +172,7 @@ const Pair = ({ chain, pair }) => {
                     <Link />
                   </div>
                   <div className="flex-grow pl-4">
-                    <h2 className="font-medium title-font text-sm text-black mb-1 tracking-wider">
+                    <h2 className="font-semibold text-xl title-font text-gray-900">
                       Oracle Information
                     </h2>
                     <p>Start Date: {chartData[0].date}</p>
@@ -188,7 +187,9 @@ const Pair = ({ chain, pair }) => {
                           href={"https://etherscan.io/address/" + proxyAddress}
                           target="_blank"
                           rel="noopener noreferrer"
+                          className="font-semibold hover:text-emerald-600 focus:text-emerald-600 hover:font-bold"
                         >
+                          {" "}
                           {truncateEthAddress(proxyAddress)}
                         </a>
                       ) : (
@@ -204,23 +205,32 @@ const Pair = ({ chain, pair }) => {
                     <Download />
                   </div>
                   <div className="flex-grow pl-4">
-                    <h2 className="font-medium title-font text-sm text-black mb-1 tracking-wider">
-                      Download Dataset (Updated Daily at 00:00 UTC)
+                    <h2 className="font-semibold text-xl title-font text-gray-900">
+                      Download Dataset
                     </h2>
+                    <ul className="leading-relaxed">
+                      <li>(Updated Daily at 00:00 UTC)</li>
+                    </ul>
                     <>
                       <a
                         href={JSONfileUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <p className="leading-relaxed"> JSON file</p>
+                        <p className="font-semibold hover:text-emerald-600 hover:font-bold focus:text-emerald-600 ">
+                          {" "}
+                          JSON file
+                        </p>
                       </a>
                       <a
                         href={CSVfileUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <p className="leading-relaxed"> CSV file</p>
+                        <p className="font-semibold hover:text-emerald-600 focus:text-emerald-600 hover:font-bold">
+                          {" "}
+                          CSV file
+                        </p>
                       </a>
                     </>
                   </div>

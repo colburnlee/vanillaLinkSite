@@ -8,6 +8,7 @@ import {
   endAt,
   limitToLast,
 } from "firebase/database";
+import { useEffect } from "react";
 
 const DateLookup = ({ range, dateRef }) => {
   const [date, setDate] = useState("");
@@ -53,6 +54,7 @@ const DateLookup = ({ range, dateRef }) => {
           <code className="flex ">"startedAt": {result.startedAt}</code>
           <code className="flex ">"updatedAt": {result.updatedAt}</code>
           <br />
+          <code className="flex ">Goal: {inputTime}</code>
           <code className="flex ">Time Difference: {timeDiff} seconds</code>
           <code className="flex ">
             Time Difference: {timeDiff / 60} minutes
@@ -67,7 +69,6 @@ const DateLookup = ({ range, dateRef }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // console.log(date[1]);
     // Look up the date in RTDB. Find the closest value to the date.
 
     const lookupNextDate = query(
@@ -129,6 +130,10 @@ const DateLookup = ({ range, dateRef }) => {
   };
   const dateRange = [formatDate(range[0]), formatDate(range[1])];
 
+  useEffect(() => {
+    setAnswerGiven(false);
+  }, [range]);
+
   return (
     <>
       {answerGiven ? (
@@ -181,7 +186,6 @@ const DateLookup = ({ range, dateRef }) => {
 
           <input
             type="datetime-local"
-            id=""
             onChange={handleDateChange}
             required
             min={dateRange[0]}
@@ -199,7 +203,7 @@ const DateLookup = ({ range, dateRef }) => {
           ) : (
             <button
               disabled={true}
-              className="flex mx-auto text-stone-400 bg-stone-800 border-0 py-2 px-8 focus:outline-none hover:bg-stone-700  rounded text-lg  mt-2"
+              className="flex mx-auto text-stone-400 border-slate-600 py-2 px-8  hover:bg-stone-700  rounded text-lg  mt-2"
             >
               Awaiting input
             </button>
