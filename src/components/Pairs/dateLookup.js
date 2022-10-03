@@ -57,10 +57,10 @@ const DateLookup = ({ range, dateRef }) => {
           <code className="flex ">Goal: {inputTime}</code>
           <code className="flex ">Time Difference: {timeDiff} seconds</code>
           <code className="flex ">
-            Time Difference: {timeDiff / 60} minutes
+            Time Difference: {(timeDiff / 60).toFixed(2)} minutes
           </code>
           <code className="flex ">
-            Time Difference: {timeDiff / 3600} hours
+            Time Difference: {(timeDiff / 3600).toFixed(2)} hours
           </code>
         </pre>
       </div>

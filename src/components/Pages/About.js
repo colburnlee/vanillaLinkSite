@@ -18,7 +18,8 @@ const About = () => {
             data science, and in particular - the Ethereum blockchain. My
             curiousity in Chainlink grew after realizing that, in one way or
             another, I have an insane amount of my life savings riding on the
-            protocol. I hope you find it useful.
+            protocol and I wanted to understand it better. I hope you find it
+            useful.
           </p>
 
           <br />
