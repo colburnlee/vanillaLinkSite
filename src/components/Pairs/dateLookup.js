@@ -219,11 +219,6 @@ const DateLookup = ({ range, dateRef }) => {
               Awaiting input
             </button>
           )}
-
-          <p>
-            Test - Input Area Date Range: {dateRange[0]} - {dateRange[1]} <br />
-            Test - Range of Dates: {range[0]} - {range[1]}
-          </p>
         </div>
       )}
     </>
