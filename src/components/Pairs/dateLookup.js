@@ -40,31 +40,41 @@ const DateLookup = ({ range, dateRef }) => {
   };
 
   const codeBlock = (data, inputTime) => {
-    const result = JSON.parse(data);
-    const timeDiff = Math.abs(result.startedAt - inputTime);
-    return (
-      <div className="flex flex-auto p-2 text-gray-300 bg-gray-800 rounded-lg mb-8 mt-2 overflow-auto text-xs max-w-sm sm:max-w-lg md:max-w-full  sm:text-lg lg:w-full ">
-        <pre className="flex flex-col ">
-          <code className="flex ">"answer": {result.answer}</code>
-          <code className="flex ">
-            "answeredInRound": "{result.answeredInRound}"
-          </code>
-          <code className="flex ">"price": {result.price}</code>
-          <code className="flex ">"roundId": "{result.roundId}"</code>
-          <code className="flex ">"startedAt": {result.startedAt}</code>
-          <code className="flex ">"updatedAt": {result.updatedAt}</code>
-          <br />
-          <code className="flex ">Goal: {inputTime}</code>
-          <code className="flex ">Time Difference: {timeDiff} seconds</code>
-          <code className="flex ">
-            Time Difference: {(timeDiff / 60).toFixed(2)} minutes
-          </code>
-          <code className="flex ">
-            Time Difference: {(timeDiff / 3600).toFixed(2)} hours
-          </code>
-        </pre>
-      </div>
-    );
+    try {
+      const result = JSON.parse(data);
+      const timeDiff = Math.abs(result.startedAt - inputTime);
+      return (
+        <div className="flex flex-auto p-2 text-gray-300 bg-gray-800 rounded-lg mb-8 mt-2 overflow-auto text-xs max-w-sm sm:max-w-lg md:max-w-full  sm:text-lg lg:w-full ">
+          <pre className="flex flex-col ">
+            <code className="flex ">"answer": {result.answer}</code>
+            <code className="flex ">
+              "answeredInRound": "{result.answeredInRound}"
+            </code>
+            <code className="flex ">"price": {result.price}</code>
+            <code className="flex ">"roundId": "{result.roundId}"</code>
+            <code className="flex ">"startedAt": {result.startedAt}</code>
+            <code className="flex ">"updatedAt": {result.updatedAt}</code>
+            <br />
+            <code className="flex ">Goal: {inputTime}</code>
+            <code className="flex ">Time Difference: {timeDiff} seconds</code>
+            <code className="flex ">
+              Time Difference: {(timeDiff / 60).toFixed(2)} minutes
+            </code>
+            <code className="flex ">
+              Time Difference: {(timeDiff / 3600).toFixed(2)} hours
+            </code>
+          </pre>
+        </div>
+      );
+    } catch (e) {
+      return (
+        <div className="flex flex-auto p-2 text-gray-300 bg-gray-800 rounded-lg mb-8 mt-2 overflow-auto text-xs max-w-sm sm:max-w-lg md:max-w-full  sm:text-lg lg:w-full ">
+          <pre className="flex flex-col ">
+            <code className="flex ">No answer found</code>
+          </pre>
+        </div>
+      );
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -116,6 +126,7 @@ const DateLookup = ({ range, dateRef }) => {
 
   const formatDate = (date) => {
     let dateObj = new Date(date);
+    console.log(dateObj);
     let year = dateObj.getFullYear();
     let month = dateObj.getMonth() + 1;
     month = month < 10 ? "0" + month : month;
@@ -208,6 +219,11 @@ const DateLookup = ({ range, dateRef }) => {
               Awaiting input
             </button>
           )}
+
+          <p>
+            Test - Input Area Date Range: {dateRange[0]} - {dateRange[1]} <br />
+            Test - Range of Dates: {range[0]} - {range[1]}
+          </p>
         </div>
       )}
     </>
