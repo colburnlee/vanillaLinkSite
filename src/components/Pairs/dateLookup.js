@@ -213,7 +213,7 @@ const DateLookup = ({ range, dateRef }) => {
           ) : (
             <button
               disabled={true}
-              className="flex mx-auto text-stone-400 border-slate-600 py-2 px-8  hover:bg-stone-700  rounded text-lg  mt-2"
+              className="flex mx-auto text-slate-600 border-slate-600 py-2 px-8 bg-stone-400  hover:bg-stone-700 hover:text-white rounded text-lg  mt-2"
             >
               Awaiting input
             </button>

@@ -158,7 +158,7 @@ const RoundsInRange = ({ range, dateRef }) => {
               className="flex mx-auto text-slate-600 border-slate-600 py-2 px-8 bg-stone-400  hover:bg-stone-700 hover:text-white rounded text-lg  mt-2  "
               disabled
             >
-              Search{" "}
+              Awaiting Input
             </button>
           )}
         </div>
