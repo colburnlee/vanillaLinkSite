@@ -32,22 +32,6 @@ const RoundsInRange = ({ range, dateRef }) => {
       const result = JSON.parse(data);
 
       return (
-        // <div>
-        //   <p>
-        //     <strong>Start Date:</strong> {start}
-        //   </p>
-        //   <p>
-        //     <strong>End Date:</strong> {end}
-        //   </p>
-        //   <p>
-        //     <strong>Result:</strong>{" "}
-        //     {result.map((round) => (
-        //       <ul key={round.roundId}>
-        //         {round.roundId} - {round.startedAt}
-        //       </ul>
-        //     ))}
-        //   </p>
-        // </div>
         <div className="flex flex-auto p-2 text-gray-300 bg-gray-800 rounded-lg mb-8 mt-2 max-h-96 overflow-auto text-xs max-w-sm sm:max-w-lg md:max-w-full  sm:text-lg lg:w-full ">
           <pre className="flex flex-col ">
             <code className="flex">
@@ -57,12 +41,12 @@ const RoundsInRange = ({ range, dateRef }) => {
               <strong>End Date:</strong> {end}
             </code>
             <code className="flex">
-              <strong>Number of Rounds in Range:</strong>
+              <strong>Rounds within Date Range:</strong>
               {result.length}
             </code>
             <br />
             <code className="text-left">
-              <strong>Result:</strong>
+              <strong>Result - RoundIds:</strong>
               {result.map((round) => round.roundId + ", ")}
             </code>
           </pre>
