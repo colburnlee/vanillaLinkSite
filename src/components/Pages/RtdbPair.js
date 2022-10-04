@@ -14,6 +14,7 @@ import { UpdateHistoryChart } from "../Pairs/UpdateHistoryChart";
 import { JSONSnippet } from "../Pairs/JSONSnippet";
 import { CSVSnippet } from "../Pairs/CSVSnippet";
 import { DateLookup } from "../Pairs/dateLookup";
+import { RoundsInRange } from "../Pairs/roundsInRange";
 
 const Pair = ({ chain, pair }) => {
   // Declare the initial state variable types for the chart
@@ -246,10 +247,8 @@ const Pair = ({ chain, pair }) => {
           <div className="lg:w-2/3 md:w-5/6 md:pr-2 md:py-2 rounded-lg md:px-4 flex-col md:mt-0 mt-12 w-full justify-end object-cover">
             {chartData ? (
               <>
-                {/* <p>Test selectedChart: {selectedChart}</p> */}
                 <div className="flex justify-between items-end">
                   <ChartSelect chartChange={chartChange} />
-                  {/* <div className="flex justify-end items-end">  */}
                   {(selectedChart === "priceHistory" ||
                     selectedChart === "updateHistory") && (
                     <TimeUnitPanel timeChange={timeChange} />
@@ -280,6 +279,9 @@ const Pair = ({ chain, pair }) => {
                     />
                   )}
                 </div>
+                {selectedChart === "roundsInRange" && (
+                  <RoundsInRange range={dateRange} dateRef={dateRef} />
+                )}
                 <div className="flex flex-shrink">
                   {selectedChart === "JSONExample" && <JSONSnippet />}
                   {selectedChart === "CSVExample" && <CSVSnippet />}

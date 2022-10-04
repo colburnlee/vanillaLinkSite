@@ -126,7 +126,6 @@ const DateLookup = ({ range, dateRef }) => {
 
   const formatDate = (date) => {
     let dateObj = new Date(date);
-    console.log(dateObj);
     let year = dateObj.getFullYear();
     let month = dateObj.getMonth() + 1;
     month = month < 10 ? "0" + month : month;

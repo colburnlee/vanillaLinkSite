@@ -69,10 +69,10 @@ const Charts = [
     value: "CSVExample",
     label: "CSV Data Example",
   },
-  //   {
-  //     value: "updateDetail",
-  //     label: "Update Detail",
-  //   },
+  {
+    value: "roundsInRange",
+    label: "Rounds In Range",
+  },
   //   {
   //     value: "oracleInfo",
   //     label: "Oracle Information",
