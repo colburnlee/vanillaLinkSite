@@ -18,7 +18,7 @@ const getCustomAnswers = async (rounds, proxy, network) => {
     const answers = [];
     for (let i = 0; i < rounds.length; i++) {
       console.log("rounds[i]: ", rounds[i].toString());
-      let result = await contract.getRoundData(rounds[i].toString());
+      let result = await contract.getRoundData(rounds[i]);
       let answer = result.answer.toString();
       let answeredInRound = result.answeredInRound.toString();
       let roundId = result.roundId.toString();

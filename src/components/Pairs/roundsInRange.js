@@ -125,6 +125,7 @@ const RoundsInRange = ({ range, dateRef, network, proxy }) => {
                 className="flex mx-auto text-white bg-emerald-800 border-0 py-2 px-8 focus:outline-none hover:bg-emerald-600 rounded text-lg"
                 onClick={() => {
                   setAnswerGiven(false);
+                  setInputRange([0, 0]);
                 }}
               >
                 Search Again
