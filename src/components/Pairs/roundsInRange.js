@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { query, orderByChild, startAt, get, endAt } from "firebase/database";
+// import { getCustomAnswers } from "./callAnswers";
 
-const RoundsInRange = ({ range, dateRef }) => {
+const RoundsInRange = ({ range, dateRef, network, proxy }) => {
   const [answerGiven, setAnswerGiven] = useState(false);
   const [inputRange, setInputRange] = useState([0, 0]);
   const [answer, setAnswer] = useState(0);
+  // const [customRange, setCustomRange] = useState(false);
 
   //convert date to 2023-06-03 format
   const formatDate = (date) => {
@@ -35,18 +37,18 @@ const RoundsInRange = ({ range, dateRef }) => {
         <div className="flex flex-auto p-2 text-gray-300 bg-gray-800 rounded-lg mb-8 mt-2 max-h-96 overflow-auto text-xs max-w-sm sm:max-w-lg md:max-w-full  sm:text-lg lg:w-full ">
           <pre className="flex flex-col ">
             <code className="flex">
-              <strong>Start Date:</strong> {start}
+              <strong>Start Date: </strong> {start}
             </code>
             <code className="flex">
-              <strong>End Date:</strong> {end}
+              <strong>End Date: </strong> {end}
             </code>
             <code className="flex">
-              <strong>Rounds within Date Range:</strong>
+              <strong>Rounds within Date Range: </strong>
               {result.length}
             </code>
             <br />
             <code className="text-left">
-              <strong>Result - RoundIds:</strong>
+              <strong>Result RoundIds: </strong>
               {result.map((round) => round.roundId + ", ")}
             </code>
           </pre>
@@ -100,6 +102,17 @@ const RoundsInRange = ({ range, dateRef }) => {
 
     setAnswerGiven(true);
   };
+  // const handleCustomRange = async () => {
+  //   const roundIds = JSON.parse(answer).map((round) => round.roundId);
+  //   console.log("roundIds: ", roundIds);
+  //   const customAnswer = await getCustomAnswers(roundIds, network, proxy);
+
+  //   setCustomRange(customAnswer);
+  // };
+
+  useEffect(() => {
+    setAnswerGiven(false);
+  }, [range]);
 
   return (
     <div>
@@ -116,7 +129,16 @@ const RoundsInRange = ({ range, dateRef }) => {
               >
                 Search Again
               </button>
+              {/* <button
+                className="flex mx-auto text-white bg-emerald-800 border-0 py-2 px-8 focus:outline-none hover:bg-emerald-600 rounded text-lg mt-4"
+                onClick={() => {
+                  handleCustomRange();
+                }}
+              >
+                Get Round Answers from blockchain
+              </button> */}
             </div>
+            {/* {customRange} */}
           </div>
         </>
       ) : (

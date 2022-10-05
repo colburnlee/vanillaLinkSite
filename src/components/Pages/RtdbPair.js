@@ -36,7 +36,7 @@ const Pair = ({ chain, pair }) => {
   const [selectedTime, setSelectedTime] = useState(90);
   const [selectedChart, setSelectedChart] = useState("priceHistory");
   const [dateRange, setDateRange] = useState(null);
-  // const [timeRange, setTimeRange] = useState([0, 0]);
+  const [network, setNetwork] = useState(null);
 
   // Build Storage References
   const pairRef = ref(storage);
@@ -120,10 +120,10 @@ const Pair = ({ chain, pair }) => {
     // get the data from the RTDB
     get(rtdbRef).then((snapshot) => {
       if (snapshot.exists()) {
-        // setDecimals(snapshot.val().decimals);
         setProxyAddress(snapshot.val().proxyAddress);
         setDeviationThreshold(snapshot.val().deviationThreshold);
         setHeartbeat(snapshot.val().heartbeat);
+        setNetwork(snapshot.val().chain);
       } else {
         console.log("No rtdb data available");
       }
@@ -280,7 +280,12 @@ const Pair = ({ chain, pair }) => {
                   )}
                 </div>
                 {selectedChart === "roundsInRange" && (
-                  <RoundsInRange range={dateRange} dateRef={dateRef} />
+                  <RoundsInRange
+                    range={dateRange}
+                    dateRef={dateRef}
+                    network={network}
+                    proxy={proxyAddress}
+                  />
                 )}
                 <div className="flex flex-shrink">
                   {selectedChart === "JSONExample" && <JSONSnippet />}

@@ -1,8 +1,7 @@
 import { Sliders, Heart } from "../Icons";
 import { useEffect, useState } from "react";
-import { getDefaultProvider, Contract } from "ethers";
-import { aggregatorV3InterfaceABI } from "../ethers/v3AggregatorABI";
 import { LoadingWheel } from "../Icons";
+import { connectProviderContract } from "../ethers/connectProviderContract";
 
 const Introduction = () => {
   const [answer, setAnswer] = useState(null);
@@ -14,15 +13,8 @@ const Introduction = () => {
   useEffect(() => {
     (async () => {
       const EthUsdcontract = "0x5f4ec3df9cbd43714fe2740f5e3616155c5b8419";
-      const provider = getDefaultProvider(
-        "homestead",
-        `https://mainnet.infura.io/v3/5${process.env.REACT_APP_INFURA_TOKEN}`
-      );
-      const contract = new Contract(
-        EthUsdcontract,
-        aggregatorV3InterfaceABI,
-        provider
-      );
+      const network = "homestead";
+      const contract = await connectProviderContract(EthUsdcontract, network);
       const latestRoundResult = await contract.latestRoundData();
       setAnswer(+latestRoundResult.answer);
       setAnsweredInRound(latestRoundResult.answeredInRound.toString());
