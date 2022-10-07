@@ -176,6 +176,8 @@ const RoundsInRange = ({ range, dateRef, network, proxy }) => {
           )}
         </div>
       )}
+      {customRange ? handleCustomRange : null}
+      {/* Delete the above before continuing!!!! */}
     </div>
   );
 };
