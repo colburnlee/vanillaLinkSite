@@ -10,18 +10,33 @@ import {
 } from "firebase/database";
 import { useEffect } from "react";
 
+const formatDate = (date) => {
+  let dateObj = new Date(date);
+  let year = dateObj.getFullYear();
+  let month = dateObj.getMonth() + 1;
+  month = month < 10 ? "0" + month : month;
+  let dateNum = dateObj.getDate();
+  dateNum = dateNum < 10 ? "0" + dateNum : dateNum;
+  let hours = dateObj.getHours();
+  hours = hours < 10 ? "0" + hours : hours;
+  let minutes = dateObj.getMinutes();
+  minutes = minutes < 10 ? "0" + minutes : minutes;
+  // format date in this format: YYYY-MM-DDThh:mm
+  return `${year}-${month}-${dateNum}T${hours}:${minutes}`;
+};
+
+const dateFormat = {
+  day: "numeric", // numeric, 2-digit
+  year: "numeric", // numeric, 2-digit
+  month: "short", // numeric, 2-digit, long, short, narrow
+  timeZone: "UTC",
+};
+
 const DateLookup = ({ range, dateRef }) => {
   const [date, setDate] = useState("");
   const [prevDate, setPrevDate] = useState("");
   const [nextDate, setNextDate] = useState("");
   const [answerGiven, setAnswerGiven] = useState(false);
-
-  const dateFormat = {
-    day: "numeric", // numeric, 2-digit
-    year: "numeric", // numeric, 2-digit
-    month: "short", // numeric, 2-digit, long, short, narrow
-    timeZone: "UTC",
-  };
 
   const handleDateChange = (e) => {
     let rawDate = e.target.value;
@@ -124,20 +139,6 @@ const DateLookup = ({ range, dateRef }) => {
     setAnswerGiven(true);
   };
 
-  const formatDate = (date) => {
-    let dateObj = new Date(date);
-    let year = dateObj.getFullYear();
-    let month = dateObj.getMonth() + 1;
-    month = month < 10 ? "0" + month : month;
-    let dateNum = dateObj.getDate();
-    dateNum = dateNum < 10 ? "0" + dateNum : dateNum;
-    let hours = dateObj.getHours();
-    hours = hours < 10 ? "0" + hours : hours;
-    let minutes = dateObj.getMinutes();
-    minutes = minutes < 10 ? "0" + minutes : minutes;
-    // format date in this format: YYYY-MM-DDThh:mm
-    return `${year}-${month}-${dateNum}T${hours}:${minutes}`;
-  };
   const dateRange = [formatDate(range[0]), formatDate(range[1])];
 
   useEffect(() => {
@@ -224,4 +225,4 @@ const DateLookup = ({ range, dateRef }) => {
   );
 };
 
-export { DateLookup };
+export { DateLookup, formatDate, dateFormat };

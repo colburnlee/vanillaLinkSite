@@ -20,12 +20,19 @@ const connectProviderContract = async (contractAddress, chain) => {
     infura: `${process.env.REACT_APP_INFURA_TOKEN}`,
   });
 
-  // const provider = getDefaultProvider("https://rpc.ankr.com/eth");
+  // const provider = getDefaultProvider(network, {
+  //   ankr: "https://rpc.ankr.com/eth",
+  // });
+
+  // const provider = getDefaultProvider(network, {
+  //   alchemy: `${process.env.REACT_APP_ALCHEMY_TOKEN}`,
+  // });
   const contract = new Contract(
     contractAddress,
     aggregatorV3InterfaceABI,
     provider
   );
+
   return contract;
 };
 

@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { query, orderByChild, startAt, get, endAt } from "firebase/database";
-// import { getCustomAnswers } from "./callAnswers";
+import { getCustomAnswers } from "./callAnswers";
 
 const RoundsInRange = ({ range, dateRef, network, proxy }) => {
   const [answerGiven, setAnswerGiven] = useState(false);
   const [inputRange, setInputRange] = useState([0, 0]);
   const [answer, setAnswer] = useState(0);
-  // const [customRange, setCustomRange] = useState(false);
+  const [customRange, setCustomRange] = useState(false);
 
   //convert date to 2023-06-03 format
   const formatDate = (date) => {
@@ -102,13 +102,12 @@ const RoundsInRange = ({ range, dateRef, network, proxy }) => {
 
     setAnswerGiven(true);
   };
-  // const handleCustomRange = async () => {
-  //   const roundIds = JSON.parse(answer).map((round) => round.roundId);
-  //   console.log("roundIds: ", roundIds);
-  //   const customAnswer = await getCustomAnswers(roundIds, network, proxy);
+  const handleCustomRange = async () => {
+    const roundIds = JSON.parse(answer).map((round) => round.roundId);
+    const customAnswer = await getCustomAnswers(roundIds, proxy, network);
 
-  //   setCustomRange(customAnswer);
-  // };
+    setCustomRange(customAnswer);
+  };
 
   useEffect(() => {
     setAnswerGiven(false);
@@ -130,16 +129,7 @@ const RoundsInRange = ({ range, dateRef, network, proxy }) => {
               >
                 Search Again
               </button>
-              {/* <button
-                className="flex mx-auto text-white bg-emerald-800 border-0 py-2 px-8 focus:outline-none hover:bg-emerald-600 rounded text-lg mt-4"
-                onClick={() => {
-                  handleCustomRange();
-                }}
-              >
-                Get Round Answers from blockchain
-              </button> */}
             </div>
-            {/* {customRange} */}
           </div>
         </>
       ) : (

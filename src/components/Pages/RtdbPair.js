@@ -15,6 +15,7 @@ import { JSONSnippet } from "../Pairs/JSONSnippet";
 import { CSVSnippet } from "../Pairs/CSVSnippet";
 import { DateLookup } from "../Pairs/dateLookup";
 import { RoundsInRange } from "../Pairs/roundsInRange";
+import { CustomRange } from "../Pairs/customRange";
 
 const Pair = ({ chain, pair }) => {
   // Declare the initial state variable types for the chart
@@ -257,6 +258,9 @@ const Pair = ({ chain, pair }) => {
                 <div className="relative flex grow justify-center">
                   {selectedChart === "DateLookup" && (
                     <DateLookup range={dateRange} dateRef={dateRef} />
+                  )}
+                  {selectedChart === "customRange" && (
+                    <CustomRange range={dateRange} />
                   )}
                   {selectedChart === "priceHistory" && (
                     <OHLChart
