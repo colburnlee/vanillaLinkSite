@@ -94,7 +94,7 @@ const CustomRange = ({ range, dateRef, pair }) => {
               </code>
               <br />
               <code className="text-left">
-                <strong>Result Sample: </strong>[
+                <strong>JSON Result Sample: </strong>[
                 {jsonSample.map((round) => (
                   <div key={round.roundId} className="flex flex-col">
                     {JSON.stringify(round)},
@@ -106,7 +106,10 @@ const CustomRange = ({ range, dateRef, pair }) => {
           </div>
           <div className="flex flex-auto p-2 text-gray-300 bg-gray-800 rounded-lg mb-8 mt-2 max-h-64 overflow-auto text-xs max-w-sm sm:max-w-lg md:max-w-full  sm:text-lg lg:w-full ">
             <pre className="flex flex-col ">
-              <code className="flex text-left">{csv}</code>
+              <code className="text-left">
+                <strong>CSV Result Sample: </strong> <br />
+                {csv}
+              </code>
             </pre>
           </div>
           <div className="flex flex-row  mt-4 mb-8 ">
