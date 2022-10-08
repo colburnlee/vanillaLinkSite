@@ -259,9 +259,7 @@ const Pair = ({ chain, pair }) => {
                   {selectedChart === "DateLookup" && (
                     <DateLookup range={dateRange} dateRef={dateRef} />
                   )}
-                  {selectedChart === "customRange" && (
-                    <CustomRange range={dateRange} />
-                  )}
+
                   {selectedChart === "priceHistory" && (
                     <OHLChart
                       data={chartData}
@@ -294,6 +292,14 @@ const Pair = ({ chain, pair }) => {
                 <div className="flex flex-shrink">
                   {selectedChart === "JSONExample" && <JSONSnippet />}
                   {selectedChart === "CSVExample" && <CSVSnippet />}
+                  {selectedChart === "customRange" && (
+                    <CustomRange
+                      range={dateRange}
+                      dateRef={dateRef}
+                      network={network}
+                      proxy={proxyAddress}
+                    />
+                  )}
                 </div>
               </>
             ) : (

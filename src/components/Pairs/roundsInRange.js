@@ -1,12 +1,10 @@
 import { useState, useEffect } from "react";
 import { query, orderByChild, startAt, get, endAt } from "firebase/database";
-import { getCustomAnswers } from "./callAnswers";
 
 const RoundsInRange = ({ range, dateRef, network, proxy }) => {
   const [answerGiven, setAnswerGiven] = useState(false);
   const [inputRange, setInputRange] = useState([0, 0]);
   const [answer, setAnswer] = useState(0);
-  const [customRange, setCustomRange] = useState(false);
 
   //convert date to 2023-06-03 format
   const formatDate = (date) => {
@@ -102,12 +100,6 @@ const RoundsInRange = ({ range, dateRef, network, proxy }) => {
 
     setAnswerGiven(true);
   };
-  const handleCustomRange = async () => {
-    const roundIds = JSON.parse(answer).map((round) => round.roundId);
-    const customAnswer = await getCustomAnswers(roundIds, proxy, network);
-
-    setCustomRange(customAnswer);
-  };
 
   useEffect(() => {
     setAnswerGiven(false);
@@ -176,8 +168,6 @@ const RoundsInRange = ({ range, dateRef, network, proxy }) => {
           )}
         </div>
       )}
-      {customRange ? handleCustomRange : null}
-      {/* Delete the above before continuing!!!! */}
     </div>
   );
 };

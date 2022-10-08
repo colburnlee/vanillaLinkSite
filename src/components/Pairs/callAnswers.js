@@ -1,13 +1,21 @@
 import { connectProviderContract } from "../ethers/connectProviderContract";
+import Bottleneck from "bottleneck";
 
 const getCustomAnswers = async (rounds, proxy, network) => {
+  const limiter = new Bottleneck({
+    maxConcurrent: 2,
+    minTime: 1000,
+  });
+
   const contract = await connectProviderContract(proxy, network);
-  let customAnswers = await Promise.all(
-    rounds.map(async (round) => {
-      const customAnswer = await contract.getRoundData(round);
-      return customAnswer;
-    })
-  );
+
+  let customAnswers = await limiter.schedule(() => {
+    const customAnswer = rounds.map(async (round) =>
+      contract.getRoundData(round)
+    );
+    return Promise.all(customAnswer);
+  });
+
   // format customAnswers
   customAnswers = customAnswers.map((result) => {
     const customAnswer = result;

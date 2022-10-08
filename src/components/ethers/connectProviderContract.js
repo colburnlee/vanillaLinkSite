@@ -18,6 +18,10 @@ const connectProviderContract = async (contractAddress, chain) => {
   const network = networks[chain];
   const provider = getDefaultProvider(network, {
     infura: `${process.env.REACT_APP_INFURA_TOKEN}`,
+    // ankr: "https://rpc.ankr.com/eth",
+    alchemy: `${process.env.REACT_APP_ALCHEMY_TOKEN}`,
+    // cloudflare: "https://cloudflare-eth.com",
+    etherscan: `${process.env.REACT_APP_ETHERSCAN_TOKEN}`,
   });
 
   // const provider = getDefaultProvider(network, {
