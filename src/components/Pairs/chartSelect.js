@@ -73,10 +73,10 @@ const Charts = [
     value: "roundsInRange",
     label: "Rounds In Range",
   },
-  {
-    value: "customRange",
-    label: "Build Custom Range",
-  },
+  // {
+  //   value: "customRange",
+  //   label: "Build Custom Range",
+  // },
   {
     value: "DateLookup",
     label: "Date/Time Lookup",
