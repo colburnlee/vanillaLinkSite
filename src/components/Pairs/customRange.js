@@ -1,6 +1,5 @@
 import { formatDate, dateFormat } from "./dateLookup";
 import { useState, useEffect } from "react";
-import { getCustomAnswers } from "./callAnswers";
 import { query, orderByChild, startAt, get, endAt } from "firebase/database";
 import { unparse } from "papaparse";
 
@@ -11,8 +10,7 @@ const CustomRange = ({ range, dateRef, pair }) => {
   const [endDate, setEndDate] = useState("");
   // Input range - Start and End date for the range that is created onClick and formatted
   const [inputRange, setInputRange] = useState([0, 0]);
-  // Answer from the RTDB. This is a stringified JSON object of the roundIds
-  const [answer, setAnswer] = useState("");
+
   // Final Result - This is the parsed JSON object of the roundIds
   const [result, setResult] = useState("");
 
