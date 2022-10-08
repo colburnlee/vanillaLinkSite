@@ -69,14 +69,14 @@ const Charts = [
     value: "CSVExample",
     label: "CSV Data Example",
   },
-  {
-    value: "roundsInRange",
-    label: "Rounds In Range",
-  },
   // {
-  //   value: "customRange",
-  //   label: "Build Custom Range",
+  //   value: "roundsInRange",
+  //   label: "Rounds In Range",
   // },
+  {
+    value: "customRange",
+    label: "Build Custom Range",
+  },
   {
     value: "DateLookup",
     label: "Date/Time Lookup",

@@ -26,9 +26,9 @@ const RoundsInRange = ({ range, dateRef, network, proxy }) => {
 
   const codeBlock = (data, start, end) => {
     try {
-      // console.log("codeblock data var: ", data);
-      // console.log("codeblock start var: ", start);
-      // console.log("codeblock end var: ", end);
+      console.log("codeblock data var: ", data);
+      console.log("codeblock start var: ", start);
+      console.log("codeblock end var: ", end);
       const result = JSON.parse(data);
 
       return (

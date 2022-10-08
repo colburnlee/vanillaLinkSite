@@ -296,8 +296,7 @@ const Pair = ({ chain, pair }) => {
                     <CustomRange
                       range={dateRange}
                       dateRef={dateRef}
-                      network={network}
-                      proxy={proxyAddress}
+                      pair={pair}
                     />
                   )}
                 </div>
