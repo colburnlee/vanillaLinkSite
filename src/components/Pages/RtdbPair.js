@@ -303,18 +303,14 @@ const Pair = ({ chain, pair }) => {
                       selectedTime={selectedTime}
                     />
                   )}
-                </div>
-                {selectedChart === "roundsInRange" && (
-                  <RoundsInRange
-                    range={dateRange}
-                    dateRef={dateRef}
-                    network={network}
-                    proxy={proxyAddress}
-                  />
-                )}
-                <div className="flex flex-shrink">
-                  {selectedChart === "JSONExample" && <JSONSnippet />}
-                  {selectedChart === "CSVExample" && <CSVSnippet />}
+                  {selectedChart === "roundsInRange" && (
+                    <RoundsInRange
+                      range={dateRange}
+                      dateRef={dateRef}
+                      network={network}
+                      proxy={proxyAddress}
+                    />
+                  )}
                   {selectedChart === "customRange" && (
                     <CustomRange
                       range={dateRange}
@@ -322,6 +318,11 @@ const Pair = ({ chain, pair }) => {
                       pair={pair}
                     />
                   )}
+                </div>
+
+                <div className="flex flex-shrink">
+                  {selectedChart === "JSONExample" && <JSONSnippet />}
+                  {selectedChart === "CSVExample" && <CSVSnippet />}
                 </div>
               </>
             ) : (

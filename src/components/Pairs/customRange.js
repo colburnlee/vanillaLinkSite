@@ -104,7 +104,7 @@ const CustomRange = ({ range, dateRef, pair }) => {
               </code>
             </pre>
           </div>
-          <div className="flex flex-auto p-2 text-gray-300 bg-gray-800 rounded-lg mb-8 mt-2 max-h-64 overflow-auto text-xs max-w-sm sm:max-w-lg md:max-w-full  sm:text-lg lg:w-full ">
+          <div className="flex flex-auto p-2 text-gray-300 bg-gray-800 rounded-lg mb-8 mt-2 max-h-64 overflow-auto text-xs max-w-sm sm:max-w-lg md:max-w-full mx-1  sm:text-lg lg:w-full ">
             <pre className="flex flex-col ">
               <code className="text-left">
                 <strong>CSV Result Sample: </strong> <br />
@@ -113,7 +113,7 @@ const CustomRange = ({ range, dateRef, pair }) => {
             </pre>
           </div>
           <div className="flex flex-row  mt-4 mb-8 ">
-            <button className="mx-auto mb-4 text-gray-800 border-2 border-gray-600 rounded-md py-2 px-8 focus:outline-none hover:bg-emerald-600 hover:border-0 text-lg">
+            <button className="mx-auto mb-4 text-gray-800 border-2 border-gray-600 rounded-md py-2 px-4 focus:outline-none hover:bg-emerald-600 hover:border-0 text-md">
               <a
                 href={`data:text/csv;charset=utf-8',${encodeURIComponent(csv)}`}
                 download={`${pair}_${startDate[2]}_to_${endDate[2]}.csv`}
@@ -121,7 +121,7 @@ const CustomRange = ({ range, dateRef, pair }) => {
                 Download CSV
               </a>
             </button>
-            <button className="mx-auto mb-4 text-gray-800 border-2 border-gray-600 rounded-md py-2 px-8 focus:outline-none hover:bg-emerald-600 hover:border-0 text-lg">
+            <button className="mx-auto mb-4 text-gray-800 border-2 border-gray-600 rounded-md py-2 px-4 focus:outline-none hover:bg-emerald-600 hover:border-0 text-md">
               <a
                 href={`data:text/json;charset=utf-8',${encodeURIComponent(
                   data
@@ -153,8 +153,8 @@ const CustomRange = ({ range, dateRef, pair }) => {
     <div>
       {answerGiven ? (
         <>
-          <div className="flex flex-col justify-center align-middle max-w-xl">
-            <div className="text-center my-8">
+          <div className="flex flex-col justify-center align-middle max-w-xl mx-1">
+            <div className="text-center my-8 ">
               {codeBlock(result, inputRange[0], inputRange[1])}
               <button
                 className="flex mx-auto text-white bg-emerald-800 border-0 py-2 px-8 focus:outline-none hover:bg-emerald-600 rounded text-lg"
@@ -169,14 +169,14 @@ const CustomRange = ({ range, dateRef, pair }) => {
           </div>
         </>
       ) : (
-        <div className="flex flex-col items-center justify-center my-8">
+        <div className="flex flex-wrap flex-col items-center justify-center my-8">
           <h1 className="text-2xl my-2 font-bold text-gray-600">
             Enter a date/time range for a custom data set
           </h1>
           <h3 className="text-lg mb-6 text-gray-800">
             Samples with downloadable links below
           </h3>
-          <div className="flex flex-row justify-between align-middle">
+          <div className="flex flex-row flex-wrap justify-between align-middle">
             <div className="flex flex-col mr-4 align-middle">
               <h2 className="text-2xl font-bold text-gray-600">Start Date</h2>
               <input
