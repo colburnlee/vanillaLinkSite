@@ -10,7 +10,6 @@ const CustomRange = ({ range, dateRef, pair }) => {
   const [endDate, setEndDate] = useState("");
   // Input range - Start and End date for the range that is created onClick and formatted
   const [inputRange, setInputRange] = useState([0, 0]);
-
   // Final Result - This is the parsed JSON object of the roundIds
   const [result, setResult] = useState("");
 
@@ -53,10 +52,6 @@ const CustomRange = ({ range, dateRef, pair }) => {
       .then(async (snapshot) => {
         if (snapshot.exists()) {
           let response = JSON.stringify(Object.values(snapshot.val()));
-          // console.log("response: ", response);
-          // setAnswer(response);
-          // const roundIds = JSON.parse(answer).map((round) => round.roundId);
-          // const customAnswer = await getCustomAnswers(roundIds, proxy, network);
           setResult(response);
           setAnswerGiven(true);
         } else {
@@ -71,11 +66,9 @@ const CustomRange = ({ range, dateRef, pair }) => {
   };
   const codeBlock = (data, start, end) => {
     try {
-      // console.log("codeblock data var: ", data);
-      // console.log("codeblock start var: ", start);
-      // console.log("codeblock end var: ", end);
       const result = JSON.parse(data);
-      const jsonSample = result.length > 100 ? result.slice(0, 100) : result;
+      const jsonSample = result.length > 10 ? result.slice(0, 10) : result;
+      const csvSample = unparse(jsonSample);
       const csv = unparse(result);
 
       return (
@@ -108,9 +101,12 @@ const CustomRange = ({ range, dateRef, pair }) => {
             <pre className="flex flex-col ">
               <code className="text-left">
                 <strong>CSV Result Sample: </strong> <br />
-                {csv}
+                {csvSample}
               </code>
             </pre>
+          </div>
+          <div className="text-center text-sm">
+            <p>Download custom results:</p>
           </div>
           <div className="flex flex-row  mt-4 mb-8 ">
             <button className="mx-auto mb-4 text-gray-800 border-2 border-gray-600 rounded-md py-2 px-4 focus:outline-none hover:bg-emerald-600 hover:border-0 text-md">
@@ -132,16 +128,40 @@ const CustomRange = ({ range, dateRef, pair }) => {
               </a>
             </button>
           </div>
+          <div className="flex flex-row  mb-8 ">
+            <button
+              className="flex mx-auto text-white bg-emerald-800 border-0 py-2 px-8 focus:outline-none hover:bg-emerald-600 rounded text-lg"
+              onClick={() => {
+                setAnswerGiven(false);
+                setInputRange([0, 0]);
+              }}
+            >
+              Search Again
+            </button>
+          </div>
         </>
       );
     } catch (error) {
       console.error(error);
       return (
-        <div className="flex flex-auto p-2 text-gray-300 bg-gray-800 rounded-lg mb-8 mt-2 overflow-auto text-xs max-w-sm sm:max-w-lg md:max-w-full  sm:text-lg lg:w-full ">
-          <pre className="flex flex-col ">
-            <code className="flex ">No answer found</code>
-          </pre>
-        </div>
+        <>
+          <div className="flex flex-auto p-2 text-gray-300 bg-gray-800 rounded-lg mb-8 mt-2 overflow-auto text-xs max-w-sm sm:max-w-lg md:max-w-full  sm:text-lg lg:w-full ">
+            <pre className="flex flex-col ">
+              <code className="flex ">No answer found</code>
+            </pre>
+          </div>
+          <div className="flex flex-row  mb-8 ">
+            <button
+              className="flex mx-auto text-white bg-emerald-800 border-0 py-2 px-8 focus:outline-none hover:bg-emerald-600 rounded text-lg"
+              onClick={() => {
+                setAnswerGiven(false);
+                setInputRange([0, 0]);
+              }}
+            >
+              Search Again
+            </button>
+          </div>
+        </>
       );
     }
   };
@@ -156,15 +176,6 @@ const CustomRange = ({ range, dateRef, pair }) => {
           <div className="flex flex-col justify-center align-middle max-w-xl mx-1">
             <div className="text-center my-8 ">
               {codeBlock(result, inputRange[0], inputRange[1])}
-              <button
-                className="flex mx-auto text-white bg-emerald-800 border-0 py-2 px-8 focus:outline-none hover:bg-emerald-600 rounded text-lg"
-                onClick={() => {
-                  setAnswerGiven(false);
-                  setInputRange([0, 0]);
-                }}
-              >
-                Search Again
-              </button>
             </div>
           </div>
         </>
