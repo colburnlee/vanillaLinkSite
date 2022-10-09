@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { storage } from "../../firebase/firebase.config"; // add: rtdb
-import { ref, getDownloadURL } from "firebase/storage";
+import { ref, getDownloadURL, getMetadata } from "firebase/storage";
 import useAxios from "../useAxios";
 import OHLChart from "../Pairs/OHLChart";
 import { Settings, Link, Download, LoadingWheel } from "../Icons";
@@ -16,6 +16,7 @@ import { CSVSnippet } from "../Pairs/CSVSnippet";
 import { DateLookup } from "../Pairs/dateLookup";
 import { RoundsInRange } from "../Pairs/roundsInRange";
 import { CustomRange } from "../Pairs/customRange";
+import prettyBytes from "pretty-bytes";
 
 const Pair = ({ chain, pair }) => {
   // Declare the initial state variable types for the chart
@@ -27,7 +28,9 @@ const Pair = ({ chain, pair }) => {
   // Set the initial state variables for the chart
   const [chartUrl, setChartUrl] = useState(null);
   const [JSONfileUrl, setJSONFileUrl] = useState(null);
+  const [JSONfileMetadata, setJSONFileMetadata] = useState(null);
   const [CSVfileUrl, setCSVFileUrl] = useState(null);
+  const [CSVfileMetadata, setCSVFileMetadata] = useState(null);
   const [updateCount, setUpdateCount] = useState(null);
   const [chartKey, setChartKey] = useState(0);
   const [proxyAddress, setProxyAddress] = useState(null);
@@ -87,10 +90,28 @@ const Pair = ({ chain, pair }) => {
         console.log(err);
       });
 
+    // JSON File Metadata
+    getMetadata(jsonFileRef)
+      .then((res) => {
+        setJSONFileMetadata(prettyBytes(res.size));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
     // CSV File URL
     getDownloadURL(csvFileRef)
       .then((res) => {
         setCSVFileUrl(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    // CSV File Metadata
+    getMetadata(csvFileRef)
+      .then((res) => {
+        setCSVFileMetadata(prettyBytes(res.size));
       })
       .catch((err) => {
         console.log(err);
@@ -207,35 +228,37 @@ const Pair = ({ chain, pair }) => {
                   <div className="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-600 inline-flex items-center justify-center text-black relative z-10">
                     <Download />
                   </div>
-                  <div className="flex-grow pl-4">
+                  <div className="flex-grow pl-4 ">
                     <h2 className="font-semibold text-xl title-font text-gray-900">
-                      Download Dataset
+                      Download Complete Dataset
                     </h2>
                     <ul className="leading-relaxed">
                       <li>(Updated Daily at 00:00 UTC)</li>
                     </ul>
-                    <>
-                      <a
-                        href={JSONfileUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <p className="font-semibold hover:text-emerald-600 hover:font-bold focus:text-emerald-600 ">
-                          {" "}
-                          JSON file
-                        </p>
-                      </a>
-                      <a
-                        href={CSVfileUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <p className="font-semibold hover:text-emerald-600 focus:text-emerald-600 hover:font-bold">
-                          {" "}
-                          CSV file
-                        </p>
-                      </a>
-                    </>
+
+                    <a
+                      href={JSONfileUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex flex-row items-center "
+                    >
+                      <p className="font-semibold hover:text-emerald-600 hover:font-bold focus:text-emerald-600 mr-1">
+                        JSON file
+                      </p>
+                      <p className="text-xs mt-1">({JSONfileMetadata})</p>
+                    </a>
+
+                    <a
+                      href={CSVfileUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex flex-row items-center "
+                    >
+                      <p className="font-semibold  hover:text-emerald-600 hover:font-bold focus:text-emerald-600 mr-1 ">
+                        CSV file
+                      </p>
+                      <p className="text-xs mt-1 "> ({CSVfileMetadata})</p>
+                    </a>
                   </div>
                 </div>
               </>

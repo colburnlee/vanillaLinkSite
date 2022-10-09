@@ -9256,3 +9256,9 @@ INFO: Detected non-HTTP/2 connection.
 [debug] [2022-10-08T20:21:36.682Z] Oct 08, 2022 10:21:36 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected non-HTTP/2 connection.
  {"metadata":{"emulator":{"name":"firestore"},"message":"Oct 08, 2022 10:21:36 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[info] {"result":{"permit":true},"id":24817,"status":"ok"}
+{"result":{"permit":true},"id":24818,"status":"ok"} {"metadata":{"emulator":{"name":"storage"},"message":"{\"result\":{\"permit\":true},\"id\":24817,\"status\":\"ok\"}\n{\"result\":{\"permit\":true},\"id\":24818,\"status\":\"ok\"}"}}
+[info] {"result":{"permit":true},"id":35776,"status":"ok"}
+{"result":{"permit":true},"id":35777,"status":"ok"}
+{"result":{"permit":true},"id":35778,"status":"ok"}
+{"result":{"permit":true},"id":35779,"status":"ok"} {"metadata":{"emulator":{"name":"storage"},"message":"{\"result\":{\"permit\":true},\"id\":35776,\"status\":\"ok\"}\n{\"result\":{\"permit\":true},\"id\":35777,\"status\":\"ok\"}\n{\"result\":{\"permit\":true},\"id\":35778,\"status\":\"ok\"}\n{\"result\":{\"permit\":true},\"id\":35779,\"status\":\"ok\"}"}}
