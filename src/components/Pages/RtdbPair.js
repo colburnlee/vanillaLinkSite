@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { storage } from "../../firebase/firebase.config"; // add: rtdb
+import { storage } from "../../firebase/firebase.config";
 import { ref, getDownloadURL, getMetadata } from "firebase/storage";
 import useAxios from "../useAxios";
 import OHLChart from "../Pairs/OHLChart";

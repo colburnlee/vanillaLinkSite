@@ -170,7 +170,7 @@ const CustomRange = ({ range, dateRef, pair }) => {
   }, [range]);
 
   return (
-    <div>
+    <>
       {answerGiven ? (
         <>
           <div className="flex flex-col justify-center align-middle max-w-xl mx-1">
@@ -184,9 +184,7 @@ const CustomRange = ({ range, dateRef, pair }) => {
           <h1 className="text-2xl my-2 font-bold text-gray-600">
             Enter a date/time range for a custom data set
           </h1>
-          <h3 className="text-lg mb-6 text-gray-800">
-            Samples with downloadable links below
-          </h3>
+
           <div className="flex flex-row flex-wrap justify-between align-middle">
             <div className="flex flex-col mr-4 align-middle">
               <h2 className="text-2xl font-bold text-gray-600">Start Date</h2>
@@ -226,7 +224,7 @@ const CustomRange = ({ range, dateRef, pair }) => {
           )}
         </div>
       )}
-    </div>
+    </>
   );
 };
 

@@ -69,10 +69,6 @@ const Charts = [
     value: "CSVExample",
     label: "CSV Data Example",
   },
-  // {
-  //   value: "roundsInRange",
-  //   label: "Rounds In Range",
-  // },
   {
     value: "customRange",
     label: "Build Custom Range",

@@ -14,6 +14,7 @@ const connectProviderContract = async (contractAddress, chain) => {
     BSC: "bsc",
     FTM: "ftm",
     AVALANCHE: "avalanche",
+    AVAX: "avalanche",
   };
   const network = networks[chain];
   const provider = getDefaultProvider(network, {
