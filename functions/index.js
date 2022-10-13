@@ -66,7 +66,8 @@ exports.getLatestFromOracle = functions.https.onRequest((request, response) => {
           price: +result.answer / Math.pow(10, decimals),
         })
             .then(() => {
-              return (console.log("RTDB updated!"));
+              // eslint-disable-next-line max-len
+              return (console.log(`Round ${result.roundId} saved to ${chain}_${pair}`));
             }
             )
             .catch((error) => {
@@ -78,7 +79,7 @@ exports.getLatestFromOracle = functions.https.onRequest((request, response) => {
       return (console.log("No data available"));
     }
   }).catch((error) => {
-    console.error(error);
+    return (console.error(error));
   }
   );
 });
