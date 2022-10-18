@@ -37,7 +37,7 @@ const Pair = ({ chain, pair }) => {
   const [deviationThreshold, setDeviationThreshold] = useState(null);
   const [heartbeat, setHeartbeat] = useState(null);
   const [latestRound, setLatestRound] = useState(null);
-  const [selectedTime, setSelectedTime] = useState(60);
+  const [selectedTime, setSelectedTime] = useState(30);
   const [selectedChart, setSelectedChart] = useState("priceHistory");
   const [dateRange, setDateRange] = useState(null);
   const [network, setNetwork] = useState(null);
@@ -132,7 +132,7 @@ const Pair = ({ chain, pair }) => {
         totalUpdates.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
       );
       setLatestRound(latestRound);
-      setSelectedTime(90);
+      setSelectedTime(60);
       // setSelectedChart("priceHistory");
       setDateRange([chartData[0].date, chartData[chartData.length - 1].date]); // YYYY-MM-DDThh:mm  Mar 11, 2021
     }

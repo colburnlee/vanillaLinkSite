@@ -21,6 +21,7 @@ const OHLChart = (LineChartProps = {}) => {
   } = LineChartProps; // const { description = "Pair", data, onChange } = LineChartProps;
   const isUsd = description.includes("USD");
   let [xMin, xMax] = d3.extent(data, (d) => d.date);
+  let [, yMax] = d3.extent(data, (d) => d.high);
 
   let startIndex = data.length - 1 - selectedTime;
   if (startIndex === isNaN) startIndex = xMin;
@@ -45,17 +46,12 @@ const OHLChart = (LineChartProps = {}) => {
             domain={[xMin, xMax]}
           />
           <YAxis
-            // domain={[0, yMax]}
-            // label={{
-            //   value: priceConstructor,
-            //   angle: -90,
-            //   position: "insideBottomLeft",
-            // }}
+            type="number"
             tickFormatter={(tick) => {
               if (isUsd) {
                 // format in dollars with commas, rounded to thousands
                 return `$${tick.toLocaleString("en-US", {
-                  maximumFractionDigits: 0,
+                  maximumFractionDigits: yMax < 100 ? 2 : 0,
                 })}`;
               } else {
                 return `${tick}`;
@@ -70,7 +66,7 @@ const OHLChart = (LineChartProps = {}) => {
                 (name === "Low" || name === "High" || name === "Open")
               ) {
                 return `$${value.toLocaleString("en-US", {
-                  maximumFractionDigits: 0,
+                  maximumFractionDigits: yMax < 100 ? 2 : 0,
                 })}`;
               }
               return value;
@@ -114,7 +110,7 @@ const OHLChart = (LineChartProps = {}) => {
             strokeWidth={1}
             dot={false}
           />
-          <Line
+          {/* <Line
             connectNulls
             type="monotone"
             dataKey="updateCount"
@@ -124,7 +120,7 @@ const OHLChart = (LineChartProps = {}) => {
             stroke="#000000"
             dot={false}
             legendType="none"
-          />
+          /> */}
         </LineChart>
       </ResponsiveContainer>
     </>

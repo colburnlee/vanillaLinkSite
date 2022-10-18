@@ -1,0 +1,19 @@
+{
+  "name": "data/GOERLI_LINKUSD.json",
+  "bucket": "link-to-the-past-a5042.appspot.com",
+  "metageneration": 1,
+  "generation": 1666118287729,
+  "contentType": "application/json",
+  "storageClass": "STANDARD",
+  "contentDisposition": "inline",
+  "downloadTokens": [
+    "4c8f4ab5-c8fe-4e01-96d0-5e540d13d204"
+  ],
+  "etag": "BZId9aV5IEqxi/e/E3Cw4VWXhNE",
+  "customMetadata": {},
+  "timeCreated": "2022-10-18T18:38:07.729Z",
+  "updated": "2022-10-18T18:38:07.729Z",
+  "size": 1069036,
+  "md5Hash": "GRSUHlfiMCRNhioeMws3Bg==",
+  "crc32c": "3976714912"
+}

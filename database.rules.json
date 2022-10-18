@@ -6,6 +6,9 @@
       },
       "ETH_BTCUSD": {
         ".indexOn": "startedAt"
+      },
+      "GOERLI_LINKUSD": {
+        ".indexOn": "startedAt"
       }
     },
     "ohlChart": {},

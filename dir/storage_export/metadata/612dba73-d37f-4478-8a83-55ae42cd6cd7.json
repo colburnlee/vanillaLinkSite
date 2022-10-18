@@ -1,0 +1,19 @@
+{
+  "name": "csv/GOERLI_LINKUSD.csv",
+  "bucket": "link-to-the-past-a5042.appspot.com",
+  "metageneration": 1,
+  "generation": 1666118733145,
+  "contentType": "text/csv",
+  "storageClass": "STANDARD",
+  "contentDisposition": "inline",
+  "downloadTokens": [
+    "932cd915-c1ac-44aa-8f56-2836712ef596"
+  ],
+  "etag": "NolVjpljKAC+6YM0lWhs6Tnhmqk",
+  "customMetadata": {},
+  "timeCreated": "2022-10-18T18:45:33.145Z",
+  "updated": "2022-10-18T18:45:33.145Z",
+  "size": 555013,
+  "md5Hash": "xImG1vIXav/NMa+7+mDocA==",
+  "crc32c": "1350327605"
+}

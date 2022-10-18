@@ -1,0 +1,19 @@
+{
+  "name": "ohlChart/GOERLI_LINKUSD.json",
+  "bucket": "link-to-the-past-a5042.appspot.com",
+  "metageneration": 1,
+  "generation": 1666118251979,
+  "contentType": "application/json",
+  "storageClass": "STANDARD",
+  "contentDisposition": "inline",
+  "downloadTokens": [
+    "a9245f45-22b8-49b2-8472-1ff219688a44"
+  ],
+  "etag": "1R8glCy6x2am/esdZIIUyHBkQm8",
+  "customMetadata": {},
+  "timeCreated": "2022-10-18T18:37:31.979Z",
+  "updated": "2022-10-18T18:37:31.979Z",
+  "size": 171159,
+  "md5Hash": "sDudshzuGe7xFkgEVw7sxw==",
+  "crc32c": "1939273245"
+}
