@@ -11,6 +11,6 @@
     "ohlChart": {},
     "oracles": {},
     ".read": true,
-    ".write": false
+    ".write": true
   }
 }
