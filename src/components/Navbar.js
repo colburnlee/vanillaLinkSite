@@ -25,6 +25,9 @@ const Navbar = () => {
           <Link to="/ETH/BTCUSD" className="mr-5 hover:text-white">
             BTC-USD
           </Link>
+          <Link to="/GOERLI/LINKUSD" className="mr-5 hover:text-white">
+            LINK-USD (Goerli)
+          </Link>
         </nav>
       </div>
     </header>

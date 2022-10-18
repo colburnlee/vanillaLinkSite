@@ -14,7 +14,7 @@ function App() {
         <Navbar />
       </div>
       <div className="Content   ">
-        <div className="App bg-gradient-to-r from-gray-200 to-emerald-50 items-center justify-center  ">
+        <div className="App bg-gradient-to-r from-gray-200 to-emerald-50 min-h-screen flex items-center justify-center ">
           <Routes>
             <Route path="/" element={<Landing />}></Route>
             <Route
@@ -37,6 +37,11 @@ function App() {
               exact
               path="/ETH/BTCUSD"
               element={<RtdbPair chain={"ETH"} pair={"BTCUSD"} />}
+            ></Route>
+            <Route
+              exact
+              path="/GOERLI/LINKUSD"
+              element={<RtdbPair chain={"GOERLI"} pair={"LINKUSD"} />}
             ></Route>
           </Routes>
         </div>

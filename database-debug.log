@@ -1,10 +1,14 @@
 WARNING: An illegal reflective access operation has occurred
-WARNING: Illegal reflective access by io.netty.util.internal.ReflectionUtil (file:/home/pop/.cache/firebase/emulators/firebase-database-emulator-v4.8.0.jar) to field sun.nio.ch.SelectorImpl.selectedKeys
+WARNING: Illegal reflective access by io.netty.util.internal.ReflectionUtil (file:/home/pop/.cache/firebase/emulators/firebase-database-emulator-v4.10.0.jar) to field sun.nio.ch.SelectorImpl.selectedKeys
 WARNING: Please consider reporting this to the maintainers of io.netty.util.internal.ReflectionUtil
 WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
 WARNING: All illegal access operations will be denied in a future release
-09:06:50.744 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
-09:06:50.986 [main] INFO com.firebase.server.forge.App$ - Listening at localhost:9000
-09:06:51.491 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO com.firebase.core.namespace.NamespaceActor - link-to-the-past-a5042-default-rtdb successfully activated FBKV (SurveyIdle(0)) wait: 145ms, init: 0ms
-09:06:57.998 [NamespaceSystem-blocking-namespace-operation-dispatcher-8:link-to-the-past-a5042-default-rtdb$57369019:] INFO com.firebase.core.namespace.StateManager - Namespace link-to-the-past-a5042-default-rtdb status Active to Active
-09:51:35.235 [NamespaceSystem-akka.actor.default-dispatcher-75] INFO com.firebase.core.namespace.NamespaceActor - link-to-the-past-a5042 successfully activated FBKV (SurveyIdle(0)) wait: 2ms, init: 0ms
+15:29:48.113 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+15:29:48.323 [main] INFO com.firebase.server.forge.App$ - Listening at 127.0.0.1:9000
+15:29:48.749 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO com.firebase.core.namespace.NamespaceActor - link-to-the-past-a5042-default-rtdb successfully activated FBKV (SurveyIdle(0)) wait: 187ms, init: 0ms
+15:29:55.229 [NamespaceSystem-blocking-namespace-operation-dispatcher-13] INFO com.firebase.core.namespace.StateManager - Namespace link-to-the-past-a5042-default-rtdb status Active to Active
+15:33:08.837 [FirebaseWorkerPool-1-1] WARN com.firebase.core.persistence.backend.dummy.EmulatorMetadataPersistence - Multiple projectIds are not recommended in single project mode. Requested 
+namespace link-to-the-past-a5042, but the emulator is configured for link-to-the-past-a5042-default-rtdb. To 
+opt-out of single project mode add/set the single_project_mode: false property in 
+the firebase.json emulators config. 
+15:33:08.844 [NamespaceSystem-akka.actor.default-dispatcher-17] INFO com.firebase.core.namespace.NamespaceActor - link-to-the-past-a5042 successfully activated FBKV (SurveyIdle(0)) wait: 3ms, init: 0ms

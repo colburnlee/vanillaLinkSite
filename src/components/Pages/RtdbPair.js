@@ -153,8 +153,8 @@ const Pair = ({ chain, pair }) => {
   }, [rtdbRef]);
 
   return (
-    <section className="text-black py-20 body-font w-full bg-background-light flex grow justify-evenly align-middle ">
-      <div className="container pt-28 flex rounded-xl border border-foreground-alt-500 shadow pb-4 sm:p-8 px-2  mx-1  justify-evenly align-middle">
+    <section className="text-black py-20 body-font w-full bg-background-light flex grow items-center justify-center  ">
+      <div className="container pt-28 flex rounded-xl border border-foreground-alt-500 shadow pb-4 sm:p-8 px-2  mx-1 ">
         <div className="flex flex-wrap h-full w-full justify-center align-middle items-center">
           {/* Div for Pair Name, Description, and Information */}
           <div className="lg:w-1/3 md:w-1/3 md:px-4 md:py-6 ">
