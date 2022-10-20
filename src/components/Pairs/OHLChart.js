@@ -60,7 +60,7 @@ const OHLChart = (LineChartProps = {}) => {
           />
           <Tooltip
             formatter={(value, name) => {
-              // format in dollars with commas, rounded to thousands. limit to only "Low", "High", "Open"
+              // format in dollars with commas, rounded to thousands if applicable. limit to only "Low", "High", "Open"
               if (
                 isUsd &&
                 (name === "Low" || name === "High" || name === "Open")
@@ -90,7 +90,7 @@ const OHLChart = (LineChartProps = {}) => {
             name="Low"
             stroke="#8884d8"
             dot={false}
-            strokeWidth={1}
+            strokeWidth={2}
           />
           <Line
             connectNulls
@@ -99,7 +99,7 @@ const OHLChart = (LineChartProps = {}) => {
             name="High"
             stroke="#82ca9d"
             dot={false}
-            strokeWidth={1}
+            strokeWidth={2}
           />
           <Line
             connectNulls
@@ -107,7 +107,7 @@ const OHLChart = (LineChartProps = {}) => {
             dataKey="open"
             name="Open"
             stroke="#3d2cbf"
-            strokeWidth={1}
+            strokeWidth={2}
             dot={false}
           />
           {/* <Line

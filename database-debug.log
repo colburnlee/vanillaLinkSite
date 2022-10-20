@@ -12,3 +12,8 @@ namespace link-to-the-past-a5042, but the emulator is configured for link-to-the
 opt-out of single project mode add/set the single_project_mode: false property in 
 the firebase.json emulators config. 
 08:53:39.153 [NamespaceSystem-akka.actor.default-dispatcher-13] INFO com.firebase.core.namespace.NamespaceActor - link-to-the-past-a5042 successfully activated FBKV (SurveyIdle(0)) wait: 3ms, init: 0ms
+11:03:30.983 [FirebaseWorkerPool-1-3] WARN com.firebase.core.persistence.backend.dummy.EmulatorMetadataPersistence - Multiple projectIds are not recommended in single project mode. Requested 
+namespace fake-server, but the emulator is configured for link-to-the-past-a5042,link-to-the-past-a5042-default-rtdb. To 
+opt-out of single project mode add/set the single_project_mode: false property in 
+the firebase.json emulators config. 
+11:03:30.987 [NamespaceSystem-akka.actor.default-dispatcher-310] INFO com.firebase.core.namespace.NamespaceActor - fake-server successfully activated FBKV (SurveyIdle(0)) wait: 2ms, init: 0ms
