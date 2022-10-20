@@ -208,7 +208,12 @@ const Pair = ({ chain, pair }) => {
                       Proxy Contract Address:
                       {proxyAddress ? (
                         <a
-                          href={"https://etherscan.io/address/" + proxyAddress}
+                          href={
+                            chain === "ETH"
+                              ? "https://etherscan.io/address/" + proxyAddress
+                              : "https://goerli.etherscan.io/address/" +
+                                proxyAddress
+                          }
                           target="_blank"
                           rel="noopener noreferrer"
                           className="font-semibold hover:text-emerald-600 focus:text-emerald-600 hover:font-bold"
