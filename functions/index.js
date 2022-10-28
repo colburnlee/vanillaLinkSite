@@ -201,11 +201,111 @@ app.post("*/closestRound", (req, res) => {
       });
 });
 
-app.post("*/20DayOpenHistory", (req, res) => {
-  EAInput = req.body;
-  const chain = EAInput.data.chain;
-  const pair = EAInput.data.pair;
+app.get("*/getClosestRound/:chain/:pair/:timestamp", (req, res) => {
   const rtdb = admin.database();
+  const chain = req.params.chain;
+  const pair = req.params.pair;
+  const time = +req.params.timestamp;
+  const dateRef = ref(rtdb, `data/${chain}_${pair}`);
+
+  const lookupNextDate = query(
+      dateRef,
+      orderByChild("/startedAt"),
+      endAt(time),
+      limitToLast(1)
+  );
+  get(lookupNextDate)
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          const answer = Object.values(snapshot.val())[0].answeredInRound;
+          console.log(
+              `Successful querery for: ${chain}_${pair} at time: ${time}. Closest round: ${answer}`
+          );
+          EAOutput = {
+            jobRunID: "lookupDate",
+            statusCode: 200,
+            data: {
+              result: answer,
+            },
+            error: null,
+          };
+          res.status(200).send(EAOutput);
+        } else {
+          console.log(
+              `No data available for chain: ${chain} pair: ${pair} at time: ${time}`
+          );
+          EAOutput = {
+            jobRunID: EAInput.id,
+            statusCode: 404,
+            data: {
+              result: null,
+            },
+            error: "No data available",
+          };
+          res.status(404).send(EAOutput);
+          return;
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+});
+
+// Pending Deletion - POST Request
+// app.post("*/20DayOpenHistory", (req, res) => {
+//   EAInput = req.body;
+//   const chain = EAInput.data.chain;
+//   const pair = EAInput.data.pair;
+//   const rtdb = admin.database();
+//   console.log(`Request for 20 day open history for ${chain}_${pair}`);
+
+//   const dateRef = ref(rtdb, `data/${chain}_${pair}`);
+//   let date = new Date();
+//   date = date.setUTCHours(0, 0, 1, 0) / 1000;
+//   const dateArray = [];
+//   for (let i = 1; i < 21; i++) {
+//     dateArray.push(date);
+//     date = date - 86400;
+//   }
+
+//   const resultsArray = [];
+//   dateArray.forEach(function(date) {
+//     const lookupNextDate = query(
+//         dateRef,
+//         orderByChild("/startedAt"),
+//         endAt(date),
+//         limitToLast(1)
+//     );
+//     // Look up the closest round and push it to an array to return
+//     get(lookupNextDate).then((snapshot) => {
+//       if (snapshot.exists()) {
+//         const answer = Object.values(snapshot.val())[0].answeredInRound;
+//         resultsArray.push(answer);
+//       } else {
+//         console.log(
+//             `No data available for chain: ${chain} pair: ${pair} at time: ${date}`
+//         );
+//         resultsArray.push(null);
+//       }
+//     });
+//   });
+//   setTimeout(function() {
+//     EAOutput = {
+//       jobRunID: EAInput.id,
+//       statusCode: 200,
+//       data: {
+//         result: resultsArray,
+//       },
+//       error: null,
+//     };
+//     res.status(200).send(EAOutput);
+//   }, 2500);
+// });
+
+app.get("*/20DayOpenHistory/:chain/:pair/", (req, res) => {
+  const rtdb = admin.database();
+  const chain = req.params.chain;
+  const pair = req.params.pair;
   console.log(`Request for 20 day open history for ${chain}_${pair}`);
 
   const dateRef = ref(rtdb, `data/${chain}_${pair}`);
@@ -240,7 +340,7 @@ app.post("*/20DayOpenHistory", (req, res) => {
   });
   setTimeout(function() {
     EAOutput = {
-      jobRunID: EAInput.id,
+      jobRunID: "20DayOpenHistory",
       statusCode: 200,
       data: {
         result: resultsArray,
