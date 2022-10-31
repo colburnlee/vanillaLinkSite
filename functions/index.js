@@ -343,7 +343,7 @@ app.get("*/20DayOpenHistory/:chain/:pair/", (req, res) => {
       jobRunID: "20DayOpenHistory",
       statusCode: 200,
       data: {
-        result: resultsArray,
+        result: resultsArray.join(),
       },
       error: null,
     };
