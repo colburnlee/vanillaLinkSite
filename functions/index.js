@@ -351,6 +351,57 @@ app.get("*/20DayOpenHistory/:chain/:pair/", (req, res) => {
   }, 2500);
 });
 
+app.get("*/20DaySMA/:chain/:pair/", (req, res) => {
+  const rtdb = admin.database();
+  const chain = req.params.chain;
+  const pair = req.params.pair;
+  console.log(`Request for 20 day SMA for ${chain}_${pair}`);
+
+  const dateRef = ref(rtdb, `data/${chain}_${pair}`);
+  let date = new Date();
+  date = date.setUTCHours(0, 0, 1, 0) / 1000;
+  const dateArray = [];
+  for (let i = 1; i < 21; i++) {
+    dateArray.push(date);
+    date = date - 86400;
+  }
+
+  const resultsArray = [];
+  dateArray.forEach(function(date) {
+    const lookupNextDate = query(
+        dateRef,
+        orderByChild("/startedAt"),
+        endAt(date),
+        limitToLast(1)
+    );
+    // Look up the closest round and push it to an array to return
+    get(lookupNextDate).then((snapshot) => {
+      if (snapshot.exists()) {
+        const answer = Object.values(snapshot.val())[0].answer;
+        resultsArray.push(+answer);
+      } else {
+        console.log(
+            `No data available for chain: ${chain} pair: ${pair} at time: ${date}`
+        );
+        resultsArray.push(null);
+      }
+    });
+  });
+  const average = (array) => array.reduce((a, b) => a + b) / array.length;
+
+  setTimeout(function() {
+    EAOutput = {
+      jobRunID: "20DaySMA_" + chain + "_" + pair,
+      statusCode: 200,
+      data: {
+        result: +average(resultsArray).toFixed(),
+      },
+      error: null,
+    };
+    res.status(200).send(EAOutput);
+  }, 1500);
+});
+
 
 // Expose the API as a function
 exports.api = functions.https.onRequest(app);
