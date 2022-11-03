@@ -12,3 +12,10 @@ namespace link-to-the-past-a5042, but the emulator is configured for link-to-the
 opt-out of single project mode add/set the single_project_mode: false property in 
 the firebase.json emulators config. 
 11:32:41.490 [NamespaceSystem-akka.actor.default-dispatcher-59] INFO com.firebase.core.namespace.NamespaceActor - link-to-the-past-a5042 successfully activated FBKV (SurveyIdle(0)) wait: 2ms, init: 0ms
+18:05:31.359 [Thread-0] INFO com.firebase.server.forge.App$ - Attempting graceful shutdown.
+18:05:31.368 [NamespaceSystem-akka.actor.default-dispatcher-255] INFO com.firebase.core.namespace.Terminator$Terminator - 2 actors left to terminate: link-to-the-past-a5042, link-to-the-past-a5042-default-rtdb
+18:05:31.377 [NamespaceSystem-akka.actor.default-dispatcher-267] INFO com.firebase.core.namespace.NamespaceActor - stopped namespace actor for link-to-the-past-a5042
+18:05:31.377 [NamespaceSystem-akka.actor.default-dispatcher-268] INFO com.firebase.core.namespace.NamespaceActor - stopped namespace actor for link-to-the-past-a5042-default-rtdb
+18:05:31.383 [NamespaceSystem-akka.actor.default-dispatcher-269] INFO com.firebase.core.namespace.DeadLetterResponder - Message ClientManagementEnvelope(CloseClient,Websockets) meant for NamespaceActor (akka://NamespaceSystem/user/link-to-the-past-a5042-default-rtdb) went to deadletter actor
+18:05:31.384 [NamespaceSystem-akka.actor.default-dispatcher-269] INFO com.firebase.core.namespace.DeadLetterResponder - Message TooManyRequestsWithDelay(1 minute) meant for other actor (akka://NamespaceSystem/user/link-to-the-past-a5042-default-rtdb/$Q) went to deadletter actor
+18:05:31.385 [Thread-0] INFO com.firebase.server.forge.App$ - Graceful shutdown complete.
